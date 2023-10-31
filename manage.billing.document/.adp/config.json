@@ -1,0 +1,12 @@
+{
+  "componentname": "cus.sd.customerinvoices.manage.s1",
+  "safeMode": false,
+  "appvariant": "manage.billing.document",
+  "layer": "CUSTOMER_BASE",
+  "sourceSystem": "https://ikjdcdevcha01.dangote-group.com:50000",
+  "client": "150",
+  "isOVPApp": false,
+  "isFioriElement": false,
+  "environment": "ABAP",
+  "ui5Version": "1.96.25"
+}
