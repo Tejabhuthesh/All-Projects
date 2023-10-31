@@ -1,0 +1,12 @@
+{
+  "componentname": "fin.ap.manager.ovp",
+  "safeMode": true,
+  "appvariant": "app.variant3",
+  "layer": "CUSTOMER_BASE",
+  "sourceSystem": "http://ikjdcdevcha01.dangote-group.com:8000/",
+  "client": "150",
+  "isOVPApp": true,
+  "isFioriElement": true,
+  "environment": "ABAP",
+  "ui5Version": "1.117.1"
+}
