@@ -1,0 +1,7 @@
+<mvc:View controllerName="project6.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="pageTEJA" title="{i18n>title}">
+        <content />
+    </Page>
+</mvc:View>
