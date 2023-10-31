@@ -1,0 +1,38 @@
+<mvc:View controllerName="idstring.zstringmethods.controller.View2" xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title1}" class="page2">
+     <headerContent>
+      
+           <Input id="idjoin1" width="5rem" type="Text" />
+            <Input id="idjoin2" width="5rem" type="Text" />
+             <Input id="idjoin3" width="5rem" type="Text" />
+              <Button  press="rightarrow" type="Transparent"  icon="sap-icon://navigation-right-arrow"/>
+        </headerContent>
+        <content >
+ <!-- <Label text="*"/>  <Input id="idjoi" width="15rem" type="Text" /> -->
+                        <VBox justifyContent="Center" alignItems="Center">
+                          <!-- <Label text="*"/> -->
+                          <HBox justifyContent="Start">
+                            <Input id="idjoin" width="15rem" type="Text" 	/>
+                            </HBox>
+                                <HBox justifyContent="Center" alignItems="Center">
+                             
+                                  <Button text="Join" press="onjoin"  width="5rem" type="Emphasized" />
+                                   <Button text="shift" press="onshift"  width="5rem" type="Emphasized" />
+                                     <Button text="unshift" press="onunshift"  width="5rem" type="Emphasized" />
+                                  <!-- <Button text="Pop" press="onpop"  width="5rem" type="Emphasized"  class="sapMBtn "/> -->
+                                  <Button text="Push" press="onpush"  width="5rem" type="Emphasized" />
+                                  <Button text="Delite" press="ondelite"  width="5rem" type="Emphasized" />
+                                  <Button text="Concat" press="onconcat"  width="5rem" type="Emphasized" />
+                              </HBox>
+                               <HBox >
+                              <Button text="Flat" press="onflat"  width="5rem" type="Emphasized" />
+                              <Button text="Pop" press="onpop"  width="5rem" type="Emphasized"  class="popbutton"/>
+                                <Button text="Slice" press="onslice"  width="5rem" type="Emphasized" />
+                                </HBox>
+                              
+                        </VBox>
+        </content>
+    </Page>
+     </mvc:View>

@@ -1,0 +1,38 @@
+<mvc:View controllerName="idodata.odatacrud.controller.View3"
+  
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+     <Page id="page"   showNavButton="true" navButtonPress="onNavBack">
+     <content>
+      <!-- <Table width="auto" id="idProductsTable" inset="true" headerText="EMPLOYE DETAILS" visible="true" items="{
+			path: 'Data>/results',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+                <columns>
+                    <Column width="auto">
+                        <Text text="Request Number " />
+                    </Column>
+
+                    <Column>
+                        <Text text="Cost center" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Fiscal Year" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="colss1">
+                        <cells>
+                            <Input value="{Data1>Request Number}" editable="false" id="Id1" />
+                            <Input value="{Data1>Cost center}" editable="false" id="Id2" />
+                            <Input value="{Data1>Fiscal Year}" editable="false" id="Id3" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table> -->
+     </content>
+    </Page>
+</mvc:View>

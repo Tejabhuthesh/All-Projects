@@ -1,0 +1,53 @@
+<mvc:View controllerName="idstring.zstringmethods.controller.View1" xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" class="page">
+     <headerContent>
+      
+           <Button  press="rightarrow" type="Transparent"  icon="sap-icon://navigation-right-arrow"/>
+        </headerContent>
+        <content >
+         <FlexBox alignItems="Start" justifyContent="Center">
+                <f:SimpleForm editable="true" title="String Methods">
+                    <f:content>
+                        <VBox justifyContent="Center" alignItems="Center">
+                            <!-- <Title text="Instagram" class="sapUiBody" /> -->
+                            <!-- <Text text="Please visit Microsoft! and Microsoft" id="replace"/> -->
+                            <Input id="idlen" width="15rem" type="Text" />
+                              <HBox justifyContent="Center" alignItems="Center">
+                             <Input id="num1" width="5rem" type="Text" />
+                              <Input id="num2" width="5rem" type="Text" />
+                              </HBox>
+                               <HBox justifyContent="Center" alignItems="Center">
+                        <Button text="Length" press="onLength" type="Emphasized" width="5rem" />
+                        <Button text="Upper" press="onUpPer" type="Emphasized" width="5rem" />
+                        <Button text="Lower" press="onLower" type="Emphasized" width="5rem" />
+                         </HBox>
+                        <HBox justifyContent="Center" alignItems="Center">
+                            <Button text="Slice" press="onSlice" type="Emphasized" width="5rem" />
+                            <Button text="Substring" press="onSubstring" type="Emphasized" width="5rem" />
+                            <Button text="substr" press="onSubstr" type="Emphasized" width="5rem" />
+                            
+                         </HBox>
+                         <HBox justifyContent="Center" alignItems="Center">
+                          <Button text="Replace One" press="onReplace"  width="7rem" type="Emphasized"/>
+                          <!-- / <Button text="Replace" press="onReplaceall"  width="5rem" type="Emphasized"/> -->
+                            <Button text="Replace ALL" press="onReplacealll"  width="7rem" type="Emphasized"/>
+                          </HBox>
+                           <HBox justifyContent="Center" alignItems="Center">
+                           <Button text="Contact" press="onContact"  width="5rem" type="Emphasized"/>
+                           <Button text="Trim" press="onTrim"  width="5rem" type="Emphasized"/>
+                            <Button text="PadStart" press="onpadStart"  width="5rem" type="Emphasized" />
+                         	
+		
+		
+	                           
+                          </HBox>
+                        </VBox>
+                    </f:content>
+                </f:SimpleForm>
+            </FlexBox>
+        </content>
+    </Page>
+</mvc:View>
+

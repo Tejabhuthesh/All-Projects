@@ -1,0 +1,11 @@
+<mvc:View 
+xmlns:m="sap.m"
+     displayBlock="true"
+	xmlns:mvc="sap.ui.core.mvc">
+    <m:Page 
+   >
+   <m:content>
+   <m:Text text="dfg"/>
+   </m:content>
+   </m:Page>
+    </mvc:View >

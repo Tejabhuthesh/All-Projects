@@ -1,0 +1,35 @@
+/* Enter your custom styles here */
+.sapMLabel {
+    color: #629aee;
+    font-size: 0.875rem;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    cursor: text;
+}
+.sapMIBar-CTX .sapMTitle {
+    color: #0eefc9;
+    text-shadow: none;
+}
+.sapMMessageToast {
+    box-sizing: border-box;
+    position: absolute;
+    max-width: 100%;
+    word-wrap: break-word;
+    text-align: center;
+    text-decoration: none;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: pre-line;
+    font-size: 0.875rem;
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-weight: normal;
+    padding: 1rem;
+    background: #2db7c552;
+    color: #32363a;
+    box-shadow: 0 0 0 0.0625rem rgb(0 0 0 / 42%), 0 0.625rem 1.875rem 0 rgb(0 0 0 / 30%);
+    border-radius: 0.25rem;
+}

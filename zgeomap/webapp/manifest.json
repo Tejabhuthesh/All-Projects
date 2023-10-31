@@ -1,0 +1,139 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "idmaps.zgeomap",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.9.6",
+      "toolsId": "88fcb1b0-a826-4a11-99e5-f5296e7782b5"
+    },
+    "dataSources": {
+      
+        "localdata": {
+            "uri": "model/Sdata.json",
+            "type": "JSON"
+        }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.114.0",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "idmaps.zgeomap.i18n.i18n"
+        }
+      },
+      "": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "localdata",
+        "preload": true,
+        "settings": {}
+    }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "idmaps.zgeomap.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+            "name": "View2",
+            "view": "View2",
+            "pattern": "View2",
+            "targetAggregation": "pages",
+            "controlId": "app"
+          },
+          {
+            "name": "View3",
+            "view": "View3",
+            "pattern": "View3",
+            "targetAggregation": "pages",
+            "controlId": "app"
+          },
+          {
+            "name": "View4",
+            "view": "View4",
+            "pattern": "View4",
+            "targetAggregation": "pages",
+            "controlId": "app"
+          }
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "idmaps.zgeomap.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

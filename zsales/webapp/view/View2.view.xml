@@ -1,0 +1,593 @@
+<mvc:View
+    controllerName="idsales.zsales.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:tnt="sap.tnt"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:layout="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:m="sap.m"
+    xmlns:s="sap.suite.ui.commons"
+    xmlns:u="sap.uxap"
+    xmlns:t="sap.ui.table"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+>
+    <App id="app">
+        <pages>
+            <Page
+                id="page"
+                title="{=${InvoiceSet>/TicketNo} ==='0000000000' ? 'Development Tracker - Create': 'Development Tracker - Manage'}"
+                showNavButton="true"
+                navButtonPress="onNavBack"
+            >
+                <content>
+                    <ObjectHeader
+                        id="idObjectHeader"
+                        visible="false"
+                        icon="sap-icon://employee"
+                        iconDensityAware="true"
+                        iconAlt="Denise Smith"
+                        imageShape="Square"
+                        responsive="true"
+                        title="Creator: {ObjectModel>/CreatedBy}"
+                     
+                         number="AGING: {path:'ObjectModel>/CreatedOn',type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd-MM-yyyy' }}"
+                        intro="{ObjectModel>/SaleOrderName} : {ObjectModel>/Order}"
+                        backgroundDesign="Solid"
+                    >
+                        <ObjectAttribute
+                            title="Line Item No"
+                            id="SaleOrder"
+                            text="{ObjectModel>/Item}"
+                            visible="true"
+                        />
+                    </ObjectHeader>
+
+                    <IconTabBar
+                        expandable="false"
+                        id="idIconTabBar"
+                        select="onFilterSelect"
+                        class="sapUiResponsivePadding--header sapUiResponsivePadding--content"
+                    >
+                        <items>
+                            <IconTabFilter
+                                icon="sap-icon://sales-order"
+                                iconColor="Positive"
+                                text="Sales"
+                                key="Sales"
+                                visible="{=${FlagModel>/S} === 'S'|| ${FlagModel>/V} === 'V'}"
+                            >
+                                <VBox
+                                    class="sapUiSmallMargin"
+                                    alignContent="Center"
+                                >
+                                    <f:SimpleForm
+                                        id="SimpleFormChange480_Trial"
+                                        editable="true"
+                                        layout="ResponsiveGridLayout"
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"
+                                    >
+                                        <f:content>
+                                            <core:Title
+                                                text="Sale Order Deatails"
+                                            />
+                                            <Label
+                                                text="Sale Order"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="SaleOrder1"
+                                                width="100%"
+                                                value="{SalesSet>/Vbeln}"
+                                                editable="{=${FlagModel>/V} === 'V' || ${FlagModel>/Copy} === 'Copy'}"
+                                                maxLength="126"
+                                                type="Number"
+                                                visible="{=${FlagModel>/V} === 'V' || ${FlagModel>/Copy} === 'Copy'}"
+                                            />
+                                            <!-- editable="{=${InvoiceSet>/Flag} ==='S' || ${InvoiceSet>/Flag} ==='X'}" -->
+                                            <Label
+                                                text="Line Item"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="LineItem"
+                                                type="Number"
+                                                value="{SalesSet>/Posnr}"
+                                                editable="{=${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy'}"
+                                                maxLength="80"
+                                                visible="{=${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy'}"
+                                            />
+                                            <Label
+                                                text="Document Date"
+                                                required="true"
+                                            />
+                                            <DatePicker
+                                                id="DocumentDate_S"
+                                             
+                                                 value="{SalesSet>/Audat}"
+                                               
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                            />
+
+                                            <!-- value="{path:'{SalesSet>/Audat}', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }" -->
+                                            <Label
+                                                text="Item Description"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="ItemDescription"
+                                                width="100%"
+                                                value="{SalesSet>/Arktx}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                            />
+                                            <Label
+                                                text="Sold to Party"
+                                                required="true"
+                                            />
+
+                                            <Input
+                                                id="SoldtoParty"
+                                                width="100%"
+                                                value="{SalesSet>/Kunnr}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                            />
+                                            <Label
+                                                text="Ship to Party"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="ShiptoParty"
+                                                width="100%"
+                                                value="{SalesSet>/Kunag}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                            />
+                                            <core:Title text="" />
+
+                                            <Label
+                                                text="Material"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="Material"
+                                                value="{SalesSet>/Matnr}"
+                                                type="Number"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <Label
+                                                text="Quantity"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="Quantity"
+                                                type="Number"
+                                                value="{SalesSet>/Kwmeng}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <Label
+                                                text="Unit of Measurement"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="UnitofMeasurement"
+                                                value="{SalesSet>/Kmein}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <Label
+                                                text="Net Value"
+                                                required="true"
+                                                id="idNetValue_S"
+                                                visible="true"
+                                            />
+                                            <Input
+                                                id="NetValue_S"
+                                                value="{SalesSet>/Netwr}"
+                                                editable="false"
+                                                maxLength="80"
+                                                visible="true"
+                                            />
+                                            <!-- <Label
+                                                text="Created By"
+                                                required="true"
+                                                visible="true"
+                                            />
+                                            <Input
+                                                id="CreatedBy"
+                                                value="{SalesSet>/Ernam}"
+                                                editable="{=${FlagModel>/V} === 'V'}"
+                                                maxLength="80"
+                                                visible="true"
+                                            />
+                                            <Label
+                                                text="Created On"
+                                                required="true"
+                                                visible="true"
+                                            />
+                                            <Input
+                                                id="CreatedOn"
+                                                value="{SalesSet>/Erdat}"
+                                                editable="{=${FlagModel>/V} === 'V'}"
+                                                maxLength="80"
+                                                visible="true"
+                                            /> -->
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </VBox>
+                            </IconTabFilter>
+                            <IconTabFilter
+                                iconColor="Critical"
+                                id="idTeams"
+                                text="Delivery"
+                                key="Delivery"
+                                icon="sap-icon://shipping-status"
+                                visible="{=${FlagModel>/D} === 'D' ||${FlagModel>/DD} === 'D'  || ${FlagModel>/V} === 'V'}"
+                            >
+                                <VBox class="sapUiSmallMargin">
+                                    <f:SimpleForm
+                                        id="SimpleFormChange480_Delivery"
+                                        editable="true"
+                                        layout="ResponsiveGridLayout"
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"
+                                    >
+                                        <f:content>
+                                            <core:Title
+                                                text="Delivery Deatails"
+                                            />
+                                            <Label
+                                                text="Delivery Doc"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="DeliveryDoc"
+                                                width="100%"
+                                                value="{DeliverySet1>/Vbeln}"
+                                                editable="{=${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy'}"
+                                                maxLength="126"
+                                                visible="{=${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy'}"
+                                            />
+                                            <!-- editable="{=${DeliverySet>/Flag} ==='S' || ${DeliverySet>/Flag} ==='X'}" -->
+                                            <Label
+                                                text="Line Item"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="LineItem_D"
+                                                value="{DeliverySet1>/Posnr}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                                visible="{=${FlagModel>/V} === 'V'}"
+                                            />
+                                            <Label
+                                                text="Document Date"
+                                                required="true"
+                                            />
+                                            <DatePicker
+                                                id="DocumentDate"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                value="{path:'DeliverySet1>/Bldat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd-MM-yyyy' } }"
+                                            />
+
+                                            <Label
+                                                text="Item Description"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="ItemDescription_D"
+                                                value="{DeliverySet1>/Arktx}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+
+                                            <Label
+                                                text="Sold to Party"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="SoldtoParty_D"
+                                                value="{DeliverySet1>/Kunag}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <Label
+                                                text="Ship to Party"
+                                                required="true"
+                                            />
+
+                                            <Input
+                                                id="ShiptoParty_D"
+                                                width="100%"
+                                                value="{DeliverySet1>/Kunnr}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                suggestionItems="{DeliverySet1>/Kunnr}"
+                                                showSuggestion="true"
+                                            >
+                                                <suggestionItems>
+                                                    <core:Item
+                                                        text="{DeliverySet1>Kunnr}"
+                                                        key="{DeliverySet1>Kunnr}"
+                                                    />
+                                                </suggestionItems>
+                                            </Input>
+                                            <Label
+                                                text="Material"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="Material_D"
+                                                value="{DeliverySet1>/Matnr}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <Label
+                                                text="Plant"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="Plant"
+                                                value="{DeliverySet1>/Werks}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <core:Title text="" />
+
+                                            <Label
+                                                text="Storage Location"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="StorageLocation"
+                                                value="{DeliverySet1>/Lgort}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+
+                                            <Label
+                                                text="Delivery Quantity"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="DeliveryQuantity"
+                                                value="{DeliverySet1>/Lfimg}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+
+                                            <Label
+                                                text="Unit of Measurement"
+                                                required="true"
+                                            />
+
+                                            <Input
+                                                id="UnitofMeasurement_I"
+                                                value="{DeliverySet1>/Vrkme}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                required="true"
+                                                maxLength="10"
+                                            />
+                                            <Label
+                                                text="Picked Quantity"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="PickedQuantity"
+                                                width="100%"
+                                                value="{DeliverySet1>/Pikmg}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                            />
+                                            <Label
+                                                text="Net Value"
+                                                required="true"
+                                                id="idNetValue_D"
+                                                visible="true"
+                                            />
+                                            <Input
+                                                id="NetValue_D"
+                                                value="{SalesSet>/Netwr}"
+                                                editable="false"
+                                                maxLength="80"
+                                                visible="true"
+                                            />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </VBox>
+                            </IconTabFilter>
+
+                            <IconTabFilter
+                                icon="sap-icon://form"
+                                iconColor="Positive"
+                                text="Invoice"
+                                key="Invoice"
+                                visible="{=${FlagModel>/I} === 'I' || ${FlagModel>/V} === 'V'}"
+                            >
+                                <VBox class="sapUiSmallMargin">
+                                    <f:SimpleForm
+                                        id="SimpleFormChange480_Invoice"
+                                        editable="true"
+                                        layout="ResponsiveGridLayout"
+                                        labelSpanXL="4"
+                                        labelSpanL="4"
+                                        labelSpanM="4"
+                                        labelSpanS="12"
+                                        adjustLabelSpan="false"
+                                        emptySpanXL="0"
+                                        emptySpanL="0"
+                                        emptySpanM="0"
+                                        emptySpanS="0"
+                                        columnsXL="3"
+                                        columnsL="2"
+                                        columnsM="2"
+                                        singleContainerFullSize="false"
+                                    >
+                                        <f:content>
+                                            <core:Title
+                                                text="Invoice Deatails"
+                                            />
+                                            <Label
+                                                text="Invoice No"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="InvoiceNo"
+                                                width="100%"
+                                                value="{InvoiceSet1>/Vbeln}"
+                                                editable="{=${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="126"
+                                                visible="{=${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy'}"
+                                            />
+                                            <!-- editable="{=${InvoiceSet>/Flag} ==='S' || ${InvoiceSet>/Flag} ==='X'}" -->
+                                            <Label
+                                                text="Billing Date"
+                                                required="true"
+                                            />
+                                            <DatePicker
+                                                id="BillingDate_I"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                value="{InvoiceSet1>/Fkdat}"
+                                            />
+                                            <!-- value="{path:'InvoiceSet1>/Fkdat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }" -->
+                                            <Label
+                                                text="Item Description"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="ItemDescription_I"
+                                                value="{InvoiceSet1>/Arktx}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                required="true"
+                                                maxLength="10"
+                                            />
+                                            <Label
+                                                text="Sold to Party"
+                                                required="true"
+                                            />
+
+                                            <Input
+                                                id="SoldtoParty_I"
+                                                width="100%"
+                                                value="{InvoiceSet1>/Kunag}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                            />
+                                            <Label
+                                                text="Payer"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="Payer"
+                                                value="{InvoiceSet1>/Kunrg}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+                                            <core:Title text="" />
+
+                                            <Label
+                                                text="Material"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="Material_I"
+                                                value="{InvoiceSet1>/Matnr}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                maxLength="80"
+                                            />
+
+                                            <Label
+                                                text="Billed Quantity"
+                                                required="true"
+                                            />
+
+                                            <Input
+                                                id="BilledQuantity"
+                                                value="{InvoiceSet1>/Fkimg}"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                required="true"
+                                                maxLength="10"
+                                            />
+
+                                            <Label
+                                                text="Company Code"
+                                                required="true"
+                                            />
+                                            <Input
+                                                id="CompanyCode"
+                                                width="100%"
+                                                editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
+                                                value="{InvoiceSet1>/Bukrs}"
+                                            />
+                                            <Label
+                                                text="Net Value"
+                                                required="true"
+                                                id="idNetValue_I"
+                                                visible="true"
+                                            />
+                                            <Input
+                                                id="NetValue_I"
+                                                value="{SalesSet>/Netwr}"
+                                                editable="false"
+                                                maxLength="80"
+                                                visible="true"
+                                            />
+                                        </f:content>
+                                    </f:SimpleForm>
+                                </VBox>
+                            </IconTabFilter>
+                        </items>
+                    </IconTabBar>
+                </content>
+                <footer>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <Button
+                            id="iUpdate"
+                            text="Edit"
+                            type="Neutral"
+                            press="onUpdateReq"
+                            visible="false"
+                        />
+                        <Button
+                            id="idSave"
+                            text="Save"
+                            type="Success"
+                            press="onUpdateSave"
+                            visible="false"
+                        />
+                        <Button
+                            id="idDelite"
+                            text="Delite"
+                            type="Negative"
+                            press="onDelite"
+                            visible="{=${FlagModel>/V} !== 'V'}"
+                        />
+                    </OverflowToolbar>
+                </footer>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

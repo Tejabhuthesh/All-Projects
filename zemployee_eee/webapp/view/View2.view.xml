@@ -1,0 +1,5 @@
+<mvc:View controllerName="idZEMPLOYEEEEE.zemployeeeee.controller.View2" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+<Page >
+<Text text="hello" />
+</Page>
+</mvc:View>

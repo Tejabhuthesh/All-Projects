@@ -1,0 +1,171 @@
+<mvc:View controllerName="idodata.odatacrud.controller.View2" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <Page id="page"  showNavButton="true" navButtonPress="onNavBack">
+        <content>
+         <FlexBox alignItems="Start" justifyContent="Center">
+            <f:SimpleForm editable="true" layout="ResponsiveGridLayout" emptySpanL="8" emptySpanM="8" title="Employee deatails">
+                <f:content>
+                    <VBox>
+                        <Label text="Request Number" labelFor="Request Number" design="Bold" />
+                        <HBox>
+                            <Input editable="true" id="Id1" />
+                        </HBox>
+                        <Label text="Cost center" labelFor="Cost center" design="Bold" />
+                        <HBox>
+                            <Input editable="true" id="Id2" />
+                        </HBox>
+                        <Label text="Fiscal Year" labelFor="Fiscal Year" design="Bold" />
+                        <HBox>
+                            <Input editable="true" id="Id3" />
+                        </HBox>
+                        <HBox>
+                            <Button type="Accept" text="SUBMIT" press="onPress" />
+                        </HBox>
+                    </VBox>
+                </f:content>
+            </f:SimpleForm>
+             </FlexBox>
+            <ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+                <Table width="100rem" id="idProductsTable" inset="true" headerText="EMPLOYE DETAILS" visible="true" items="{
+			path: 'Data>/results',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+                    <columns>
+                        <Column width="8rem">
+                            <Text text="WF Request " />
+                        </Column>
+
+                        <Column width="10rem">
+                            <Text text="COST Center" />
+                        </Column>
+
+                        <Column width="8rem">
+                            <Text text="Genaral Ledger Account" />
+                        </Column>
+
+                        <Column width="10rem">
+                            <Text text="Fiscal Year" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="Budget Version" />
+                        </Column>
+                        <Column width="8rem">
+                            <Text text="CR_TMSTP" />
+                        </Column>
+                        <Column width="11rem">
+                            <Text text="WF_CURRENT_STATE" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="CR_DATE" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="ERNAM" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L1_TMSTP" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L2_TMSTP" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L3_TMSTP" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L4_TMSTP" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L5_TMSTP" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="ANN_BUG_VAL" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="SUPP_BUG_VAL" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L1_APRID" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L2_APRID" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L3_APRID" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L4_APRID" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="L5_APRID" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="LVL_1_COMMENT" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="LVL_2_COMMENT" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="LVL_3_COMMENT" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="LVL_4_COMMENT" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="LVL_5_COMMENT" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="APPROVEL_LEVELS" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="CURRENT_LEVELS" />
+                        </Column>
+                        <Column width="10rem">
+                            <Text text="CL_STATUS" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active" id="colss1">
+                            <cells>
+                                <Text text="{Data1>WF_Request}" />
+                                <Text text="{Data1>COSTCENTER}" />
+                                <Text text="{Data1>GL}" />
+                                <Text text="{Data1>FISCALYEAR}" />
+                                <Text text="{Data1>VER_SUPP_BUG}" />
+                                <Text text="{Data1>CR_TMSTP}" />
+                                <Text text="{Data1>ERNAM}" />
+                                <Text text="{Data1>L1TMSTP}" />
+                                <Text text="{Data1>L2_TMSTP}" />
+                                <Text text="{Data1>L3_TMSTP}" />
+                                <Text text="{Data1>L4_TMSTP}" />
+                                <Text text="{Data1>ANN_BUG_VAL}" />
+                                <Text text="{Data1>SUPP_BUG_VAL}" />
+                                <Text text="{Data1>L1_APRID}" />
+                                <Text text="{Data1>L2_APRID}" />
+                                <Text text="{Data1>L3_APRID}" />
+                                <Text text="{Data1>L4_APRID}" />
+                                <Text text="{Data1>L5_APRID}" />
+                                <Text text="{Data1>LVL_1_COMMENT}" />
+                                <Text text="{Data1>LVL_2_COMMENT}" />
+                                <Text text="{Data1>LVL_3_COMMENT}" />
+                                <Text text="{Data1>LVL_4_COMMENT}" />
+                                <Text text="{Data1>LVL_5_COMMENT}" />
+                                <Text text="{Data1>APPROVEL_LEVELS}" />
+                                <Text text="{Data1>CURRENT_LEVELS}" />
+                                <Text text="{Data1>CL_STATUS}" />
+                                <!-- <Input value="{Data>Request Number}" editable="false" />
+                                <Input value="{Data>Cost center}" editable="false" />
+                                <Input value="{Data>Fiscal Year}" editable="false" /> -->
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </content>
+        <footer>
+            <OverflowToolbar id="otbFooter">
+                <ToolbarSpacer />
+                <Button  icon="sap-icon://navigation-right-arrow" press="onPress" />
+            </OverflowToolbar>
+        </footer>
+    </Page>
+</mvc:View>

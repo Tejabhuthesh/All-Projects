@@ -1,0 +1,38 @@
+<mvc:View controllerName="demoroutingid.demorouting.controller.View2" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <App>
+        <pages>
+            <Page id="page" title="View2" showNavButton="true" navButtonPress="onNavBack">
+                <content>
+                    <f:SimpleForm editable="false" layout="ResponsiveGridLayout">
+                        <f:content>
+                            <Label text="Employeid" />
+                            <Text text="{Data2>/0/Employeid}" />
+                            <Label text="Name" />
+                            <Text text="{Data2>/0/Name}" />
+                            <Label text="Date of Birth" />
+                            <Text text="{Data2>/0/DateofBirth}" />
+                            <Label text="Age" />
+                            <Text text="{Data2>/0/Age}" />
+                            <Label text="Role" />
+                            <Text text="{Data2>/0/Role}" />
+                            <Label text="Date of Joining" />
+                            <Text text="{Data2>/0/DateofJoining}" />
+                            <Label text="Position" />
+                            <Text text="{Data2>/0/Position}" />
+                            <Label text="CTC" />
+                            <Text text="{Data2>/0/CTC}" />
+                            <Label text="Number" />
+                            <Text text="{Data2>/0/Number}" />
+                            <Label text="Alternative Mobile Number" />
+                            <Text text="{Data2>/0/landline}" />
+                            <Label text="Email ID" />
+                            <Text text="{Data2>/0/EmailID}" />
+                            <Label text="Address" />
+                            <Text text="{Data2>/0/Address}" />
+                        </f:content>
+                    </f:SimpleForm>
+                </content>
+            </Page>
+        </pages>
+    </App>
+</mvc:View>

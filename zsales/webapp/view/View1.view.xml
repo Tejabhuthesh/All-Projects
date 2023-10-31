@@ -1,0 +1,796 @@
+<mvc:View
+    controllerName="idsales.zsales.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    height="100%"
+    xmlns:ui="sap.ui.table"
+>
+    <Page
+        title="{i18n>title}"
+        enableScrolling="true"
+        titleAlignment="Center"
+        showHeader="false"
+    >
+        <content>
+            <IconTabBar
+                upperCase="true"
+                expandable="false"
+                applyContentPadding="true"
+                stretchContentHeight="true"
+                select="onFilterSelect"
+                class="sapUiResponsiveContentPadding"
+            >
+                <items>
+                    <IconTabFilter
+                        key="Sales"
+                        text="Sales"
+                        icon="sap-icon://sales-order"
+                        iconColor="Positive"
+                        count="{=${SalesSet>/results}.length}"
+                    >
+                        <f:DynamicPage
+                            id="dynamicPageId"
+                            preserveHeaderStateOnScroll="true"
+                            headerExpanded="{/headerExpanded}"
+                            showFooter="false"
+                            fitContent="true"
+                        >
+                            <!-- <f:title>
+                                <f:DynamicPageTitle>
+                                    <f:heading>
+                                        <Title text="Sales Orders" />
+                                    </f:heading>
+
+                                    <f:actions>
+                                        <ToolbarSpacer />
+                                    </f:actions>
+                                </f:DynamicPageTitle>
+                            </f:title> -->
+
+                            <f:header>
+                                <f:DynamicPageHeader pinnable="true">
+                                    <filterbar:FilterBar
+                                        search="onPressGo"
+                                        useToolbar="false"
+                                        showGoOnFB="true"
+                                        showClearOnFB="true"
+                                        visible="true"
+                                        clear="onPressClear"
+                                    >
+                                        <filterbar:filterGroupItems>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G111"
+                                                label="Sale Order"
+                                                groupTitle="group111"
+                                                name="Sale Order"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_SaleOrder"
+                                                        visible="true"
+                                                        items="{SalesSet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{SalesSet>Vbeln}"
+                                                            text="{SalesSet>Vbeln}"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G1111"
+                                                label="Created By"
+                                                groupTitle="group1111"
+                                                name="Created By"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_CreatedBy"
+                                                        visible="true"
+                                                        items="{SalesSet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{SalesSet>Ernam}"
+                                                            text="{SalesSet>Ernam}"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G1112"
+                                                label="Created On"
+                                                groupTitle="group1112"
+                                                name="Created On"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_CreatedOn"
+                                                        visible="true"
+                                                        items="{SalesSet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{SalesSet>Erdat}"
+                                                            text="{path:'SalesSet>Erdat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }"
+                                                        />
+                                                        <!-- text="{path:'{SalesSet>Erdat}', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }" -->
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                        </filterbar:filterGroupItems>
+                                    </filterbar:FilterBar>
+                                </f:DynamicPageHeader>
+                            </f:header>
+
+                            <f:content>
+                                <ui:Table
+                                    id="idSalesTable"
+                                    rows="{SalesSet>/results}"
+                                    alternateRowColors="true"
+                                    selectionMode="None"
+                                    enableColumnFreeze="true"
+                                    rowActionCount="2"
+                                >
+                                    <ui:extension>
+                                        <OverflowToolbar>
+                                            <ToolbarSpacer />
+                                            <SearchField
+                                                liveChange="onSearch"
+                                                width="20%"
+                                            />
+                                            <Button
+                                                press="onExport"
+                                                type="Transparent"
+                                                icon="sap-icon://excel-attachment"
+                                            />
+                                        </OverflowToolbar>
+                                    </ui:extension>
+                                    <ui:columns>
+                                        <ui:Column 
+                                            filterProperty="Vbeln"
+                                            sortProperty="Vbeln"
+                                        >
+                                            <Label text="Sale Order" />
+                                            <ui:template>
+                                                <Link
+                                                    text="{SalesSet>Vbeln}"
+                                                    wrapping="false"
+                                                    press="onSaleOrder"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column 
+                                            filterProperty="Posnr"
+                                            sortProperty="Posnr"
+                                        >
+                                            <Label text="Line Iteam" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{SalesSet>Posnr}"
+                                                    wrapping="false"
+
+                                                    class="CC"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Audat"
+                                            sortProperty="Audat"
+                                        >
+                                            <Label text="Document Date" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{SalesSet>Audat}"
+                                                    wrapping="false"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+
+                                        <ui:Column
+                                            filterProperty="Kunnr"
+                                            sortProperty="Kunnr"
+                                        >
+                                            <Label text="Sold to Party" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{SalesSet>Kunnr}"
+                                                    wrapping="false"
+                                                      class="CC"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Kunag"
+                                            sortProperty="Kunag"
+                                        >
+                                            <Label text="Ship to Party" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{SalesSet>Kunag}"
+                                                    wrapping="false"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+
+                                        <ui:Column
+                                            filterProperty="Matnr"
+                                            sortProperty="Matnr"
+                                        >
+                                            <Label text="Material" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{SalesSet>Matnr}"
+                                                    wrapping="false"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Arktx"
+                                            sortProperty="Arktx"
+                                        >
+                                            <Label text="Iteam Description" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{SalesSet>Arktx}"
+                                                    wrapping="false"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <!-- <ui:Column filterProperty="Erdat" sortProperty="Erdat">
+                                            <Label text="Created On" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{path:'SalesSet>Erdat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column> -->
+                                    </ui:columns>
+                                    <!-- <ui:rowActionTemplate>
+                                        <ui:RowAction>
+                                            <ui:items>
+                                                <ui:RowActionItem
+                                                    type="Delete"
+                                                    press="onpressrow"
+                                                    icon="sap-icon://feeder-arrow"
+                                                />
+                                            </ui:items>
+                                        </ui:RowAction>
+                                    </ui:rowActionTemplate> -->
+                                    <ui:rowActionTemplate>
+                                        <ui:RowAction>
+                                            <ui:items>
+                                              <ui:RowActionItem
+                                              id="idCopy"
+                                            
+                                                  type="Custom"
+                                                    press="onSaleOrder" 
+                                                    icon="sap-icon://copy"/>
+                                                <ui:RowActionItem
+                                                 id="idNavigation"
+                                                    type="Navigation"
+                                                     icon="sap-icon://feeder-arrow"
+                                                    press="onSaleOrder"
+                                                />
+                                              
+                                            </ui:items>
+                                        </ui:RowAction>
+                                    </ui:rowActionTemplate>
+                                </ui:Table>
+                            </f:content>
+                        </f:DynamicPage>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        key="Delivery"
+                        text="Delivery"
+                        icon="sap-icon://shipping-status"
+                        iconColor="Critical"
+                        count="{=${DeliverySet>/results}.length}"
+                    >
+                        <f:DynamicPage
+                            id="delivery"
+                            preserveHeaderStateOnScroll="true"
+                            headerExpanded="{/headerExpanded}"
+                            showFooter="false"
+                            fitContent="true"
+                        >
+                            <!-- <f:title>
+                                <f:DynamicPageTitle>
+                                    <f:heading>
+                                        <Title text="Delivery Deatails" />
+                                    </f:heading>
+
+                                    <f:actions>
+                                        <ToolbarSpacer />
+                                    </f:actions>
+                                </f:DynamicPageTitle>
+                            </f:title> -->
+
+                            <f:header>
+                                <f:DynamicPageHeader pinnable="true">
+                                    <filterbar:FilterBar
+                                        search="onPressGo_D"
+                                        useToolbar="false"
+                                        showGoOnFB="true"
+                                        showClearOnFB="true"
+                                        clear="onPressClear_D"
+                                    >
+                                        <filterbar:filterGroupItems>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G1"
+                                                label="Delivery Doc"
+                                                groupTitle="group1"
+                                                name="Delivery Doc"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_DeliveryDoc"
+                                                        visible="true"
+                                                        items="{DeliverySet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{DeliverySet>Vbeln}"
+                                                            text="{DeliverySet>Vbeln}"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G2"
+                                                label="Created By"
+                                                groupTitle="group2"
+                                                name="Created By"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_CreatedBy_D"
+                                                        visible="true"
+                                                        items="{DeliverySet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{DeliverySet>Ernam}"
+                                                            text="{DeliverySet>Ernam}"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G12"
+                                                label="Created On"
+                                                groupTitle="group12"
+                                                name="Created On"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                    
+                                                
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_CreatedOn_D"
+                                                        visible="true"
+                                                        items="{DeliverySet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{DeliverySet>Erdat}"
+                                                            text="{path:'DeliverySet>Erdat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                        </filterbar:filterGroupItems>
+                                    </filterbar:FilterBar>
+                                </f:DynamicPageHeader>
+                            </f:header>
+
+                            <f:content>
+                                <ui:Table
+                                    id="idDeliveryTable"
+                                    rows="{DeliverySet>/results}"
+                                    alternateRowColors="true"
+                                    selectionMode="None"
+                                      rowActionCount="2"
+
+                                >
+                                    <ui:extension>
+                                        <OverflowToolbar>
+                                            <ToolbarSpacer />
+                                            <SearchField
+                                                liveChange="onSearch"
+                                                width="20%"
+                                            />
+                                            <Button
+                                                press="onExport_D"
+                                                type="Transparent"
+                                                icon="sap-icon://excel-attachment"
+                                            />
+                                        </OverflowToolbar>
+                                    </ui:extension>
+                                    <ui:columns>
+                                        <ui:Column
+                                            filterProperty="Vbeln"
+                                            sortProperty="Vbeln"
+                                        >
+                                            <Label text="Delivery Doc" />
+                                            <ui:template>
+                                                <Link
+                                                    text="{DeliverySet>Vbeln}"
+                                                    wrapping="true"
+                                                    press="onDelivery"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Posnr"
+                                            sortProperty="Posnr"
+                                        >
+                                            <Label text="Line Iteam" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{DeliverySet>Posnr}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Bldat"
+                                            sortProperty="Bldat"
+                                        >
+                                            <Label text="Document Date" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{path:'DeliverySet>Bldat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd-MM-yyyy' } }"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                            <!-- text="{DeliverySet>Bldat}" -->
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Kunag"
+                                            sortProperty="Kunag"
+                                        >
+                                            <Label text="Sold to party" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{DeliverySet>Kunag}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Kunnr"
+                                            sortProperty="Kunnr"
+                                        >
+                                            <Label text="Ship to Party" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{DeliverySet>Kunnr}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Vkorg"
+                                            sortProperty="Vkorg"
+                                        >
+                                            <Label text="Sales Org" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{DeliverySet>Vkorg}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+
+                                        <ui:Column
+                                            filterProperty="Matnr"
+                                            sortProperty="Matnr"
+                                        >
+                                            <Label text="Material" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{DeliverySet>Matnr}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Arktx"
+                                            sortProperty="Arktx"
+                                        >
+                                            <Label text="Iteam Description" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{DeliverySet>Arktx}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                    </ui:columns>
+                                     <ui:rowActionTemplate>
+                                        <ui:RowAction>
+                                            <ui:items>
+                                             <ui:RowActionItem
+                                              id="idCopy_D"
+                                            
+                                                  type="Custom"
+                                                    press="onDelivery"
+                                                    icon="sap-icon://copy"/>
+                                                <ui:RowActionItem
+                                                    type="Navigation"
+                                                     icon="sap-icon://feeder-arrow"
+                                                    press="onDelivery"
+                                                />
+                                            </ui:items>
+                                        </ui:RowAction>
+                                    </ui:rowActionTemplate>
+                                </ui:Table>
+                            </f:content>
+                        </f:DynamicPage>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        key="Invoice"
+                        text="Invoice"
+                        icon="sap-icon://form"
+                        iconColor="Contrast"
+                        count="{=${InvoiceSet>/results}.length}"
+                    >
+                        <f:DynamicPage
+                            id="Invoice"
+                            preserveHeaderStateOnScroll="true"
+                            headerExpanded="{/headerExpanded}"
+                            showFooter="false"
+                            fitContent="true"
+                        >
+                            <!-- <f:title>
+                                <f:DynamicPageTitle>
+                                    <f:heading>
+                                        <Title text="Invoice Deatails" />
+                                    </f:heading>
+
+                                    <f:actions>
+                                        <ToolbarSpacer />
+                                    </f:actions>
+                                </f:DynamicPageTitle>
+                            </f:title> -->
+
+                            <f:header>
+                                <f:DynamicPageHeader pinnable="true">
+                                    <filterbar:FilterBar
+                                        search="onPressGo_I"
+                                        useToolbar="false"
+                                        showGoOnFB="true"
+                                        showClearOnFB="true"
+                                        clear="onPressClear_I"
+                                    >
+                                        <filterbar:filterGroupItems>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G1"
+                                                label="Invoice No"
+                                                groupTitle="group1"
+                                                name="Invoice No"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_InvoiceNo"
+                                                        visible="true"
+                                                        items="{InvoiceSet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{InvoiceSet>Vbeln}"
+                                                            text="{InvoiceSet>Vbeln}"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G11"
+                                                label="Created By"
+                                                groupTitle="group11"
+                                                name="Created By"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_CreatedBy_I"
+                                                        visible="true"
+                                                        items="{InvoiceSet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{InvoiceSet>Ernam}"
+                                                            text="{InvoiceSet>Ernam}"
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G12"
+                                                label="Created On"
+                                                groupTitle="group12"
+                                                name="Created On"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_CreatedOn_I"
+                                                        visible="true"
+                                                        items="{InvoiceSet>/results}"
+                                                    >
+                                                        <c:Item
+                                                            key="{InvoiceSet>Erdat}"
+                                                            text="{path:'InvoiceSet>Erdat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }"
+                                                        />
+                                                        <!-- value="{path:'datamodel2>/FsTargetCom', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }"  -->
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                        </filterbar:filterGroupItems>
+                                    </filterbar:FilterBar>
+                                </f:DynamicPageHeader>
+                            </f:header>
+
+                            <f:content>
+                                <ui:Table
+                                    id="idInvoiceTable"
+                                    rows="{InvoiceSet>/results}"
+                                    alternateRowColors="true"
+                                    selectionMode="None"
+                                      rowActionCount="2"
+                                >
+                                    <ui:extension>
+                                        <OverflowToolbar>
+                                            <ToolbarSpacer />
+                                            <SearchField
+                                                liveChange="onSearch"
+                                                width="20%"
+                                            />
+                                            <Button
+                                                press="onExport_I"
+                                                type="Transparent"
+                                                icon="sap-icon://excel-attachment"
+                                            />
+                                        </OverflowToolbar>
+                                    </ui:extension>
+                                    <ui:columns>
+                                        <ui:Column
+                                            filterProperty="Vbeln"
+                                            sortProperty="Vbeln"
+                                        >
+                                            <Label text="Invoice No" />
+                                            <ui:template>
+                                                <Link
+                                                    text="{InvoiceSet>Vbeln}"
+                                                    wrapping="true"
+                                                    press="onInvoice"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Fkdat"
+                                            sortProperty="Fkdat"
+                                        >
+                                            <Label text="Billing Date" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{InvoiceSet>Fkdat}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Kunag"
+                                            sortProperty="Kunag"
+                                        >
+                                            <Label text="Sold to party" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{InvoiceSet>Kunag}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+
+                                        <ui:Column
+                                            filterProperty="Kunrg"
+                                            sortProperty="Kunrg"
+                                        >
+                                            <Label text="Payer" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{InvoiceSet>Kunrg}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+
+                                        <ui:Column
+                                            filterProperty="Matnr"
+                                            sortProperty="Matnr"
+                                        >
+                                            <Label text="Material" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{InvoiceSet>Matnr}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column
+                                            filterProperty="Arktx"
+                                            sortProperty="Arktx"
+                                        >
+                                            <Label text="Iteam Description" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{InvoiceSet>Arktx}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                    </ui:columns>
+                                     <ui:rowActionTemplate>
+                                        <ui:RowAction>
+                                            <ui:items>
+                                              <ui:RowActionItem
+                                              id="idCopy_I"
+                                            
+                                                  type="Custom"
+                                                    press="onInvoice"
+                                                    icon="sap-icon://copy"/>
+                                                <ui:RowActionItem
+                                                    type="Navigation"
+                                                     icon="sap-icon://feeder-arrow"
+                                                    press="onInvoice"
+                                                    
+                                                />
+                                            </ui:items>
+                                        </ui:RowAction>
+                                    </ui:rowActionTemplate>
+                                </ui:Table>
+                            </f:content>
+                        </f:DynamicPage>
+                    </IconTabFilter>
+                </items>
+                <content />
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

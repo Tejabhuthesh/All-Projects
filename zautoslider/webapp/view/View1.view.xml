@@ -1,0 +1,35 @@
+<mvc:View controllerName="zautoslider.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartList="sap.ui.comp.smartlist">
+    <Page id="page" title="{i18n>title}">
+        <headerContent>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="onFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/fullScreen} !== null }"/>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/exitFullScreen} !== null }"/>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close begin column" visible="{= ${/actionButtonsInfo/endColumn/closeColumn} !== null }"/>
+            <Button text="next" press="onListItemPress"></Button>
+        </headerContent>
+        <content >
+
+
+            <ScrollContainer vertical="false" horizontal="true">
+                <HBox class="slide-track">
+
+                    <!-- <GenericTile class="img" backgroundImage="{/FoodItems>/0/Pizza}" press="onPlayStore" header="" frameType="TwoByOne" subheader="" /> -->
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/obtyqt35sq55t0owwixq" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/d461cb7eac503656a2b4bb13e7c60b97" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/02731f6bd73f982bc74a522edd9c1b01" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/dusrpnmq696kud6ri5p5" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ebvhlm5cwapzxrqs6nkd" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/42110cd5216d1ebad900b13f5287bd9b" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/2beebd3688e63e027ee8a11c1c8a72c8" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/ji7etlhddnvtocaoes1n" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/mxc0204gqh6vps9asyw1" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                    <GenericTile class="img" backgroundImage="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/af8216b15abde417bb0e1d8fc44fb877" press="onPlayStore" header="" frameType="TwoByOne" subheader="" />
+                </HBox>
+            </ScrollContainer>
+
+        </content>
+    </Page>
+</mvc:View>

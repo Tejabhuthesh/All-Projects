@@ -1,0 +1,158 @@
+<mvc:View xmlns:uxap="sap.uxap" controllerName="idfilters.zfilters.controller.View2" height="100%" width="100%" displayBlock="true"
+    xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns="sap.ui.table"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:u="sap.ui.unified"
+    xmlns:sfb="sap.ui.comp.smartfilterbar">
+    <m:Page id="page" title="{i18n>title}" showHeader="true" enableScrolling="true" class="sapUiContentPadding" showNavButton="true" navButtonPress="onNavBack">
+        <m:headerContent>
+
+            <m:Button press="rightarrow" type="Transparent" icon="sap-icon://navigation-right-arrow" />
+        </m:headerContent>
+        <f:DynamicPage id="dynamicPageId" showFooter="true" preserveHeaderStateOnScroll="true">
+            <f:title>
+                <f:DynamicPageTitle />
+            </f:title>
+
+            <f:header>
+                <f:DynamicPageHeader pinnable="true">
+                    <m:OverflowToolbar style="Clear">
+                        <m:ToolbarSpacer />
+                        <m:SearchField liveChange="onSearch" width="20%" />
+                    </m:OverflowToolbar>
+
+                    <filterbar:FilterBar search="onPressGo" useToolbar="true" showGoOnFB="true">
+
+
+                        <filterbar:filterGroupItems>
+                            <filterbar:FilterGroupItem groupName="G1" label="Name" groupTitle="group1" name="name1" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idname" width="15%" items="{
+			            	path: 'Data1>/results', 
+				            sorter: { path: 'Name' }
+                             }">
+                                        <core:Item key="001" text="{Data1>Name}" />
+                                    </m:MultiComboBox>
+                                    <!-- <m:MultiComboBox id="idname" selectionChange="handleSelectionChangeName" selectionFinish="handleSelectionFinish" width="15%" 
+                                     growing = "true"  
+                                     growingThreshold = "1" maxItemsDisplayed = "1" items="{path: 'Data1>/results',length:'3'}">
+                                        <core:Item key="001" text="{Data1>Name}" />
+                                    </m:MultiComboBox> -->
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem groupName="G2" label="Zemprole" groupTitle="group2" name="name2" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idemprole" selectionChange="handleSelectionChangeRole" selectionFinish="handleSelectionFinish" width="15%" items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'Zemprole' } }">
+                                        <core:Item key="002" text="{Data1>Zemprole}" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+
+                            <filterbar:FilterGroupItem groupName="G3" label="Zgender" groupTitle="group3" name="name3" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idgender" selectionChange="handleSelectionChangeGender" selectionFinish="handleSelectionFinish" width="15%">
+                                        <core:Item key="003" text="Male" />
+                                        <core:Item key="004" text="Female" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem groupName="G4" label="Zcity" groupTitle="group4" name="name4" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idcity" selectionChange="handleSelectionChangeCity" selectionFinish="handleSelectionFinish" width="15%" items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'Zcity' } }">
+                                        <core:Item key="003" text="{Data1>Zcity}" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem groupName="G5" label="Znumber" groupTitle="group5" name="name5" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idnumber" selectionChange="handleSelectionChangeNumber" selectionFinish="handleSelectionFinish" width="15%" items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'Znumber' } }">
+                                        <core:Item key="004" text="{Data1>Znumber}" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                        </filterbar:filterGroupItems>
+                    </filterbar:FilterBar>
+                </f:DynamicPageHeader>
+            </f:header>
+            <f:content>
+                <Table id="idProductsTable" rows="{Data1>/results}" visibleRowCount="9" alternateRowColors="true" enableColumnReordering="true" columnHeaderHeight="60" rowActionCount="2">
+                    <extension >
+                        <m:OverflowToolbar >
+                            <m:ToolbarSpacer ></m:ToolbarSpacer>
+                            <m:Button press="onExport" type="Transparent" icon="sap-icon://excel-attachment"/>
+                        </m:OverflowToolbar>
+                    </extension >
+                    <!-- <extension >
+                    <headerToolbar>
+                        <m:OverflowToolbar>
+                            <m:ToolbarSpacer/>
+                            <m:OverflowToolbarButton type="Transparent" icon="sap-icon://excel-attachment" press="onExport"/>
+                        </m:OverflowToolbar>
+                    </headerToolbar>
+                     </extension > -->
+                    <columns>
+                        <Column filterProperty="Name" sortProperty="Name">
+                            <m:Label text="Name" />
+                            <template>
+                                <m:Text text="{Data1>Name}" wrapping="true" />
+                            </template>
+                        </Column>
+                        <Column width="auto" filterProperty="Zemprole" sortProperty="Zemprole">
+                            <m:Label text="Zemprole" />
+                            <template>
+                                <m:Text text="{Data1>Zemprole}" wrapping="false" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="Zgender" sortProperty="Zgender">
+                            <m:Label text="Zgender" />
+                            <template>
+                                <m:Text text="{Data1>Zgender}" wrapping="false" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="Zcity" sortProperty="Zcity">
+                            <m:Label text="Zcity" />
+                            <template>
+                                <m:Text text="{Data1>Zcity}" wrapping="false" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="Znumber" sortProperty="Znumber">
+                            <m:Label text="Znumber" />
+                            <template>
+                                <m:Text text="{Data1>Znumber}" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="" width="5rem" sortProperty="">
+                            <m:Button icon="sap-icon://clear-all" press="ondeliteall" />
+                            <template>
+                                <m:Link text=" X " press="onpressrow" />
+                            </template>
+                        </Column>
+                    </columns>
+
+                    <rowActionTemplate>
+                    <RowAction>
+                    <items>
+                    <RowActionItem type="Delete" press="onpressrow"/>
+                    </items>
+                    </RowAction>
+                     </rowActionTemplate>
+                </Table>
+            </f:content>
+
+        </f:DynamicPage>
+    </m:Page>
+</mvc:View>

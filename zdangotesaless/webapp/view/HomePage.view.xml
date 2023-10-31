@@ -1,0 +1,58 @@
+<mvc:View
+    controllerName="iddsales.zdangotesaless.controller.HomePage"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+        class="elementstyle"
+        showHeader="true"
+    >
+        <headerContent >
+         <Link text="Login" id="homelogin"  class="loginLnk" press="onHomeLogin"></Link>
+         <Button text="Sign Up" id="homeSign" class="signup" press="onHomesign"></Button>
+        </headerContent>
+        <content>
+            <Toolbar>
+                <Label text="SWIZOO"   class="swizoo"/>
+                <ComboBox
+                    width="20rem"
+                    placeholder="Select Your Restaurant"
+                    visible="true"
+                    id="SelectYourRestaurant"
+                    items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'Name1' } }"
+                >
+                    <core:Item
+                        id="idcoreitem"
+                        text="{Data1>Name1}"
+                    />
+                </ComboBox>
+
+               
+                <Button
+                    text="FIND FOOD"
+                    width="7rem" press="onFindFood"
+                />
+                <ToolbarSpacer />
+                <SearchField
+                    liveChange="onSearch"
+                    width="30%"
+                />
+            </Toolbar>
+            
+        </content>
+        <content >
+         <!-- <FlexBox class="sapcontent1" alignContent="Center" alignItems="Center"> -->
+            <Label text="" id="idresturantname" class="sapMLabell"></Label>
+            <!-- </FlexBox>  -->
+        </content>
+    </Page>
+</mvc:View>

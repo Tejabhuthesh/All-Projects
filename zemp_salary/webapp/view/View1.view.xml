@@ -1,0 +1,98 @@
+<mvc:View controllerName="idemp.zempsalary.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 	
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title2}">
+     <headerContent>
+        
+         <!-- <Button icon="sap-icon://locked" text="Locked" press="Lock" type="Transparent" /> -->
+            <Button  id="editmode" icon="sap-icon://edit" text="Edit" press="onEdit" type="Transparent" />
+            <Button id="addButton" icon="sap-icon://add" text="Add" type="Transparent" press="onAdd" />
+            <!-- <Button id="deleteButton" icon="sap-icon://delete" text="Delete" type="Transparent" press="onDelite" /> -->
+           
+           <Button  press="rightarrow" type="Transparent"  icon="sap-icon://navigation-right-arrow"/>
+        </headerContent>
+          <Toolbar>
+          <Button  press="rightarrow" type="Transparent"  icon="sap-icon://navigation-right-arrow"/>
+             <ToolbarSpacer />
+             <SearchField liveChange="onSearch" width="20%" />
+           </Toolbar>
+        <content>
+        
+            <ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+            	
+            	
+                <Table width="80rem"  id="idProductsTable" inset="true"  mode="MultiSelect"	selectionChange="handleSelectionChange"    visible="true" alternateRowColors="true"
+                 items="{
+			path: 'Data1>/results'
+                 
+            , sorter: {
+				path: 'EmpId',
+                group: false
+			} 
+         
+            }">
+          
+                    <columns >
+                        <Column width="auto">
+                            <Text text="EmpId" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpName" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpPhone" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpEmail" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpDep" />
+                        </Column>
+                         <Column >
+                            <Text text="BasicPay" />
+                        </Column>
+
+                        <Column >
+                            <Text text="Hra" />
+                        </Column>
+
+                        <Column >
+                            <Text text="SplAllowance" />
+                        </Column>
+
+                        <Column >
+                            <Text text="ShiftAllowance" />
+                        </Column>
+
+                        <Column >
+                            <Text text="MonthlyPay" />
+                        </Column>
+
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active" id="colss" >
+                            <cells>
+                                <Link text="{Data1>EmpId}"  press="onEmpid"/>
+                                <Text text="{Data1>EmpName}" />
+                                <Text text="{Data1>EmpPhone}" />
+                                <Text text="{Data1>EmpEmail}" />
+                                <Text text="{Data1>EmpDep}" />
+                                 <Text text="{Data1>BasicPay}" />
+                                <Text text="{Data1>Hra}" />
+                                <Text text="{Data1>SplAllowance}" />
+                                <Text text="{Data1>ShiftAllowance}" />
+                                <Text text="{Data1>MonthlyPay}" />
+                            
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </content>
+      
+    </Page>
+</mvc:View>

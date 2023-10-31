@@ -1,0 +1,72 @@
+
+
+
+<mvc:View controllerName="idodata.odatacrud.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page">
+         <content>
+            <Table width="80rem" id="idProductsTable" inset="true" headerText="EMPLOYE DETAILS" visible="true" items="{
+			path: 'Data>/results',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+                <columns>
+                    <Column width="auto">
+                        <Text text="Cost center" />
+                    </Column>
+
+                    <Column>
+                        <Text text="GL Account" />
+                    </Column>
+
+                    <Column>
+                        <Text text=" Fiscal Year" />
+                    </Column>
+
+                    <Column>
+                        <Text text=" Annual Budget" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Supplementary Budget  " />
+                    </Column>
+                     <Column>
+                        <Text text="Version" />
+                    </Column>
+                    <!-- <Column>
+                        <Text text="" />
+                    </Column> -->
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="colss">
+                        <cells>
+                            <Text text="{Data1>Cost center}" />
+                            <Text text="{Data1>GL Account}" />
+                            <Text text="{Data1>Fiscal Year}"/>
+                            <!-- <Input value="{Data1>Fiscal Year}" editable="false" id="Id"/> -->
+                            <Text text="{Data1>Annual Budget}" />
+                           <Text text="{Data1>Supplementary Budget }" />
+                            <Text text="{Data1>Version}" />
+                            <!-- <HBox >
+                            <Button icon="sap-icon://edit" text="Edit" press="onEdit"/>
+                            <Button icon="sap-icon://delite" class="sapUiSmallMarginBeginEnd" type="Reject" text="Delite" press="onDelite"/>
+                            <Button icon="sap-icon://copy" text="Duplicate"/>
+                            </HBox> -->
+                          
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        <footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				<Button  press="onpress" icon="sap-icon://navigation-right-arrow" />
+					
+
+			</OverflowToolbar>
+		</footer>
+    </Page>
+</mvc:View>

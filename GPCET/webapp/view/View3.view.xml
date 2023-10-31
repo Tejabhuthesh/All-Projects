@@ -1,0 +1,64 @@
+<mvc:View controllerName="idapp.project1.controller.View3" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title3}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <IconTabBar id="idIconTabBarMulti" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter icon="sap-icon://group" key="people" >
+                        <Text text="" />
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+<!-- <ImageContent  src="sap-icon://group"></ImageContent> -->
+            <f:SimpleForm  editable="true" layout="ResponsiveGridLayout" >
+                <f:content>
+                    <Label text="NAME" />
+                    <Input type="Text" id="fname" placeholder="Enter FullName"  value="{tableData>/Studentdeatails}"/>
+
+                    <Label labelFor="gender" text="Gender" />
+
+                    <RadioButtonGroup columns="4" id="gender">
+                        <buttons>
+                            <RadioButton id="maleid" text="Male" />
+
+                            <RadioButton id="fmaleid" text="Femle" />
+                        </buttons>
+                    </RadioButtonGroup>
+
+                    <!-- <core:Title text = ""/> -->
+
+                    <Label text="Pin Number" />
+                    <Input type="Text" id="pnum" placeholder="Enter PinNumber" value="{Studentdeatails}" />
+
+                     <Label text="Collage Name" />
+                    <Input type="Text" id="cname" placeholder="Enter CollageName" />
+
+                    <Label text="Collage Code" />
+                    <Input type="Number" id="code" placeholder="Enter code" />
+
+                    <core:Title text = "WELCOME" />
+
+                    <Label text="Branch" />
+                    <ComboBox id="branch">
+                        <core:Item key="id1" text="Mechanical Engineering" />
+                        <core:Item key="id2" text="Civil Engineering" />
+                        <core:Item key="id3" text="Computer Science Engineering" />
+                        <core:Item key="id4" text="Other" />
+                    </ComboBox>
+                </f:content>
+            </f:SimpleForm>
+    
+        
+        
+<!--             
+                <Button text="Register" press="alert('Your Registraion Successfully Completed.
+                Go To Login Portal!')" type="Emphasized" width="200px" class="sapUiSmallMargin"/> -->
+                <Button text="hhhh" press="onhh"/>
+            <HBox>
+            <Link text = "Already have account?" class="sapUiSmallMargin"/>
+            <Button text="Login" press="onpress1" type="Emphasized" width="200px" class="sapUiSmallMargin"/>
+                </HBox>
+
+        </content>
+         
+    </Page>
+</mvc:View>

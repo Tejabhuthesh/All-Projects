@@ -1,0 +1,45 @@
+<mvc:View controllerName="idemp.zempsalary.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+      <Page id="page" title="{i18n>title2}" showNavButton="true" navButtonPress="onNavBack" class="sapUshellShellsapMPageBgStandard">
+      <headerContent>
+        
+       
+           
+           <Button  press="onrightarrow" type="Transparent"  icon="sap-icon://navigation-right-arrow"/>
+        </headerContent>
+        <content>
+        
+         <f:SimpleForm id="form1" editable="false" layout="ResponsiveGridLayout" title="{i18n>title1}" visible="true">
+                <f:content>
+                 <core:Title text=""/>
+                                <Label text="EmpId" />
+                                 <Input  value="{Data1>/EmpId}" width="10rem" />
+                                
+                                <Label text="EmpName" />
+                                <Input  value="{Data1>/EmpName}" width="10rem"/>
+                              
+                                 <Label text="EmpPhone" />
+                                <Input  value="{Data1>/EmpPhone}" width="10rem" />
+                                 <Label text="EmpEmail" />
+                                <Input  value="{Data1>/EmpEmail}" width="10rem"/>
+                                 <Label text="EmpDe" />
+                                <Input  value="{Data1>/EmpDep}" width="10rem"/>
+                                 <core:Title text=""/>
+                                 <Label text="BasicPay" />
+                                 <Input  value="{Data1>/BasicPay}" width="10rem"/>
+                                  <Label text="Hra" />
+                                <Input  value="{Data1>/Hra}" width="10rem"/>
+                                 <Label text="SplAllowance" />
+                                <Input  value="{Data1>/SplAllowance}" width="10rem"/>
+                                 <Label text="ShiftAllowancel" />
+                                <Input  value="{Data1>/ShiftAllowance}" width="10rem"/>
+                                 <Label text="MonthlyPay" />
+                                <Input  value="{Data1>/MonthlyPay}" width="10rem"/>
+                                
+                </f:content>
+            </f:SimpleForm>
+            
+        </content>
+    </Page>
+</mvc:View>

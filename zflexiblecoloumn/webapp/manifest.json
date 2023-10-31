@@ -1,0 +1,164 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "idflex.zflexiblecoloumn",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.9.6",
+            "toolsId": "69620cb0-0936-47e8-a541-d6eefa03068b"
+        },
+        "dataSources": {
+            "mainService": {
+                "uri": "/sap/opu/odata/sap/ZCUSTOMAPP_SRV/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        },
+        "crossNavigation": {
+            "inbounds": {
+                "idflex-zflexiblecoloumn-inbound": {
+                    "signature": {
+                        "parameters": {},
+                        "additionalParameters": "allowed"
+                    },
+                    "semanticObject": "zflex001",
+                    "action": "display",
+                    "title": "{{flpTitle}}",
+                    "subTitle": "{{flpSubtitle}}",
+                    "icon": ""
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": true,
+        "dependencies": {
+            "minUI5Version": "1.115.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "idflex.zflexiblecoloumn.i18n.i18n"
+                }
+            },
+            "Data1": {
+                "dataSource": "mainService",
+                "preload": true,
+                "settings": {}
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "idflex.zflexiblecoloumn.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+				{
+					"pattern": "page2",
+					"name": "page2",
+					"target": "page2",
+					"layout": "EndColumnFullScreen"
+				},
+				{
+					"pattern": ":layout:",
+					"name": "list",
+					"target": [
+						"list",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detail/{product}/{layout}",
+					"name": "detail",
+					"target": [
+						"list",
+						"detail"
+					]
+				},
+				{
+					"pattern": "detailDetail/{product}/{supplier}/{layout}",
+					"name": "detailDetail",
+					"target": [
+						"list",
+						"detail",
+						"detailDetail"
+					]
+				}
+			],
+            "targets": {
+				"list": {
+					"name": "List",
+					"controlAggregation": "beginColumnPages"
+				},
+				"detail": {
+					"name": "Detail",
+					"controlAggregation": "midColumnPages"
+				},
+				"detailDetail": {
+					"name": "DetailDetail",
+					"controlAggregation": "endColumnPages"
+				}
+        },
+        "rootView": {
+            "viewName": "idflex.zflexiblecoloumn.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

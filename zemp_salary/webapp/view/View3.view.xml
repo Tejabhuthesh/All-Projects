@@ -1,0 +1,45 @@
+<mvc:View controllerName="idemp.zempsalary.controller.View3" 	
+        	xmlns="sap.f"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sfb="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:sv="sap.ui.comp.smartvariants"
+    	height="100%" 
+    
+    	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1">
+      <m:Page id="page" title="{i18n>title2}" showNavButton="true" navButtonPress="onNavBack" class="sapUshellShellsapMPageBgStandard">
+     
+         <m:content>
+        
+      <sfb:SmartFilterBar 
+					id="smartFilterBar"
+					entitySet="zemp_detailsSet"
+					enableBasicSearch="true"
+					basicSearchFieldName="EmpId"
+					persistencyKey="UniqueAndStablePersistencyKey">
+      </sfb:SmartFilterBar >
+
+            <smartTable:SmartTable
+				id="smartTable" 
+				entitySet="zemp_detailsSet"
+				smartFilterId="smartFilterBar"
+				tableType="Table"
+				enableAutoColumnWidth="true"
+				useTablePersonalisation="true"
+				header="Employee Salary Deatails"
+				showRowCount="true" 
+                editTogglable="true"
+               app:useSmartToggle="true">
+				<!-- <smartTable:layoutData>
+					<m:FlexItemData growFactor="1" baseSize="0%"/>
+				</smartTable:layoutData> -->
+			</smartTable:SmartTable>
+        
+        </m:content>
+    </m:Page>
+</mvc:View>
+
+
+    
+      

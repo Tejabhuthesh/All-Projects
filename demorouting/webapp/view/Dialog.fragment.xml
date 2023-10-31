@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <Dialog id="idDialog" afterClose="dialogAfterclosedit">
+        <f:SimpleForm editable="false" layout="ResponsiveGridLayout">
+            <f:content>
+                <Label text="Employeid" />
+                <Input value="{Data3>/Employeid}" id="eid" type="Number" />
+                <Label text="Name" />
+                <Input value="{Data3>/Name}" />
+                <Label text="Date of Birth" />
+                <!-- <Input value="{Data3>/DateofBirth}" type="Date" /> -->
+                <DatePicker value="{Data3>/DateofBirth}" />
+                <Label text="Age" />
+                <Input value="{Data3>/Age}" type="Number" />
+                <Label text="Role" />
+                <Input value="{Data3>/Role}" />
+                <Label text="DateofJoining" />
+                <!-- <Input value="{Data3>/DateofJoining}" id="DateofJoining" type="Date" /> -->
+                <DatePicker value="{Data3>/DateofJoining}" valueFormat="yyyy-MM-dd" />
+                <Label text="Position" />
+                <Input value="{Data3>/Position}" />
+                <Label text="CTC" />
+                <Input value="{Data3>/CTC}" type="Number" />
+                <Label text="Number" />
+                <Input value="{Data3>/Number}" />
+                <Label text="Alternative Mobile Number" type="Number" />
+                <Input value="{Data3>/landline}" />
+                <Label text="EmailID" />
+                <Input value="{Data3>/EmailID}" />
+                <Label text="Address" />
+                <Input value="{Data3>/Address}" />
+            </f:content>
+        </f:SimpleForm>
+
+        <HBox justifyContent="End" alignItems="End">
+            <Button id="ok1" type="Transparent" text="Save" press="SavePress" />
+            <!-- <Button id="ok2" type="Transparent" text="Save" press="SavePress" /> -->
+        </HBox>
+    </Dialog>
+</core:FragmentDefinition>

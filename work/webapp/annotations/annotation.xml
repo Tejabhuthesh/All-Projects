@@ -1,0 +1,79 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI" />
+    </edmx:Reference>
+    <edmx:Reference Uri="/V2/Northwind/Northwind.svc/$metadata">
+        <edmx:Include Namespace="NorthwindModel" />
+        <edmx:Include Namespace="ODataWeb.Northwind.Model" />
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="NorthwindModel.Territory">
+                <Annotation Term="UI.SelectionFields">
+                    <Collection>
+                        <PropertyPath>Region/RegionID</PropertyPath>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionVariant" Qualifier="TerritoryID">
+                    <Record Type="UI.SelectionVariantType">
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                <Record Type="UI.SelectOptionType">
+                                    <PropertyValue Property="Ranges">
+                                        <Collection>
+                                            <Record Type="UI.SelectionRangeType">
+                                                <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/LE" />
+                                                <PropertyValue Property="Low" String="5" />
+                                                <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I" />
+                                            </Record>
+                                           
+                                            <Record Type="UI.SelectionRangeType">
+                                                <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/BT" />
+                                                <PropertyValue Property="Low" String="Z" />
+                                                <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I" />
+                                            </Record>
+                                        </Collection>
+                                    </PropertyValue>
+                                    <PropertyValue Property="PropertyName" PropertyPath="TerritoryDescription" />
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataFieldForIntentBasedNavigation">
+                            <PropertyValue Property="Action" String="navigation" />
+                            <PropertyValue Property="Label" String="Navigation" />
+                            <PropertyValue Property="RequiresContext" Bool="false" />
+                            <PropertyValue Property="SemanticObject" String="navigation" />
+                            <PropertyValue Property="Inline" Bool="true" />
+                        </Record>
+                 
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.SelectionVariant" Qualifier="id1">
+                    <Record>
+                        <PropertyValue Property="Text" String="1"/>
+                        <PropertyValue Property="SelectOptions">
+                            <Collection>
+                                <Record Type="UI.SelectOptionType">
+                                    <PropertyValue Property="PropertyName" PropertyPath="TerritoryDescription"/>
+                                    <PropertyValue Property="Ranges">
+                                        <Collection>
+                                            <Record Type="UI.SelectionRangeType">
+                                                <PropertyValue Property="Sign" EnumMember="UI.SelectionRangeSignType/I"/>
+                                                <PropertyValue Property="Option" EnumMember="UI.SelectionRangeOptionType/BT"/>
+                                                <PropertyValue Property="Low" String="H"/>
+                                            </Record>
+                                        </Collection>
+                                    </PropertyValue>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

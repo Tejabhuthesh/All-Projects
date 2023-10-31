@@ -1,0 +1,64 @@
+<mvc:View controllerName="tejaid.teja.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+         <content>
+            <Table width="auto" id="idProductsTable" inset="true" headerText="EMPLOYE DETAILS" visible="true" items="{
+			path: 'Data1>/results',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+                <columns>
+                    <Column width="auto">
+                        <Text text="Name" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zemprole" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zgender" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Znumber" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zcity" />
+                    </Column>
+                     <Column>
+                        <Text text="" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="colss">
+                        <cells>
+                            <Text text="{Data1>Name}" />
+                            <Text text="{Data1>Zemprole}" />
+                            <Input value="{Data1>Zgender}" editable="false" id="Id"/>
+                            <Text text="{Data1>Znumber}" />
+                           <Text text="{Data1>Zcity}" />
+                            <HBox >
+                            <Button icon="sap-icon://edit" text="Edit" press="onEdit"/>
+                            <Button icon="sap-icon://delite" class="sapUiSmallMarginBeginEnd" type="Reject" text="Delite" press="onDelite"/>
+                            <Button icon="sap-icon://copy" text="Duplicate"/>
+                            </HBox>
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+        	<footer>
+			<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				<Button type="Accept" text="GO TO VIEW2" press="onpress"/>
+					
+
+			</OverflowToolbar>
+		</footer>
+
+    </Page>
+</mvc:View>

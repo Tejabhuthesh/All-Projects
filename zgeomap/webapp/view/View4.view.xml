@@ -1,0 +1,25 @@
+<mvc:View
+    height="100%"
+    controllerName="idmaps.zgeomap.controller.View4"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:vbm="sap.ui.vbm"
+    xmlns:l="sap.ui.layout"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    displayBlock="true"
+    xmlns:ndc="sap.ndc"
+>
+    <Page
+        id="mainPage"
+        enableScrolling="true"
+        title="GMaps"
+    >
+    <headerContent>
+      
+        </headerContent>
+        <content>
+          
+            </content>
+    </Page>
+</mvc:View>

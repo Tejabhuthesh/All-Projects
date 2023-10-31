@@ -1,0 +1,46 @@
+/* Enter your custom styles here */
+.sapMMessageToast {
+   
+    background: #e9c7c7;
+    color: #32363a;
+    
+}
+.sapMBarTitleAlignAuto .sapMBarPH {
+    justify-content: flex-start;
+    background-color: bisque;
+}
+.sapMBtnBack, .sapMBtnTransparent {
+    background-image: none;
+    background-color: transparent;
+    border-color: transparent;
+    color: #14a0eb;
+}
+.sapMList {
+    position: relative;
+    box-sizing: border-box;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+/* .sapMText {
+    display: inline-block;
+    box-sizing: border-box;
+    white-space: pre-line;
+    word-wrap: break-word;
+    cursor: text;
+    font-size: 1.3rem;
+    font-family: '72-Bold';
+    line-height: normal;
+    color: #4ee70b;
+} */
+
+.sapMCbBg.sapMCbMarkChecked:before {
+    color: #12af0d;
+}
+.sapMObjLNumberDiv .sapMObjectNumber .sapMObjectNumberText {
+    font-family: "72","72full",Arial,Helvetica,sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.375rem;
+    font-weight: normal;
+    white-space: nowrap;
+}

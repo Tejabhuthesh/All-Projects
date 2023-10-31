@@ -1,0 +1,98 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/Common.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.Common.v1" Alias="Common"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="https://sap.github.io/odata-vocabularies/vocabularies/UI.xml">
+        <edmx:Include Namespace="com.sap.vocabularies.UI.v1" Alias="UI"/>
+    </edmx:Reference>
+    <edmx:Reference Uri="/v4/northwind/northwind.svc/$metadata">
+        <edmx:Include Namespace="NorthwindModel"/>
+        <edmx:Include Namespace="ODataWebExperimental.Northwind.Model"/>
+    </edmx:Reference>
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="local">
+            <Annotations Target="NorthwindModel.Territory">
+                <Annotation Term="UI.FieldGroup" Qualifier="GeneratedGroup1">
+                    <Record Type="UI.FieldGroupType">
+                        <PropertyValue Property="Data">
+                            <Collection>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="TerritoryID"/>
+                                    <PropertyValue Property="Value" Path="TerritoryID"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="TerritoryDescription"/>
+                                    <PropertyValue Property="Value" Path="TerritoryDescription"/>
+                                </Record>
+                                <Record Type="UI.DataField">
+                                    <PropertyValue Property="Label" String="RegionID"/>
+                                    <PropertyValue Property="Value" Path="RegionID"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.Facets">
+                    <Collection>
+                        <Record Type="UI.ReferenceFacet">
+                            <PropertyValue Property="ID" String="GeneratedFacet1"/>
+                            <PropertyValue Property="Label" String="General Information"/>
+                            <PropertyValue Property="Target" AnnotationPath="@UI.FieldGroup#GeneratedGroup1"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+                <Annotation Term="UI.DataPoint" Qualifier="rating">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="RegionID"/>
+                        <PropertyValue Property="Title" String="{@i18n>regionid}"/>
+                        <PropertyValue Property="TargetValue" Int="5"/>
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating"/>
+                        <Annotation Term="Common.QuickInfo" String="{@i18n>bhu}"/>
+                    </Record>
+                </Annotation>
+                <Annotation Term="UI.HeaderFacets">
+                    <Collection>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="NorthwindModel.Territory/TerritoryID">
+                <Annotation Term="Common.Text" Path="TerritoryDescription"/>
+                <Annotation Term="UI.MultiLineText" Bool="true"/>
+            </Annotations>
+            <Annotations Target="NorthwindModel.Territory/RegionID">
+                <Annotation Term="Common.ValueList">
+                    <Record Type="Common.ValueListType">
+                        <PropertyValue Property="CollectionPath" String="Regions"/>
+                        <PropertyValue Property="Parameters">
+                            <Collection>
+                                <Record Type="Common.ValueListParameterInOut">
+                                    <PropertyValue Property="LocalDataProperty" PropertyPath="RegionID"/>
+                                    <PropertyValue Property="ValueListProperty" String="RegionID"/>
+                                </Record>
+                                <Record Type="Common.ValueListParameterDisplayOnly">
+                                    <PropertyValue Property="ValueListProperty" String="RegionDescription"/>
+                                </Record>
+                            </Collection>
+                        </PropertyValue>
+                    </Record>
+                </Annotation>
+                <Annotation Term="Common.ValueListWithFixedValues" Bool="true"/>
+            </Annotations>
+            <Annotations Target="NorthwindModel.Region/RegionID">
+                <Annotation Term="Common.Text" Path="RegionDescription">
+                    <Annotation Term="UI.TextArrangement" EnumMember="UI.TextArrangementType/TextFirst"/>
+                </Annotation>
+            </Annotations>
+            <Annotations Target="NorthwindModel.Region">
+                <Annotation Term="UI.DataPoint" Qualifier="rating">
+                    <Record Type="UI.DataPointType">
+                        <PropertyValue Property="Value" Path="RegionID"/>
+                        <PropertyValue Property="Title" String="RegionID"/>
+                        <PropertyValue Property="TargetValue" Int="5"/>
+                        <PropertyValue Property="Visualization" EnumMember="UI.VisualizationType/Rating"/>
+                    </Record>
+                </Annotation>
+            </Annotations>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

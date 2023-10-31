@@ -1,0 +1,79 @@
+/* Enter your custom styles here */
+ /*Login Page */
+.sapUshellShellsapMPageBgStandard {
+    background:linear-gradient( 360deg,#ced4da 50%, #5A5A5A 50%);  
+}
+.formbackground1 {
+    background-color:#fff;
+    border-radius: 0.55rem;
+    width: 19rem;
+    align-content: center;
+    border-color: #24364487;
+}
+.sapUiSmallMargin {
+    margin: 3cm !important;
+}
+/*Login Page */
+.elementstyle {
+    background-image: url(https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_1340/Lunch1_vlksgq);
+   
+}
+.sapUiSizeCompact .sapMTB {
+    height: 4rem;
+    background-color: black;
+}
+/*  */
+/* .sapUiFormResLayout>div {
+    padding: 0.3rem;
+    box-sizing: border-box;
+    content: "";
+    height: 10%;
+    position: absolute;
+    width: 380px;
+    background: linear-gradient(360deg,transparent,#45f3ff,#ca4724);
+    transform-origin: bottom right;
+    animation: animate 20s linear infinite;
+    animation-delay: -20s;
+} */
+/*  */
+.sapMIBar .sapMBtnInner:not(.sapMToggleBtnPressed):not(.sapMBtnEmphasized):not(.sapMBtnAccept):not(.sapMBtnAttention):not(.sapMBtnReject):not(.sapMBtnActive):not(.sapMBtnGhost) {
+    border-color: #111010e6;
+}
+.sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault, .sapMIBar .sapMBtn .sapMBtnInner.sapMBtnDefault .sapUiIcon {
+    color: #171819;
+    background-color: #d85e13e0;
+}
+.swizoo {
+    color: #697f97;
+    font-size: 2.5rem;
+    font-family: fantasy;
+    font-weight: normal;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: grab;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+.sapMLabell {
+    color: #6f6997;
+    font-size: 2.5rem;
+    font-family: fantasy;
+    font-weight: normal;
+    display: inline-block;
+    white-space: nowrap;
+    cursor: grab;
+    overflow: hidden;
+    box-sizing: border-box;
+    
+}
+.sapcontent1 {
+    background-image: url( https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1002,h_600/v1678428358/portal/m/seo_web/dweb_header);
+}
+.signup {
+    color: #e99607;
+    background-color: #151413e0;
+}
+.loginLnk {
+    color: #f25d00;
+   
+}

@@ -1,0 +1,137 @@
+{
+    "_version": "1.49.0",
+    "sap.app": {
+        "id": "idillustration.zillustration",
+        "type": "application",
+        "i18n": "i18n/i18n.properties",
+        "applicationVersion": {
+            "version": "0.0.1"
+        },
+        "title": "{{appTitle}}",
+        "description": "{{appDescription}}",
+        "resources": "resources.json",
+        "sourceTemplate": {
+            "id": "@sap/generator-fiori:basic",
+            "version": "1.9.6",
+            "toolsId": "a7cff399-565b-4d62-9859-a852b70a1891"
+        },
+        "dataSources": {
+            
+            "Northwind1": {
+                "uri": "/V2/Northwind/Northwind.svc/",
+                "type": "OData",
+                "settings": {
+                    "annotations": [],
+                    "localUri": "localService/Northwind1/metadata.xml",
+                    "odataVersion": "2.0"
+                }
+            }
+        }
+    },
+    "sap.ui": {
+        "technology": "UI5",
+        "icons": {
+            "icon": "",
+            "favIcon": "",
+            "phone": "",
+            "phone@2": "",
+            "tablet": "",
+            "tablet@2": ""
+        },
+        "deviceTypes": {
+            "desktop": true,
+            "tablet": true,
+            "phone": true
+        }
+    },
+    "sap.ui5": {
+        "flexEnabled": false,
+        "dependencies": {
+            "minUI5Version": "1.116.0",
+            "libs": {
+                "sap.m": {},
+                "sap.ui.core": {},
+                "sap.f": {},
+                "sap.suite.ui.generic.template": {},
+                "sap.ui.comp": {},
+                "sap.ui.generic.app": {},
+                "sap.ui.table": {},
+                "sap.ushell": {}
+            }
+        },
+        "contentDensities": {
+            "compact": true,
+            "cozy": true
+        },
+        "models": {
+            "i18n": {
+                "type": "sap.ui.model.resource.ResourceModel",
+                "settings": {
+                    "bundleName": "idillustration.zillustration.i18n.i18n"
+                }
+            },
+            
+            "Northwind1": {
+                "dataSource": "Northwind1",
+                "preload": true,
+                "settings": {
+                    "defaultBindingMode": "TwoWay",
+                    "defaultCountMode": "Inline",
+                    "refreshAfterChange": false,
+                    "metadataUrlParams": {
+                        "sap-value-list": "none"
+                    }
+                }
+            }
+        },
+        "resources": {
+            "css": [
+                {
+                    "uri": "css/style.css"
+                }
+            ]
+        },
+        "routing": {
+            "config": {
+                "routerClass": "sap.m.routing.Router",
+                "viewType": "XML",
+                "async": true,
+                "viewPath": "idillustration.zillustration.view",
+                "controlAggregation": "pages",
+                "controlId": "app",
+                "clearControlAggregation": false
+            },
+            "routes": [
+                {
+                    "name": "RouteView1",
+                    "pattern": ":?query:",
+                    "target": [
+                        "TargetView1"
+                    ]
+                },
+                {
+                    "name": "View2",
+                    "pattern": "View2",
+                    "target": [
+                        "TargetView1"
+                    ]
+                }
+            ],
+            "targets": {
+                "TargetView1": {
+                    "viewType": "XML",
+                    "transition": "slide",
+                    "clearControlAggregation": false,
+                    "viewId": "View1",
+                    "viewName": "View1"
+                }
+            }
+        },
+        "rootView": {
+            "viewName": "idillustration.zillustration.view.App",
+            "type": "XML",
+            "async": true,
+            "id": "App"
+        }
+    }
+}

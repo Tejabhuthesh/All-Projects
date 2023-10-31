@@ -1,0 +1,311 @@
+<mvc:View controllerName="project122.controller.View1" height="100%" width="100%" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" class="sapUiContentPadding">
+        <content>
+            <Toolbar>
+                <ToolbarSpacer />
+                <SearchField liveChange="onSearch" width="30%" />
+            </Toolbar>
+
+            <ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+                <Table id="idProducts" width="100rem" items="{
+            path : 'oModel1>/results' }" sticky="ColumnHeaders" alternateRowColors="true">
+                    <columns>
+                        <Column mergeDuplicates="true" width="10rem">
+                            <Text text="ShipName" />
+                        </Column>
+
+                        <Column width="10rem">
+                            <Text text="ShipAddress	" />
+                        </Column>
+                       <Column width="9rem">
+                            <Text text="ShipCity" />
+                        </Column> 
+                           
+                            <Column width="9rem">
+                            <Text text="ShipRegion" />
+                        </Column> 
+
+                        <Column width="9rem">
+                            <Text text="ShipPostalCode" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="ShipCountry" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="CustomerID" />
+                        </Column>
+
+                        <Column width="9rem">
+                            <Text text="CustomerName" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="Address" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="City" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="Region" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="PostalCode" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="Country" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="Salesperson" />
+                        </Column>
+
+                        <Column width="7rem">
+                            <Text text="OrderID" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="OrderDate" />
+                        </Column>
+                        <Column width="9rem">
+                            <Text text="RequiredDate" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="ShippedDate" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="ShipperName" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="ProductID" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="ProductName" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="UnitPrice" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="Quantity" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="Discount" />
+                        </Column>
+                        <Column width="9rem">
+                            <Text text="ExtendedPrice" />
+                        </Column>
+                        <Column width="7rem">
+                            <Text text="Freight" />
+                        </Column>
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active" id="colss" press="onPress">
+                            <cells>
+                                <Text text="{oModel1>ShipName}" />
+                                <Text text="{oModel1>ShipAddress}" />
+                                <Text text="{oModel1>ShipCity}" />
+                                <Text text="{oModel1>ShipRegion}" />
+                                <Text text="{oModel1>ShipPostalCode}" />
+                                <Text text="{oModel1>ShipCountry}" />
+                                <Text text="{oModel1>CustomerID}" />
+                                <Text text="{oModel1>CustomerName}" />
+                                <Text text="{oModel1>Address}" />
+                                <Text text="{oModel1>City}" />
+                                <Text text="{oModel1>Region}" />
+                                <Text text="{oModel1>PostalCode}" />
+                                <Text text="{oModel1>Country}" />
+                                <Text text="{oModel1>Salesperson}" />
+                                <Text text="{oModel1>OrderID}" />
+                                <Text text="{oModel1>OrderDate}" />
+                                <Text text="{oModel1>RequiredDate}" />
+                                <Text text="{oModel1>ShippedDate}" />
+                                <Text text="{oModel1>ShipperName}" />
+                                <Text text="{oModel1>ProductID}" />
+                                <Text text="{oModel1>ProductName}" />
+                                <Text text="{oModel1>UnitPrice}" />
+                                <Text text="{oModel1>Quantity}" />
+                                <Text text="{oModel1>Discount}" />
+                                <Text text="{oModel1>ExtendedPrice}" />
+                                <Text text="{oModel1>Freight}" />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </content>
+    </Page>
+</mvc:View>
+<!-- <mvc:View controllerName="project122.controller.View1" height="100%" width="100%" displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns:m="sap.m" xmlns="sap.ui.table" >
+    <m:Page id="page" title="{i18n>title}" showHeader="false" enableScrolling="true" class="sapUiContentPadding">
+        <m:content>
+       
+            <Table id="idProducts" rows="{oModel1>/results}"  visibleRowCount="15" alternateRowColors="true" 	 enableColumnReordering="true" columnHeaderHeight="30">
+                <extension>
+                    <m:OverflowToolbar style="Clear">
+                     
+                        <m:ToolbarSpacer />
+                        <m:SearchField liveChange="onSearch" width="30%"
+                         />
+                      
+                    </m:OverflowToolbar>
+                </extension>
+                <columns>
+                    <Column width="11rem" 		sortProperty="ShipName"
+						filterProperty="ShipName"	>
+                        <m:Label text="ShipName" />
+                        <template >
+                            <m:Text text="{oModel1>ShipName}" wrapping="true" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipAddress" />
+                        <template>
+                            <m:Text text="{oModel1>ShipAddress}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipCity" />
+                        <template>
+                            <m:Text text="{oModel1>ShipCity}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipPostalCode" />
+                        <template>
+                            <m:Text text="{oModel1>ShipPostalCode}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipCountry" />
+                        <template>
+                            <m:Text text="{oModel1>ShipCountry}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="CustomerID" />
+                        <template>
+                            <m:Link text="{oModel1>CustomerID}" press="onPress" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="CustomerName" />
+                        <template>
+                            <m:Text text="{oModel1>CustomerName}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Address" />
+                        <template>
+                            <m:Text text="{oModel1>Address}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="City" />
+                        <template>
+                            <m:Text text="{oModel1>City}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Region" />
+                        <template>
+                            <m:Text text="{oModel1>Region}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="PostalCode" />
+                        <template>
+                            <m:Text text="{oModel1>PostalCode}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Country" />
+                        <template>
+                            <m:Text text="{oModel1>Country}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Salesperson" />
+                        <template>
+                            <m:Text text="{oModel1>Salesperson}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="OrderID" />
+                        <template>
+                            <m:Text text="{oModel1>OrderID}" wrapping="true" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="OrderDate" />
+                        <template>
+                            <m:Text text="{oModel1>OrderDate}" wrapping="true" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ORequiredDate" />
+                        <template>
+                            <m:Text text="{oModel1>ORequiredDate}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShippedDate" />
+                        <template>
+                            <m:Text text="{oModel1>ShippedDate}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ShipperName" />
+                        <template>
+                            <m:Text text="{oModel1>ShipperName}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ProductID" />
+                        <template>
+                            <m:Text text="{oModel1>ProductID}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ProductName" />
+                        <template>
+                            <m:Text text="{oModel1>ProductName}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="UnitPrices" />
+                        <template>
+                            <m:Text text="{oModel1>UnitPrice}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Quantity" />
+                        <template>
+                            <m:Text text="{oModel1>Quantity}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Discount" />
+                        <template>
+                            <m:Text text="{oModel1>Discount}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="ExtendedPric" />
+                        <template>
+                            <m:Text text="{oModel1>ExtendedPric}" wrapping="false" />
+                        </template>
+                    </Column>
+                    <Column width="11rem">
+                        <m:Label text="Freight" />
+                        <template>
+                            <m:Text text="{oModel1>Freight}" wrapping="false" />
+                        </template>
+                    </Column>
+                </columns>
+            </Table>
+        </m:content>
+    </m:Page>
+</mvc:View>  -->

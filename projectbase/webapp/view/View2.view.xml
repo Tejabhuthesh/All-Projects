@@ -1,0 +1,9 @@
+
+<mvc:View controllerName="idbase.projectbase.controller.View2"
+  
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   <Page id="dfg" >
+   <content></content>
+   </Page>
+</mvc:View>

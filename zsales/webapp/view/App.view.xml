@@ -1,0 +1,28 @@
+<View controllerName="idsales.zsales.controller.App" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
+	<App id="app">
+		<pages>
+			<Page>
+				<content>
+					<GenericTile header="Create" frameType="OneByOne" press="onCreate" enableNavigationButton="true" class="Tile">
+						<TileContent footer="Sale Order">
+							<NewsContent contentText="" subheader="" />
+							   <NumericContent
+                        value="0"
+                        icon="sap-icon://create-form"
+                    />
+						</TileContent>
+					</GenericTile>
+					<GenericTile header="Dashboard" frameType="OneByOne" press="onDashboard" enableNavigationButton="true" class="Tile">
+						<TileContent footer="Sale Order">
+							<NewsContent contentText="" subheader="" />
+							   <NumericContent
+                        value="{dash>/}"
+                        icon="sap-icon://bar-chart"
+                    />
+						</TileContent>
+					</GenericTile>
+				</content>
+			</Page>
+		</pages>
+	</App>
+</View>

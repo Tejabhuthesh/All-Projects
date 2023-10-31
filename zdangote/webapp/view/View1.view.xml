@@ -1,0 +1,67 @@
+<mvc:View controllerName="zdangote.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page class="sgdh" id="page" title="{i18n>title}" >
+        <content >
+       <Table sticky="ColumnHeaders"  
+                        width="80rem"
+                        id="idProductsTable"
+                        inset="true"
+                        selectionChange="handleSelectionChange"
+                        headerText="EMPLOYE DETAILS"
+                        visible="true"
+                        alternateRowColors="true"
+                        items="{ path: 'Data1>/results' }"
+                    >
+                        <columns>
+                            <Column width="auto">
+                                <Text text="Bukrs" />
+                            </Column>
+
+                            <Column>
+                                <Text text="Kunnr" />
+                            </Column>
+
+                            <Column>
+                                <Text text="Land1" />
+                            </Column>
+
+                            <Column>
+                                <Text text="Werks" />
+                            </Column>
+
+                            <Column>
+                                <Text text="Name1" />
+                            </Column>
+                             <Column>
+                                <Text text="Stras" />
+                            </Column>
+                             <Column>
+                                <Text text="StatusCode" />
+                            </Column>
+                              <Column>
+                                <Text text="StatusMsg" />
+                            </Column>
+                        </columns>
+                        <!-- <items> -->
+                            <ColumnListItem
+                                type="Active"
+                                id="colss"
+                            >
+                                <cells>
+                                	<ObjectIdentifier title="{Data1>Bukrs}"/>
+                                    <!-- <Text text="{Data1>Name}" /> -->
+                                    <Text text="{Data1>Kunnr}" />
+                                    <Text text="{Data1>Land1}" />
+                                    <Text text="{Data1>Werks}" />
+                                    <Text text="{Data1>Name1}" />
+                                     <Text text="{Data1>Stras}" />
+                                      <Text text="{Data1>StatusCode}" />
+                                       <Text text="{Data1>StatusMsg}" />
+                                </cells>
+                            </ColumnListItem>
+                        <!-- </items> -->
+                    </Table>
+        </content>
+    </Page>
+</mvc:View>

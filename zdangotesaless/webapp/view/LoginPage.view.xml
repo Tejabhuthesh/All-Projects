@@ -1,0 +1,35 @@
+<mvc:View controllerName="iddsales.zdangotesaless.controller.LoginPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack" class="sapUshellShellsapMPageBgStandard">
+    
+        <headerContent>
+        	
+            <!-- <Button id="idrightarrow"
+                press="rightarrow"
+                type="Transparent"
+                icon="sap-icon://navigation-right-arrow"
+            /> -->
+        </headerContent>
+        <content > 
+       
+    
+              <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+             <f:SimpleForm  editable="true" layout="ResponsiveGridLayout" emptySpanL="8" emptySpanM="8"
+             title="Login Portal" class="formbackground1">
+                <f:content>
+                   <Label text="CustomerID"  visible="{=${Data2>/ram} === 'ram'}"/>
+                   <Input type="Text" id="idcustomer_id"   valueState = "{= ${Name}=== ''  ? 'Error' :'Success' }" />
+                    <Label text="Password" />
+                    <Input   id="idpassword"  />
+                    <Button text="Login"  type="Success" id="idlogin" press="onLogin"/>
+                 
+                </f:content>
+            </f:SimpleForm>
+          	 </VBox>
+        </content>
+        
+    </Page>
+</mvc:View>

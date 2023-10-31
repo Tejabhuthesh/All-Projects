@@ -1,0 +1,63 @@
+<mvc:View controllerName="customerapp.customerodataapp.controller.View1" id="Main" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:fiori="sap.ui.webc.fiori"
+	>
+    <Shell id="shell">
+        <App id="app">
+            <pages>
+                <Page id="page" title="Teja" class="thifd">
+                    <content>
+                  
+                        <Link text="../audio/Sound.mp3" id="song"/>
+                        <Button text="start" press="onShowPopup"></Button>
+                        <Button text="stop" press="onstop"></Button>
+                        <html:content id="iddd">
+                            <html:div style="text-align:center">
+                                <html:button id="button" width="5rem" onclick="onclick">Play/Pause</html:button>
+                                <html:figcaption>Listen to the T-Rex:</html:figcaption>
+                                <html:audio controls="">
+                                    <html:source src="..\audio\Sound.mp3" type="audio/mp3"/>
+                                </html:audio>
+                                <html:br/>
+                                <html:video id="video1" width="500" height="400" controls="">
+                                    <html:source src="..\video\Nature.mp4" type="video/mp4"/>
+                                </html:video>
+                            </html:div>
+                          
+
+                        </html:content>
+                        
+                    </content>
+                    <content>
+                        <mvc:XMLView id="idXMLView2" viewName="customerapp.customerodataapp.view.View2" />
+
+                    </content>
+                </Page> 
+                </pages>
+        </App>
+    </Shell>
+</mvc:View>
+<!-- <mvc:View controllerName="customerapp.customerodataapp.controller.View1"
+    xmlns="sap.ui.webc.main"
+    xmlns:fiori="sap.ui.webc.fiori"
+    xmlns:mvc="sap.ui.core.mvc" height="100%"
+    xmlns:m="sap.m">
+    <fiori:Page>
+        <fiori:header>
+            <fiori:Bar>
+                <fiori:middleContent>
+                    <Title text="BarcodeScannerDialog"></Title>
+                </fiori:middleContent>
+            </fiori:Bar>
+        </fiori:header>
+
+        <fiori:content>
+            <m:VBox id="wow" class="imageProfile">
+                <m:VBox id="canvasContainer"/>
+            </m:VBox>
+            <m:Button icon="sap-icon://camera" id="photocapture" type="Attention" text="Take a Pic!" press="takePhoto" />
+            <Button click="openBarcodeScannerDialog" text="Scan" icon="camera" tooltip="Start Camera" class="sapUiSmallMarginTop"/>
+            <Title id="scanResultLabel" level="H4" class="sapUiSmallMarginTop" />
+            <fiori:BarcodeScannerDialog id="bsd" scanError="handleScanError" scanSuccess="handleScanSuccess" />
+        </fiori:content>
+    </fiori:Page>
+
+</mvc:View> -->

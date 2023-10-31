@@ -1,0 +1,11 @@
+{
+    "base": "./dist",
+    "conn_usestrictssl" : false,
+    "conn_server": "https://ikjdcdevcha01.dangote-group.com:50000",
+    "conn_client" : "150",
+    "conn_user": "pveeresh",
+    "conn_password": "Abap@12345",
+    "abap_package": "$TMP",
+    "abap_bsp": "ZSEARCH",
+    "abap_bsp_text": "UI5 upload through VSCode App"
+}

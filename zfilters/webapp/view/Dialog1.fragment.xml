@@ -1,0 +1,146 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:l="sap.ui.layout"
+    xmlns:mvc="sap.ui.core.mvc"
+>
+    <Dialog
+        id="idDialog1"
+        afterClose="dialogAfterclosedit"
+        title="Define Conditions "
+    >
+        <!-- <content > -->
+        <f:SimpleForm
+            width="30rem"
+            id="form1"
+            class="sapUiSmallMargin"
+        >
+            <f:content>
+                <Label text="FilterOperator" />
+
+                <ComboBox
+                    id="idcomboBox"
+                    value="Select"
+                    selectionChange="handleSelectionChangeCombobox"
+                    width="70%"
+                >
+                    <core:Item
+                        text="Contains"
+                        id="idcontains"
+                    />
+                    <core:Item
+                        text="EQ"
+                        id="idequal"
+                    />
+                    <core:Item
+                        text="BT"
+                        id="idbetween"
+                    />
+                    <core:Item
+                        text="LE"
+                        id="idlessthan"
+                    />
+                    <core:Item
+                        text="GE"
+                        id="idgreterthan"
+                    />
+                </ComboBox>
+
+                <!-- <Input
+                    id="idvalue1"
+                    visible="false"
+                    placeholder="to"
+                /> -->
+                <VBox>
+                    <ComboBox
+                        placeholder="to"
+                        visible="false"
+                        id="idnamme1"
+                        items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'Name' } }"
+                    >
+                        <core:Item
+                            id="idcoreitem"
+                            text="{Data1>Name}"
+                        />
+                    </ComboBox>
+                    <ComboBox
+                        placeholder="to"
+                        id="idnamme2"
+                        visible="false"
+                        items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'Zemprole' } }"
+                    >
+                        <core:Item
+                            key="{/results>Zemprole}"
+                            id="idcoreitem2"
+                            text="{Data1>Zemprole}"
+                        />
+                    </ComboBox>
+
+                    <ComboBox
+                        placeholder="to"
+                        id="idnamme3"
+                        visible="false"
+                        items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'Zgender' } }"
+                    >
+                        <core:Item
+                            key="{/results>Zgender}"
+                            id="idcoreitem3"
+                            text="{Data1>Zgender}"
+                        />
+                    </ComboBox>
+                    <ComboBox
+                        placeholder="to"
+                        id="idnamme4"
+                        visible="false"
+                        items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'Zcity' } }"
+                    >
+                        <core:Item
+                            key="{/results>Zcity}"
+                            id="idcoreitem5"
+                            text="{Data1>Zcity}"
+                        />
+                    </ComboBox>
+                    <ComboBox
+                        placeholder="to"
+                        id="idnamme5"
+                        visible="false"
+                        items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'Znumber' } }"
+                    >
+                        <core:Item
+                            key="{/results>Znumber}"
+                            id="idcoreitem4"
+                            text="{Data1>Znumber}"
+                        />
+                    </ComboBox>
+                </VBox>
+            </f:content>
+        </f:SimpleForm>
+        <beginButton>
+            <Button
+                id="go"
+                text="Go"
+                press="ongo"
+                type="Emphasized"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="closeBtne"
+                type="Transparent"
+                text="Cancel"
+                press="CancelPress1"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

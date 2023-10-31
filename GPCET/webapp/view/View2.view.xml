@@ -1,0 +1,27 @@
+<mvc:View xmlns:tnt="sap.tnt" controllerName="idapp.project1.controller.View2" xmlns:f="sap.ui.layout.form" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m">
+    <Page id="page" showNavButton="true" navButtonPress="onNavBack" class="sapUshellShellsapMPageBgStandard">
+        <content>
+            <ImageContent src="https://digitalcampus.msmfclasses.com:90/images/digitalcampus.svg" />
+            <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+                <f:SimpleForm editable="true" layout="ResponsiveGridLayout" title="Student Login Portal" class="formbackground1">
+                    <!-- title="Student Login Portal" -->
+                    <f:content>
+                        <Label text="Username" />
+
+                        <Input id="fname" placeholder="Enter Username" />
+
+                        <Label text="Password" />
+
+                        <Input type="Password" id="pin" placeholder="Enter Password" />
+                        <Button  id="idlogin" text="Submit" press="submit" type="Emphasized" class="sapUiSmallMargin" width="15rem" />
+                    </f:content>
+                </f:SimpleForm>
+            </VBox>
+            <!-- <headerContent>
+              <icon  src="http://www.gpcet.ac.in/wp-content/uploads/2023/02/Blue-and-White-Architect-LinkedIn-Banner-7.png" ></ImageContent>
+            </headerContent> -->
+
+      <!-- <marquee scrollamount="4" behavior="alternate" direction="right" width="300"><img width="180px" style="padding-left:30px;opacity:0.7" src="img/cloud3.png"></marquee> -->
+        </content>
+    </Page>
+</mvc:View>

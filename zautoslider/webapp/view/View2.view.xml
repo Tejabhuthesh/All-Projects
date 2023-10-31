@@ -1,0 +1,52 @@
+<mvc:View controllerName="zautoslider.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartList="sap.ui.comp.smartlist">
+    <Page id="page" title="{i18n>title}">
+     <headerContent>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="onFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/fullScreen} !== null }"/>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/exitFullScreen} !== null }"/>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close mid column" visible="{= ${/actionButtonsInfo/endColumn/closeColumn} !== null }"/>
+            <Button text="next" press="onListItemPress"></Button>
+        </headerContent>
+        <content >
+           
+            <Table sticky="ColumnHeaders" width="80rem" id="idProductsTable" inset="true" selectionChange="handleSelectionChange" headerText="EMPLOYE DETAILS" visible="true" alternateRowColors="true" items="{ path: '/FoodItems/' }">
+                <columns>
+                    <Column width="auto">
+                        <Text text="Name" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zemprole" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zgender" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zcity" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Znumber" />
+                    </Column>
+                </columns>
+                <!-- <items> -->
+                <ColumnListItem type="Active" id="colss">
+                    <cells>
+                        <ObjectIdentifier title="{Pizza}"/>
+                        <!-- <Text text="{Data1>Name}" /> -->
+                        <Text text="{Burger}" />
+                        <Text text="{Data1>Zgender}" />
+                        <Text text="{Data1>Zcity}" />
+                        <Text text="{Data1>Znumber}" />
+                    </cells>
+                </ColumnListItem>
+                <!-- </items> -->
+            </Table>
+           
+        </content>
+    </Page>
+</mvc:View>

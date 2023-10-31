@@ -1,0 +1,6 @@
+<mvc:View controllerName="flexid.zflexiblecoloumnlayout.controller.App"
+   displayBlock="true"
+	height="100%"
+	xmlns="sap.f">
+  
+</mvc:View>

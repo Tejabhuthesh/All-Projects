@@ -1,0 +1,42 @@
+
+<mvc:View
+	xmlns="sap.f"
+	xmlns:m="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:sfb="sap.ui.comp.smartfilterbar"
+	xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:sv="sap.ui.comp.smartvariants"
+	controllerName="idsalary.zemploysalary.controller.View2"
+	height="100%">
+
+	<m:Button id="toggleUpdateMode" text="Change to 'LiveMode'" press="toggleUpdateMode"/>
+	<DynamicPage id="dynamicPage" fitContent="true" >
+	 <title>
+                <DynamicPageTitle />
+            </title>
+
+		<header>
+			<DynamicPageHeader pinnable="true">
+				<sfb:SmartFilterBar
+					id="smartFilterBar"
+					entitySet="zemp_detailsSet"
+					enableBasicSearch="true"
+					basicSearchFieldName="CompanyCode"
+					persistencyKey="UniqueAndStablePersistencyKey"/>
+			</DynamicPageHeader>
+		</header>
+		<content>
+				<smartTable:SmartTable
+				id="smartTable"
+				entitySet="zemp_detailsSet"
+				smartFilterId="smartFilterBar"
+				tableType="Table"
+				enableAutoColumnWidth="true"
+				useTablePersonalisation="true"
+				header="Customer orders"
+				showRowCount="true">
+			
+			</smartTable:SmartTable>
+		</content>
+	</DynamicPage>
+</mvc:View>

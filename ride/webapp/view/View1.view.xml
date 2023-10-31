@@ -1,0 +1,46 @@
+<mvc:View controllerName="ride.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="dfgh">
+        <content>
+            <Table width="auto" id="idProductsTable" inset="true" headerText="EMPLOYE DETAILS" visible="true" items="{
+			path: 'Data1>/Test1Set',
+			sorter: {
+				path: 'Name'
+			}
+		}">
+                <columns>
+                    <Column width="auto">
+                        <Text text="Zid" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zname" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zregno" />
+                    </Column>
+
+                    <Column>
+                        <Text text="Zmobno" />
+                    </Column>
+                    <Column>
+                        <Text text="Zaddrs" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem type="Active" id="colss">
+                        <cells>
+                            <Text text="{Data1>Zid}" />
+                            <Text text="{Data1>Zname}" />
+                            <Text text="{Data1>Zregno}" />
+                            <Text text="{Data1>Zmobno}" />
+                            <Text text="{Data1>Zaddrs}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

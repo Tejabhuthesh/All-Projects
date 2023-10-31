@@ -1,0 +1,39 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:f="sap.ui.layout.form">
+    <Dialog id="id1Dialog" afterClose="dialogAftercloseadd">
+        <f:SimpleForm layout="ResponsiveGridLayout" id="editmode1" editable="false">
+            <f:content>
+                <Label text="Employeid" />
+                <Input id="id" type="Number" />
+                <Label text="Name" />
+                <Input id="name" />
+                <Label text="Date of Birth" />
+                <Input id="date" type="Date" />
+                <Label text="Age" />
+                <Input id="age" type="Number" />
+                <Label text="Gender" />
+                <Input id="Gender" />
+                <Label text="Role" />
+                <Input id="role" />
+                <Label text="DateofJoining" />
+                <Input id="DateofJoining" type="Date" />
+                <Label text="Position" />
+                <Input id="position" />
+                <Label text="CTC" />
+                <Input id="ctc" type="Number" maxlength="10" />
+                <Label text="Number" />
+                <Input id="no" type="Number" />
+                <Label text="Alternative Mobile Number" />
+                <Input id="mno" type="Number" />
+                <Label text="Email ID" />
+                <Input id="email" />
+                <Label text="Address" />
+                <Input id="address" type="text" />
+            </f:content>
+        </f:SimpleForm>
+        <HBox justifyContent="End" alignItems="End">
+            <Button id="ok" type="Transparent" text="Add" press="AddPress" />
+            <Button id="ok1" type="Transparent" text="Cancel" press="CancelPress1" />
+            <Button id="ok2" type="Transparent" text="home" press="homePress1" />
+        </HBox>
+    </Dialog>
+</core:FragmentDefinition>

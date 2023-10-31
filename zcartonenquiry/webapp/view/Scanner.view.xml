@@ -1,0 +1,73 @@
+<mvc:View controllerName="idcartonenquiry.zcartonenquiry.controller.Scanner"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ndc="sap.ndc">
+    <Page id="page">
+        <content>
+            <f:SimpleForm  title ="{i18n>title}" editable="true" layout="ResponsiveGridLayout" emptySpanL="6" emptySpanM="6" class="ts1">
+                <ndc:BarcodeScannerButton id="sampleBarcodeScannerButton" scanSuccess="onScanSuccess" scanFail="onScanError" inputLiveUpdate="onScanLiveupdate" dialogTitle="Barcode Scanner Button Sample" width="4rem"/>
+                <f:content>
+                    <Label text="H.U Number" />
+                    <Input id="idHUNumber" />
+                    <Button width="4rem" text="OK" id="idOk" press="onOk" />
+                    <Label text="Unit/Floor" />
+                    <Select id="idUnitFloor" />
+                    <HBox>
+                        <Text text="T.S" />
+                        <Input id="idTS" editable="false" width="3rem" />
+                    </HBox>
+                    <Label text="D.Number" />
+                    <Input id="idDNumber" />
+                    <HBox>
+                        <Text text="S.O" />
+                        <Input id="idSO" editable="false" width="3rem" />
+                    </HBox>
+                    <Label text="Scan Here" />
+                    <Input id="idScanHere" width="12.5rem"/>
+                   
+                </f:content>
+            </f:SimpleForm>
+
+            <Table sticky="ColumnHeaders" width="80rem" id="idProductsTable" inset="true" class="ts" headerText="Product Details" alternateRowColors="true" items="{ path: 'ScanData1>/'}">
+                <headerToolbar>
+                <OverflowToolbar >
+                <ToolbarSpacer >
+                </ToolbarSpacer>
+                <ndc:BarcodeScannerButton id="sampleBarcodeScannerButtonChild" scanSuccess="onScanSuccessChild" scanFail="onScanAgainError" inputLiveUpdate="onScanLiveupdate" dialogTitle="Barcode Scanner Button Sample" width="4rem" />
+                </OverflowToolbar>
+                </headerToolbar>
+                <columns>
+                    <Column minScreenWidth="Phone" demandPopin="true">
+                        <Text text="Material" />
+                    </Column>
+                    <Column minScreenWidth="Phone" demandPopin="true">
+                        <Text text="Batch_No" />
+                    </Column>
+                    <Column minScreenWidth="Phone" demandPopin="true">
+                        <Text text="Grid" />
+                    </Column>
+                    <Column minScreenWidth="Phone" demandPopin="true">
+                        <Text text="Quantity" />
+                    </Column>
+                    <Column minScreenWidth="Phone" demandPopin="true">
+                        <Text text="Scanned" />
+                    </Column>
+                    <Column>
+                        <Text text="EAN_NO" />
+                    </Column>
+                </columns>
+                <ColumnListItem type="Active" id="colss">
+                    <cells>
+                        <ObjectIdentifier title="{ScanData1>Matnr}" />
+                        <Text text="{ScanData1>ZbatchNum}" />
+                        <Text text="{ScanData1>Zgrid}" />
+                        <Text text="{ScanData1>Menge}" />
+                        <Text text="{ScanData1>Zscanned}" />
+                        <Text text="{ScanData1>ZeanNum}" />
+                    </cells>
+                </ColumnListItem>
+            </Table>
+        </content>
+    </Page>
+</mvc:View>

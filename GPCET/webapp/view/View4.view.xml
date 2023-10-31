@@ -1,0 +1,509 @@
+<mvc:View
+    xmlns:core="sap.ui.core"
+    xmlns:tnt="sap.tnt"
+    controllerName="idapp.project1.controller.View4"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:l="sap.ui.layout"
+>
+    <SplitContainer id="SplitContDemo">
+        <masterPages>
+            <Page
+                id="page1"
+                class="sapUiSmallMargin"
+                title="{i18n>title4}"
+                showNavButton="true"
+                navButtonPress="onNavBack"
+            >
+                <content>
+                    <Image
+                        src="{Data2>/0/image}"
+                        width="100px"
+                        height="100px"
+                        class="sapMITBFilterIcon"
+                    />
+                    <Link text="{Data2>/0/Name}" />
+                 
+                    <VBox>
+                        <MenuButton text="{Data2>/0/PinNumber}">
+                            <Menu>
+                                <MenuItem
+                                    text="My Profile"
+                                    icon="sap-icon://customer"
+                                    press="myprofile"
+                                />
+                                <!-- <MenuItem text="Save Locally" icon="save">
+                                        <items>
+                                            <MenuItem text="Save on C" icon="save" />
+                                            <MenuItem text="Save on D" icon="save" />
+                                            <MenuItem text="Save on E" icon="save" />
+                                        </items>
+                                    </MenuItem>
+                                    <MenuItem text="Save on Cloud" icon="upload-to-cloud" />
+                                </MenuItem> -->
+                                <MenuItem
+                                    text="Password Change"
+                                    icon="sap-icon://employee"
+                                    press="passwordchange"
+                                />
+                                <MenuItem
+                                    text="Logout"
+                                    icon="sap-icon://log"
+                                    press="Logout"
+                                />
+                            </Menu>
+                        </MenuButton>
+                    </VBox>
+
+                    <IconTabBar class=".sapMITBContent">
+                        <items>
+                            <IconTabFilter icon="sap-icon://home">
+                                <VBox>
+                                    <HBox>
+                                        <!-- <core:Icon src="sap-icon://syringe"/> -->
+
+                                        <Link
+                                            text="Dashboard"
+                                            press="Dashboard"
+                                        />
+                                    </HBox>
+                                    <Link
+                                        text="Class Work"
+                                        press="classwork"
+                                    />
+                                    <Link
+                                        text="Fee Payment"
+                                        press="feepayment"
+                                    />
+                                    <Link
+                                        text="Applications"
+                                        press="Applications"
+                                    />
+                                    <Link
+                                        text="Feedback"
+                                        press="Feedback "
+                                    />
+                                    <Link
+                                        text="Grivence Cell"
+                                        press="GrivenceCell"
+                                    />
+                                    <Link
+                                        text="Training and Placement"
+                                        press="TrainingandPlacement"
+                                    />
+                                    <Link
+                                        text="Plan My Training"
+                                        press="PlanMyTraining"
+                                    />
+                                    <Link
+                                        text="Inovation Ideas"
+                                        press="InovationIdeas"
+                                    />
+                                    <Link
+                                        text="Digital Lab"
+                                        press="DigitalLab"
+                                    />
+                                </VBox>
+                            </IconTabFilter>
+
+                            <IconTabFilter icon="sap-icon://education" />
+
+                            <IconTabFilter icon="sap-icon://incident" />
+
+                            <!-- <IconTabFilter icon="sap-icon://action-settings">
+                                <Text text="" />
+                            </IconTabFilter> -->
+                        </items>
+                    </IconTabBar>
+                </content>
+            </Page>
+            <Page
+                id="master2"
+                title="Master 2"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+            >
+                <List itemPress=".onListItemPress">
+                    <StandardListItem
+                        title="To Detail 1"
+                        type="Active"
+                        custom:to="dashboard"
+                    />
+                    <StandardListItem
+                        title="To Detail 2"
+                        type="Active"
+                        custom:to="classwork"
+                    />
+                    <StandardListItem
+                        title="To Detail 3"
+                        type="Active"
+                        custom:to="page"
+                    />
+                </List>
+            </Page>
+        </masterPages>
+        <detailPages>
+            <Page
+                id="dashboard1"
+                title="Dashboard"
+            >
+                <!-- <ScrollContainer height="100%" width="100%" vertical="true" focusable="true"> -->
+                <content>
+                    <GenericTile
+                        width="18rem"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout sapUiSmallMargin"
+                        header="Training and Placement Attendence"
+                        subheader="Subtitle"
+                        press="training"
+                        frameType="TwoByHalf"
+                    >
+                        <TileContent>
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/ETH.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        width="19rem"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Fee Recipts / Fee Due"
+                        appShortcut="{Data2>/0/feedue}"
+                        systemInfo="16/04/2023"
+                        press="feedue"
+                        frameType="TwoByHalf"
+                    >
+                        <TileContent
+                            unit="INR"
+                            footer="Current Quarter"
+                        >
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/qtum.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile
+                        width="18rem"
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Notification/Time Table"
+                        press="notification"
+                        frameType="TwoByHalf"
+                        systemInfo="06/07/2023"
+                        appShortcut="4th Sem External Exam"
+                    >
+                        <TileContent
+                            unit="INR"
+                            footer="Current Quarter"
+                        >
+                            <ImageContent
+                                src="sap-icon://pending"
+                                class="notification"
+                            />
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Attendece"
+                        press="attendence"
+                        subheader="{Data2>/0/Attendence}"
+                    >
+                        <TileContent footer="Current Semister">
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/BTC.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+                    <GenericTile
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Mid Marks"
+                        subheader="{Data2>/0/mid}"
+                        press="midmarks"
+                        url="https://www.sap.com/"
+                    >
+                        <TileContent footer="Current Quarter">
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/ETH.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Backlogs"
+                        subheader="0"
+                        press="backlogs"
+                    >
+                        <TileContent>
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/XRP.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Placed Company"
+                        subheader="1"
+                        press="placed"
+                    >
+                        <TileContent>
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/stellar.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+
+                    <GenericTile
+                        class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout"
+                        header="Progress Report"
+                        subheader="{Data2>/0/preport}"
+                        press="progress"
+                    >
+                        <TileContent>
+                            <ImageContent
+                                src="https://digitalcampus.msmfclasses.com:90/assets2/images/coin/neo.svg"
+                            />
+                        </TileContent>
+                    </GenericTile>
+                </content>
+                <!-- </ScrollContainer> -->
+                <headerContent>
+                    <ImageContent
+                        src="sap-icon://home"
+                        press=""
+                        class="sapUiSmallMarginStart sapUiTinyMarginBegin"
+                    />
+                    <Button
+                        text="Log off!"
+                        press="Logout1"
+                        width="100px"
+                        ariaHasPopup="Dialog"
+                        icon="sap-icon://action"
+                    />
+                </headerContent>
+            </Page>
+            <Page
+                id="myprofile"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title="your Profile deatails"
+            >
+                <content>
+                    <FlexBox
+                        justifyContent="Center"
+                        alignItems="Center"
+                    >
+                        <f:SimpleForm
+                            editable="true"
+                            class="sapUiSmallMargin formbackgroundmyprofile"
+                          	
+			layout="ColumnLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false" 
+                        >
+                            <f:content>
+                                <Label text="PinNumber" />
+                                <!-- <Input value="{Data2>/0/PinNumber}" > -->
+                                	<!-- <layoutData>
+						<l:GridData span="XL1 L2 M2 S4" />
+					</layoutData> -->
+                            
+                                <Label text="Name" />
+                                <Text text="{Data2>/0/Name}" />
+                                <Label text="Date of Birth" />
+                                <Text text="{Data2>/0/Date of Birth}" />
+                                <Label text="Age" />
+                                <Text text="{Data2>/0/Age}" />
+                                <Label text="Branch" />
+                                <Text text="{Data2>/0/Branch}" />
+                                <Label text="Year" />
+                                <Text text="{Data2>/0/Year}" />
+                                <Label text="Job" />
+                                <Text text="{Data2>/0/Job}" />
+                                <Label text="Number" />
+                                <Text text="{Data2>/0/Number}" />
+                                <Label text="Alternative Mobile Number" />
+                                <Text text="{Data2>/0/Alternative Mobile Number}"/>
+                                <Label text="Email ID" />
+                                <Text text="{Data2>/0/Email ID}" />
+                                <Label text="Address" />
+                                <Text text="{Data2>/0/Address}" />
+                            </f:content>
+                        </f:SimpleForm>
+                    </FlexBox>
+                </content>
+            </Page>
+            <Page
+                id="passwordchange"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title="Password Change"
+                class=".passwordchage1"
+            >
+                <content>
+                    <VBox
+                        alignItems="Center"
+                        justifyContent="Center"
+                        class="sapUiSmallMargin"
+                    >
+                        <f:SimpleForm
+                            editable="true"
+                            layout="ResponsiveGridLayout"
+                            class="sapUiSmallMargin formbackgroundpassword"
+                            emptySpanL="8"
+                            emptySpanM="8"
+                        >
+                            <f:content>
+                                <Label text="Username" />
+                                <Input
+                                    type="Text"
+                                    id="pnum"
+                                    placeholder="Enter Username"
+                                />
+                                <Label text="Password" />
+                                <Input
+                                    type="Text"
+                                    id="Password"
+                                    placeholder="Enter Password"
+                                />
+                                <Label text=" Re-Password" />
+                                <Input
+                                    type="Text"
+                                    id="Re-Password"
+                                    placeholder="Enter Re-Password"
+                                />
+                                <Button
+                                    text="Submit"
+                                    press="alert('Your Password Updated Successfully! .
+                                   Go To Login Portal!')"
+                                    type="Emphasized"
+                                    width="15rem"
+                                    class="sapUiSmallMargin"
+                                />
+                            </f:content>
+                        </f:SimpleForm>
+                    </VBox>
+                </content>
+            </Page>
+            <Page
+                id="classwork"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title="Classwork deatails"
+            />
+            <Page
+                id="feepayment"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Feepayment deatails"
+            />
+            <Page
+                id="Applications"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title="Applications deatails"
+            />
+            <Page
+                id="Feedback"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Feedback deatails"
+            />
+            <Page
+                id="GrivenceCell"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" GrivenceCell deatails"
+            />
+            <Page
+                id="TrainingandPlacement"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" TrainingandPlacement deatails"
+            />
+            <Page
+                id="PlanMyTraining"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" PlanMyTraining deatails"
+            />
+            <Page
+                id="InovationIdeas"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" InovationIdeas deatails"
+            />
+            <Page
+                id="DigitalLab"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" DigitalLab deatails"
+            />
+
+            <Page
+                id="taining"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title="Classwork deatails"
+            />
+            <Page
+                id="notification"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Notifications deatails"
+            />
+            <Page
+                id="attendence"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Attendence deatails"
+            />
+            <Page
+                id="feesdue"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title="Applications deatails"
+            />
+
+            <Page
+                id="midmarks"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Mid Marks deatails"
+            />
+            <Page
+                id="backlogs"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Backlogs deatails"
+            />
+            <Page
+                id="placed"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Placed Student deatails"
+            />
+            <Page
+                id="progress"
+                showNavButton="true"
+                navButtonPress="onPressMasterBack"
+                title=" Progress Report deatails"
+            />
+        </detailPages>
+    </SplitContainer>
+</mvc:View>

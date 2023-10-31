@@ -1,0 +1,170 @@
+
+
+<mvc:View xmlns:uxap="sap.uxap" controllerName="idED.employeedeatails.controller.View1" height="100%" width="100%" displayBlock="true"
+    xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:m="sap.m"
+    xmlns="sap.ui.table"
+    xmlns:l="sap.ui.layout"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.f"
+    xmlns:u="sap.ui.unified"
+    xmlns:sfb="sap.ui.comp.smartfilterbar">
+    <m:Page id="page" title="{i18n>title}" showHeader="true" enableScrolling="true" class="sapUiContentPadding" showNavButton="true" navButtonPress="onNavBack">
+        <m:headerContent>
+
+            <m:Button press="rightarrow" type="Transparent" icon="sap-icon://navigation-right-arrow" />
+        </m:headerContent>
+        <f:DynamicPage id="dynamicPageId" showFooter="true" preserveHeaderStateOnScroll="true">
+            <f:title>
+                <f:DynamicPageTitle />
+            </f:title>
+
+            <f:header>
+                <f:DynamicPageHeader pinnable="true">
+                    <m:OverflowToolbar style="Clear">
+                        <m:ToolbarSpacer />
+                        <m:SearchField liveChange="onSearch" width="20%" />
+                    </m:OverflowToolbar>
+
+                    <filterbar:FilterBar search="onPressGo" useToolbar="true" showGoOnFB="true">
+
+
+                        <filterbar:filterGroupItems>
+                            <filterbar:FilterGroupItem groupName="G1" label="EmployeeId" groupTitle="group1" name="name1" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idname" width="15%" items="{
+			            	path: 'Data1>/results', 
+				            sorter: { path: 'EmployeeId' }
+                             }">
+                                        <core:Item key="001" text="{Data1>EmployeeId}" />
+                                    </m:MultiComboBox>
+                                    <!-- <m:MultiComboBox id="idname" selectionChange="handleSelectionChangeName" selectionFinish="handleSelectionFinish" width="15%" 
+                                     growing = "true"  
+                                     growingThreshold = "1" maxItemsDisplayed = "1" items="{path: 'Data1>/results',length:'3'}">
+                                        <core:Item key="001" text="{Data1>Name}" />
+                                    </m:MultiComboBox> -->
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem groupName="G2" label="EmployeeName" groupTitle="group2" name="name2" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idemprole" selectionChange="handleSelectionChangeRole" selectionFinish="handleSelectionFinish" width="15%" items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmployeeName' } }">
+                                        <core:Item key="002" text="{Data1>EmployeeName}" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+
+                            <filterbar:FilterGroupItem groupName="G3" label="EmployeeMob" groupTitle="group3" name="name3" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idgender" selectionChange="handleSelectionChangeGender" selectionFinish="handleSelectionFinish" width="15%">
+                                        <core:Item key="003" text="Male" />
+                                        <core:Item key="004" text="Female" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem groupName="G4" label="EmployeeSalary" groupTitle="group4" name="name4" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idcity" selectionChange="handleSelectionChangeCity" selectionFinish="handleSelectionFinish" width="15%" items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmployeeSalary' } }">
+                                        <core:Item key="003" text="{Data1>EmployeeSalary}" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem groupName="G5" label="EmployeeCollegename" groupTitle="group5" name="name5" visibleInFilterBar="true">
+                                <filterbar:control>
+                                    <m:MultiComboBox id="idnumber" selectionChange="handleSelectionChangeNumber" selectionFinish="handleSelectionFinish" width="15%" items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmployeeCollegename' } }">
+                                        <core:Item key="004" text="{Data1>EmployeeCollegename}" />
+                                    </m:MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                        </filterbar:filterGroupItems>
+                    </filterbar:FilterBar>
+                </f:DynamicPageHeader>
+            </f:header>
+            <f:content>
+                <Table id="idProductsTable" rows="{Data1>/results}"  alternateRowColors="true" >
+                    <extension >
+                        <m:OverflowToolbar >
+                            <m:ToolbarSpacer ></m:ToolbarSpacer>
+                             <m:Button text="Add" type="Emphasized" icon="sap-icon://add" press="onAddButtonMatnrPress" />
+                            <m:Button press="onExport" type="Transparent" icon="sap-icon://excel-attachment"/>
+                        </m:OverflowToolbar>
+                    </extension >
+                     <!-- <extension >
+                     <m:headerToolbar>
+                        <m:OverflowToolbar>
+                            <m:ToolbarSpacer/>
+                            <m:OverflowToolbarButton type="Transparent" icon="sap-icon://excel-attachment" press="onExport"/>
+                        </m:OverflowToolbar>
+                    </m:headerToolbar> 
+                     </extension >  -->
+                     <!-- <headerToolbar>
+                    <OverflowToolbar>
+                        <Title text="Materials ({= ${AppView>/materials}.length })" />
+                        <ToolbarSpacer />
+                        <Button text="Add" type="Emphasized" icon="sap-icon://add" press="onAddButtonMatnrPress" />
+                    </OverflowToolbar>
+                </headerToolbar> -->
+                    <columns>
+                        <Column filterProperty="EmployeeId" sortProperty="EmployeeId">
+                            <m:Label text="EmployeeId" />
+                            <template>
+                                <m:Input value="{Data1>EmployeeId}" />
+                            </template>
+                        </Column>
+                        <Column width="auto" filterProperty="EmployeeName" sortProperty="EmployeeName">
+                            <m:Label text="EmployeeName" />
+                            <template>
+                                <m:Text text="{Data1>EmployeeName}" wrapping="false" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="EmployeeMob" sortProperty="EmployeeMob">
+                            <m:Label text="EmployeeMob" />
+                            <template>
+                                <m:Text text="{Data1>EmployeeMob}" wrapping="false" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="EmployeeSalary" sortProperty="EmployeeSalary">
+                            <m:Label text="EmployeeSalary" />
+                            <template>
+                                <m:Text text="{Data1>EmployeeSalary}" wrapping="false" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="EmployeeCollegename" sortProperty="EmployeeCollegename">
+                            <m:Label text="EmployeeCollegename" />
+                            <template>
+                                <m:Text text="{Data1>EmployeeCollegename}" />
+                            </template>
+                        </Column>
+                        <Column filterProperty="" width="5rem" sortProperty="">
+                            <m:Button icon="sap-icon://clear-all" press="ondeliteall" />
+                            <template>
+                                <m:Link text=" X " press="onpressrow" />
+                            </template>
+                        </Column>
+                    </columns>
+
+                  
+                </Table>
+            </f:content>
+            
+
+        </f:DynamicPage>
+          <m:footer>
+            <m:OverflowToolbar>
+                <m:ToolbarSpacer />
+                <m:Button text="Save" type="Accept" icon="sap-icon://save" press="onSaveButtonPress" />
+                <m:Button text="Reset" type="Emphasized" icon="sap-icon://synchronize" press="onResetButtonPress" />
+            </m:OverflowToolbar>
+        </m:footer>
+    </m:Page>
+</mvc:View>

@@ -1,0 +1,32 @@
+<mvc:View controllerName="fileuploader.controller.View1" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout"  xmlns:upload="sap.m.upload">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <l:VerticalLayout>
+                <u:FileUploader id="fileUploader" name="myFileUpload" uploadUrl="upload/" tooltip="Upload your file to the local server" uploadComplete="handleUploadComplete" />
+                <Link text="Upload File" press="handleUploadPress" />
+            </l:VerticalLayout>
+            <upload:UploadSet>
+                id="UploadSet"
+                instantUpload="true"
+                showIcons="true"
+                uploadEnabled="true"
+                terminationEnabled="true"
+                fileTypes="txt,doc,png"
+                maxFileNameLength="30"
+                maxFileSize="200"
+                mediaTypes="text/plain,application/msword,image/png"
+                mode="MultiSelect"
+                selectionChanged="onSelectionChange" >
+                <upload:toolbar>
+                    <OverflowToolbar>
+                        <ToolbarSpacer />
+                        <Button id="uploadSelectedButton" text="Upload selected" press="onUploadSelectedButton" />
+                        <Button id="downloadSelectedButton" text="Download selected" press="onDownloadSelectedButton" />
+                        <Button id="versionButton" enabled="false" text="Upload a new version" press="onVersionUpload" />
+                        <upload:UploadSetToolbarPlaceholder />
+                    </OverflowToolbar>
+                </upload:toolbar>
+            </upload:UploadSet>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,117 @@
+<mvc:View
+    xmlns:cards="sap.f.cards"
+    controllerName="idapp.project1.controller.View1"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout"
+    xmlns:tnt="sap.tnt"
+>
+    <Page
+        id="page"
+        showNavButton="true"
+        navButtonPress="onNavBack"
+    >
+        <tnt:ToolHeader
+            height="5rem"
+            width="79.4rem"
+            class="sapTntToolHeadersapMTB"
+        />
+        <headerContent>
+          
+            <!-- <Button text="ZTEST_USER" press="ZTEST_USER" type="Emphasized" width="200px" class="sapUiSmallMargin" /> -->
+        </headerContent>
+        <content>
+            <Image
+                src="https://replicate.delivery/pbxt/Y9akxYt3Xpr0OZDM26tChCf7rEQpOLIHe6043EXiBQTLkhgQA/out..jpg"
+                class="sapMITBFilterIcon"
+                width="80rem"
+                height="20rem"
+            />
+
+            <IconTabBar class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter
+                        key="aboutus"
+                        text="About Us"
+                    >
+                        <Text
+                            text="{i18n>Welcome}"
+                            class="welcome"
+                        />
+                        <Text text="{i18n>aboutus}" />
+                    </IconTabFilter>
+
+                    <IconTabFilter
+                        key="departments"
+                        text="Departments"
+                    >
+                        <Text text="{i18n>Department}" />
+                        <!-- <Text text="{i18n>departments}" />
+                         <Text text="{i18n>post}" />
+                        -->
+                    </IconTabFilter>
+
+                    <IconTabFilter
+                        key="placements"
+                        text="Placements"
+                    >
+                        <Text
+                            text="{i18n>placements}"
+                            class="welcome"
+                        />
+                        <Text text="{i18n>placements1}" />
+                    </IconTabFilter>
+
+                    <IconTabFilter
+                        key="campuslife"
+                        text="Campus Life"
+                    >
+                        <Text
+                            text="{i18n>campuslife}"
+                            class="welcome"
+                        />
+                        <Text text="{i18n>campuslife1}" />
+                    </IconTabFilter>
+
+                    <IconTabFilter
+                        key="feeStructure"
+                        text="Fee Structure"
+                    >
+                        <Text
+                            text="{i18n>feeStructure}"
+                            class="welcome"
+                        />
+                        <Text text="{i18n>feeStructure1}" />
+                    </IconTabFilter>
+                </items>
+            </IconTabBar>
+
+            <HBox
+                alignContent="Center"
+                direction="Row"
+            >
+                <items>
+                    <f:SimpleForm title="Student Login Portal">
+                        <Button
+                            text="Log In"
+                            press="onPress"
+                            type="Emphasized"
+                            width="200px"
+                            class="sapUiSmallMargin"
+                        />
+                        <Button
+                            text="Register"
+                            press="onClick"
+                            type="Emphasized"
+                            width="200px"
+                            class="sapUiSmallMargin"
+                        />
+                    </f:SimpleForm>
+                </items>
+            </HBox>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,77 @@
+<mvc:View controllerName="idmaps.zgeomap.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"  xmlns:l="sap.ui.layout" xmlns:vbm="sap.ui.vbm" height="100%" 
+    xmlns="sap.m">
+    <!-- <Page id="page" title="{i18n>title}">
+        <content />
+    </Page> -->
+    	<l:FixFlex class="fixFlexVertical">
+		<l:fixContent>
+			<Panel expandable="true" expanded="{= !${device>/system/phone} }"
+				headerText="Description">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="Description" />
+						<ToolbarSpacer />
+                        	<Button id="btnLegend" icon="sap-icon://legend" press="onPressLegend"
+							tooltip="Hide legend" />
+						<Button id="btnResize" icon="sap-icon://resize" press="onPressResize"
+							tooltip="Minimize" />
+							
+            <Button
+                press="rightarrow"
+                type="Transparent"
+                icon="sap-icon://navigation-right-arrow"
+            />
+
+        
+					</Toolbar>
+				</headerToolbar>
+				
+				
+			</Panel>
+		</l:fixContent>
+		<l:flexContent>
+			<vbm:GeoMap id="vbi" width="100%" xmlns:l="sap.ui.layout" height="100%">
+				
+				
+			<vbm:vos>
+			<vbm:Spots items="{/Spots}" click="onClickItem" 
+						contextMenu="onContextMenuItem">
+						<vbm:Spot position="{pos}" tooltip="{tooltip}" type="Hidden"
+							labelPos="5" labelType="{type}" labelText="{text}" labelArrow="true"
+							click="onClickSpot" contextMenu="onContextMenuSpot" />
+					</vbm:Spots>
+					<!-- <vbm:Spots click="onClickItem" posChangeable="true"
+						scaleChangeable="false" contextMenu="onContextMenuItem" items="{sOrder1>/Spots}">
+						<vbm:items>
+							<vbm:Spot id="Spot" type="Hidden" labelPos="5" position="{sOrder1>pos}"
+								tooltip="{sOrder1>tooltip}" labelType="{sOrder1>type}" labelText="{sOrder1>text}"
+								labelArrow="true" contentOffset="{sOrder1>contentOffset}" click="onClickSpot"
+								contextMenu="onContextMenuSpot">
+							</vbm:Spot>
+						</vbm:items>
+					</vbm:Spots> -->
+					<vbm:Spots>
+						<vbm:Spot id="SAPSpot" position="8.641568;49.293789;0"
+							labelType="Default" labelText="Default" labelPos="5" click="onClickSpot"
+							contextMenu="onContextMenuSpot">
+						</vbm:Spot>
+					</vbm:Spots>
+				</vbm:vos>
+					<vbm:legend>
+					<vbm:Legend id="legend" caption="Legend">
+						<vbm:LegendItem text="Default Label without semantic"
+							image="white_label.png" />
+						<vbm:LegendItem text="Semantic label: Neutral"
+							color="rgb(132,143,148)" />
+						<vbm:LegendItem text="Semantic label: Positive"
+							color="rgb(97,166,86)" />
+						<vbm:LegendItem text="Semantic label: Warning"
+							color="rgb(225,123,36)" />
+						<vbm:LegendItem text="Semantic label: Error" color="rgb(211,32,48)" />
+					</vbm:Legend>
+				</vbm:legend>
+				</vbm:GeoMap>
+		</l:flexContent>
+	</l:FixFlex>
+</mvc:View>

@@ -1,0 +1,46 @@
+specVersion: "2.6"
+metadata:
+  name: customerapp.customerodataapp
+type: application
+server:
+  customMiddleware:
+    - name: fiori-tools-proxy
+      afterMiddleware: compression
+      configuration:
+        ignoreCertError: false
+        ui5:
+          path:
+            - /resources
+            - /test-resources
+          url: https://ui5.sap.com
+        backend:
+          - path: /sap
+            url: https://ikjdcdevcha01.dangote-group.com:50000
+            client: "150"
+          - path: /V2
+            url: https://services.odata.org
+    - name: fiori-tools-appreload
+      afterMiddleware: compression
+      configuration:
+        port: 35729
+        path: webapp
+        delay: 300
+    - name: sap-fe-mockserver
+      beforeMiddleware: csp
+      configuration:
+        mountPath: /
+        services:
+          - urlPath: /sap/opu/odata/sap/ZCUSTOMAPP_SRV
+            metadataPath: ./webapp/localService/metadata.xml
+            mockdataPath: ./webapp/localService/data
+            generateMockData: true
+        annotations: []
+        service:
+          - urlPath: /sap/opu/odata/sap/ZCUSTOMAPP_SRV
+            generateMockData: true
+            metadataXmlPath: ./webapp/localService/mainService/metadata.xml
+            mockdataRootPath: ./webapp/localService/data
+          - urlPath: /V2/Northwind/Northwind.svc/
+            metadataXmlPath: ./webapp/localService/Northwind/metadata.xml
+            mockdataRootPath: ./webapp/localService/Northwind/mockdata
+            generateMockData: true

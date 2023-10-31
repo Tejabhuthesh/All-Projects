@@ -1,0 +1,63 @@
+<mvc:View controllerName="iddsales.zdangotesaless.controller.RegisterPage"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:f="sap.ui.layout.form">
+    <Page id="page" title="{i18n>title}" class="sapUshellShellsapMPageBgStandard">
+    
+        <headerContent>
+        	
+            <Button id="idrightarrow"
+                press="rightarrow"
+                type="Transparent"
+                icon="sap-icon://navigation-right-arrow"
+            />
+        </headerContent>
+        <content > 
+       
+        <!-- <IconTabBar id="idIconTabBarMulti" class="sapUiResponsiveContentPadding">
+                <items>
+                    <IconTabFilter icon="sap-icon://group" key="people" >
+                        <Text text="" />
+                    </IconTabFilter>
+                </items>
+            </IconTabBar> -->
+              <VBox alignItems="Center" justifyContent="Center" class="sapUiSmallMargin">
+    <f:SimpleForm  editable="true" layout="ResponsiveGridLayout" emptySpanL="8" emptySpanM="8"
+      title="Registeration Portal" class="formbackground1">
+                <f:content>
+                	 <!-- <Toast id="demoToast" duration="2000"></Toast> -->
+                   <Label text="*CustomerID" />
+                   <Input type="Number" id="idcustomer_id" value="" valueState = "{= ${Number}=== ''  ? 'Error' :'Success' }"  />
+
+                    <Label text="NAME" />
+                    <Input  id="idname"  valueLiveUpdate="true" liveChange=""/>
+
+                   <Label  text="Address" />
+                   <Input   type="Text" id="idaddress"  />
+                                
+                    <Label text="*Mobile Number" />
+                    <!-- <Input  type="Number" id="idm_number" maxLength="10" /> -->
+                    	<Input
+				id="idm_number"
+                type="Number" 
+				placeholder="Enter text"
+				maxLength="10"
+				change="handleChange"
+				
+				ariaLabelledBy="inputTextLabel"/>
+
+                    <Label text="*UserID" />
+                    <Input  id="iduserid"   />
+
+                    <Label text="*Password" />
+                    <Input   id="idpassword" type="Password"  />
+<Button text="Rigester" type="Emphasized" id="idrigester" press="onRigister"/>
+                 
+                </f:content>
+            </f:SimpleForm>
+          	 </VBox>
+        </content>
+         
+    </Page>
+</mvc:View>

@@ -1,0 +1,35 @@
+<mvc:View controllerName="idemploye.readtwoentitys.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+   <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+      
+        <content>
+
+ <List id="idProductsTable1" headerText="Employe deatails"  items="{
+			path: 'Data1>/results'}" >
+                            <items>
+                                <!-- <ObjectListItem title="{Data2>Name}" number="{Data2>Zemprole}"
+                             
+                                  intro="{Data2>Zgender}" id="fff" press="onListPress" type="Navigation" /> -->
+                                  <StandardListItem  title = "{Data1>Ernam}" description="{Data1>Ersda},{Data1>Datab}" info="{Data1>Matkl},{Data1>Matnr},{Data1>Mtart}">
+                                  </StandardListItem>
+                           
+                            </items>
+                        </List>
+
+
+
+                    
+                        <!-- <List id="idProductsTable1" headerText="Employe deatails"  items="{
+			path: 'Data1>/MaraSet'}" >
+                            <items>
+                             
+                                  <StandardListItem  title = "{Data1>Ernam}" description="{Data1>Ersda},{Data1>Datab}" info="{Data1>Matkl},{Data1>Matnr},{Data1>Mtart}">
+                                  </StandardListItem>
+                           
+                            </items>
+                        </List> -->
+                  
+                </content>
+    </Page>
+</mvc:View>

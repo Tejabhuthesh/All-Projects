@@ -1,0 +1,370 @@
+
+<mvc:View controllerName="idsalary.zemploysalary.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 	
+    xmlns="sap.m"
+     xmlns:filterbar="sap.ui.comp.filterbar"
+      xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title2}">
+     <headerContent>
+        
+         <!-- <Button icon="sap-icon://locked" text="Locked" press="Lock" type="Transparent" /> -->
+            <!-- <Button  id="editmode" icon="sap-icon://edit" text="Edit" press="onEdit" type="Transparent" />
+            <Button id="addButton" icon="sap-icon://add" text="Add" type="Transparent" press="onAdd" />
+            <Button id="deleteButton" icon="sap-icon://delete" text="Delete" type="Transparent" press="onDelite" /> -->
+           
+           <Button  press="rightarrow" type="Transparent"  icon="sap-icon://navigation-right-arrow"/>
+        </headerContent>
+          <Toolbar>
+             <ToolbarSpacer />
+             <SearchField liveChange="onSearch" width="20%" />
+           </Toolbar>
+  <filterbar:FilterBar
+                        search="onPressGo"
+                        useToolbar="true"
+                        showGoOnFB="true"
+                    >
+                        <!-- <SearchField liveChange="onSearch" width="80%"/> -->
+
+                        <filterbar:filterGroupItems>
+                            <filterbar:FilterGroupItem
+                                groupName="G1"
+                                label="EmpId"
+                                groupTitle="group1"
+                                name="name1"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idEmpId"
+                                        selectionChange="handleSelectionChangeName"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+			            	path: 'Data1>/results',
+				            sorter: { path: 'EmpId' } }"
+                                    >
+                                        <core:Item
+                                            key="001"
+                                            text="{Data1>EmpId}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem
+                                groupName="G2"
+                                label="EmpName"
+                                groupTitle="group2"
+                                name="name2"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idEmpName"
+                                        selectionChange="handleSelectionChangeRole"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmpName' } }"
+                                    >
+                                        <core:Item
+                                            key="002"
+                                            text="{Data1>EmpName}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                           
+
+                            <filterbar:FilterGroupItem
+                                groupName="G3"
+                                label="EmpPhone"
+                                groupTitle="group3"
+                                name="name3"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idEmpPhone"
+                                        selectionChange="handleSelectionChangeGender"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        
+                                    items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmpPhone' } }"
+                                    >
+                                        <core:Item
+                                            key="003"
+                                            text="{Data1>EmpPhone}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem
+                                groupName="G4"
+                                label="EmpEmail"
+                                groupTitle="group4"
+                                name="name4"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idEmpEmail"
+                                        selectionChange="handleSelectionChangeCity"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmpEmail' } }"
+                                    >
+                                        <core:Item
+                                            key="004"
+                                            text="{Data1>EmpEmail}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                            <filterbar:FilterGroupItem
+                                groupName="G5"
+                                label="EmpDep"
+                                groupTitle="group5"
+                                name="name5"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idEmpDep"
+                                        selectionChange="handleSelectionChangeNumber"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'EmpDep' } }"
+                                    >
+                                        <core:Item
+                                            key="005"
+                                            text="{Data1>EmpDep}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                       
+
+                     <filterbar:FilterGroupItem
+                                groupName="G6"
+                                label="BasicPay"
+                                groupTitle="group6"
+                                name="name6"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idBasicPay"
+                                        selectionChange="handleSelectionChangeNumber"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'BasicPay' } }"
+                                    >
+                                        <core:Item
+                                            key="006"
+                                            text="{Data1>BasicPay}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+
+                             <filterbar:FilterGroupItem
+                                groupName="G7"
+                                label="Hra"
+                                groupTitle="group7"
+                                name="name7"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idHra"
+                                        selectionChange="handleSelectionChangeNumber"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'Hra' } }"
+                                    >
+                                        <core:Item
+                                            key="007"
+                                            text="{Data1>Hra}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                             <filterbar:FilterGroupItem
+                                groupName="G8"
+                                label="SplAllowance"
+                                groupTitle="group8"
+                                name="name8"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idSplAllowance"
+                                        selectionChange="handleSelectionChangeNumber"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'SplAllowance' } }"
+                                    >
+                                        <core:Item
+                                            key="008"
+                                            text="{Data1>SplAllowance}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                             <filterbar:FilterGroupItem
+                                groupName="G9"
+                                label="ShiftAllowance"
+                                groupTitle="group9"
+                                name="name9"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idShiftAllowance"
+                                        selectionChange="handleSelectionChangeNumber"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'ShiftAllowance' } }"
+                                    >
+                                        <core:Item
+                                            key="009"
+                                            text="{Data1>ShiftAllowance}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                             <filterbar:FilterGroupItem
+                                groupName="G10"
+                                label="MonthlyPay"
+                                groupTitle="group10"
+                                name="name10"
+                                visibleInFilterBar="true"
+                            >
+                                <filterbar:control>
+                                    <MultiComboBox
+                                        id="idMonthlyPay"
+                                        selectionChange="handleSelectionChangeNumber"
+                                        selectionFinish="handleSelectionFinish"
+                                        width="15%"
+                                        items="{
+				    path: 'Data1>/results',
+				    sorter: { path: 'MonthlyPay' } }"
+                                    >
+                                        <core:Item
+                                            key="0010"
+                                            text="{Data1>MonthlyPay}"
+                                        />
+                                    </MultiComboBox>
+                                </filterbar:control>
+                            </filterbar:FilterGroupItem>
+                        </filterbar:filterGroupItems>
+                    </filterbar:FilterBar>
+        <content>
+        
+            <ScrollContainer height="100%" width="100%" vertical="true" focusable="true">
+            	
+            	
+                <Table width="80rem"  id="idProductsTable" inset="true"  mode="MultiSelect"	selectionChange="handleSelectionChange"    visible="true" alternateRowColors="true"
+               sticky="ColumnHeaders"  items="{
+			path: 'Data1>/results'
+                 
+          
+         
+            }">
+            <!-- , sorter: {
+				path: 'EmpId',
+                group: false
+			}  -->
+                    <columns >
+                        <Column width="auto">
+                            <Text text="EmpId" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpName" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpPhone" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpEmail" />
+                        </Column>
+
+                        <Column >
+                            <Text text="EmpDep" />
+                        </Column>
+                         <Column >
+                            <Text text="BasicPay" />
+                        </Column>
+
+                        <Column >
+                            <Text text="Hra" />
+                        </Column>
+
+                        <Column >
+                            <Text text="SplAllowance" />
+                        </Column>
+
+                        <Column >
+                            <Text text="ShiftAllowance" />
+                        </Column>
+
+                        <Column >
+                            <Text text="MonthlyPay" />
+                        </Column>
+                         <!-- <Column >
+                            <Text text="" />
+                        </Column> -->
+
+                    </columns>
+                    <items>
+                        <ColumnListItem type="Active" id="colss" >
+                            <cells>
+                                <Link text="{Data1>EmpId}"  press="onEmpid"/>
+                                <Text text="{Data1>EmpName}" />
+                                <Text text="{Data1>EmpPhone}" />
+                                <Text text="{Data1>EmpEmail}" />
+                                <Text text="{Data1>EmpDep}" />
+                                 <Text text="{Data1>BasicPay}" />
+                                <Text text="{Data1>Hra}" />
+                                <Text text="{Data1>SplAllowance}" />
+                                <Text text="{Data1>ShiftAllowance}" />
+                                <Text text="{Data1>MonthlyPay}" />
+                                  <!-- <Button icon="sap-icon://navigation-right-arrow" /> -->
+                            
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </ScrollContainer>
+        </content>
+      <footer>
+       	<OverflowToolbar id="otbFooter">
+				<ToolbarSpacer/>
+				   <Button  id="editmode" icon="sap-icon://edit" text="Edit" press="onEdit" type="Accept" />
+                  <Button id="addButton" icon="sap-icon://add-employee" text="Add" type="Ghost" press="onAdd" />
+                 <Button id="deleteButton" icon="sap-icon://delete" text="Delete" type="Reject" press="onDelite" />
+                 	</OverflowToolbar >
+      </footer>
+    </Page>
+</mvc:View>

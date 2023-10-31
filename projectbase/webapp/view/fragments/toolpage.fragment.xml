@@ -1,0 +1,158 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:tnt="sap.tnt"
+    xmlns:custom="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+>
+
+    <Dialog
+        class="hgfd "
+        id="idFiltersDialog"
+        
+        title="Filter"
+    >
+     <tnt:ToolPage id="toolPage">
+		<tnt:header>
+			<tnt:ToolHeader>
+				<Button
+					id="sideNavigationToggleButton"
+					icon="sap-icon://menu2"
+					type="Transparent"
+					press=".onSideNavButtonPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+				<ToolbarSpacer width="20px" />
+				<Button text="File" type="Transparent" press="onPress">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Edit" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="View" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Navigate" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Code" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Refactor" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Run" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<Button text="Tools" type="Transparent">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="Low" />
+					</layoutData>
+				</Button>
+				<tnt:ToolHeaderUtilitySeparator />
+				<ToolbarSpacer>
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" minWidth="20px" />
+					</layoutData>
+				</ToolbarSpacer>
+				<Button text="Alan Smith" type="Transparent" press=".handleUserNamePress" ariaHasPopup="Menu">
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</tnt:ToolHeader>
+		</tnt:header>
+		<tnt:sideContent>
+			<tnt:SideNavigation
+				expanded="true"
+				selectedKey="{/selectedKey}"
+				itemSelect=".onItemSelect">
+				<tnt:NavigationList items="{path: '/navigation'}">
+					<tnt:NavigationListItem
+						text="{title}"
+						icon="{icon}"
+						enabled="{enabled}"
+						expanded="{expanded}"
+						items="{items}"
+						key="{key}">
+						<tnt:NavigationListItem
+							text="{title}"
+							key="{key}"
+							enabled="{enabled}" />
+					</tnt:NavigationListItem>
+				</tnt:NavigationList>
+				<tnt:fixedItem>
+					<tnt:NavigationList items="{path: '/fixedNavigation'}">
+						<tnt:NavigationListItem text="{title}" icon="{icon}" />
+					</tnt:NavigationList>
+				</tnt:fixedItem>
+			</tnt:SideNavigation>
+		</tnt:sideContent>
+		<tnt:mainContents>
+			<NavContainer id="pageContainer" initialPage="page1">
+				<pages>
+					<ScrollContainer
+						id="root1"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+						<Text text="This is the root page" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page1"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+						<Text text="This is the first page" />
+					</ScrollContainer>
+					<ScrollContainer
+						id="page2"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+						<Text text="Lorem ipsum dolor sit amet, consectetur adipisicing elit. A accusantium architecto autem dicta dolor dolores dolorum earum enim error esse eum ex exercitationem explicabo facilis fugit ipsum maiores, necessitatibus nemo nihil numquam odio officiis optio possimus quas qui quod quos, reiciendis similique sunt ." />
+					</ScrollContainer>
+					<ScrollContainer
+						id="root2"
+						horizontal="false"
+						vertical="true"
+						height="100%"
+						class="sapUiContentPadding">
+						<Text text="This is the root page of the second element" />
+					</ScrollContainer>
+				</pages>
+			</NavContainer>
+		</tnt:mainContents>
+	</tnt:ToolPage>
+
+       
+        <endButton>
+            <Button
+                id="closeBtne"
+                type="Transparent"
+                text="Cancel"
+                press="onFiltersDialogClose"
+                icon="sap-icon://decline"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -1,0 +1,18 @@
+<mvc:View controllerName="id9.loopupto9.controller.View1" xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+
+         <f:SimpleForm editable="true" title="Calculator">
+                <f:content>
+                 <VBox justifyContent="Center" alignItems="Center">
+        <Input type="Text" id="num"  width="15rem"/>
+      <Button text="submit" press="submit" type="Emphasized" width="5rem" />
+       </VBox>
+        </f:content>
+            </f:SimpleForm>
+
+        </content>
+    </Page>
+</mvc:View>

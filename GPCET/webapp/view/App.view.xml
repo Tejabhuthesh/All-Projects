@@ -1,0 +1,34 @@
+
+<mvc:View controllerName="idapp.project1.controller.App"  xmlns:html="http://www.w3.org/1999/xhtml" xmlns:mvc="sap.ui.core.mvc" displayBlock="true" xmlns="sap.m" xmlns:l="sap.ui.layout">
+    <App id="app">
+        <l:VerticalLayout>
+            <SlideTile class="sapUiTinyMarginBegin sapUiTinyMarginTop">
+                <GenericTile backgroundImage="https://letusstudy.in/storage/colleges/gallery/9935/14873/080120220622.jpg" frameType = "TwoByOne" press="pressOnTileOne" enableNavigationButton="true">
+                    <TileContent footer="August 21, 2016">
+                
+                        <NewsContent contentText="G.Pullaiah College of Engineering and Technology Kurnool" subheader="" />
+                    </TileContent>
+                </GenericTile>
+
+                   <GenericTile backgroundImage="https://digitalcampus.msmfclasses.com:90/images/digitalcampus.svg" frameType="TwoByOne" press="Digitalcampus" enableNavigationButton="true" >
+                    <!-- <TileContent footer="August 21, 2016">
+                        <NewsContent contentText="Login Portal" subheader="Today, SAP News" />
+                    </TileContent> -->
+                </GenericTile>
+              
+                   <GenericTile backgroundImage="https://zestechinc.com/wp-content/uploads/2017/02/registration.jpg" frameType="TwoByOne" press="Rigistration" enableNavigationButton="true">
+                    <TileContent footer="August 21, 2016">
+                        <NewsContent contentText="Registration Portal" subheader=" Last Day Today, Hurry Up!" />
+                    </TileContent>
+                </GenericTile>
+            </SlideTile>
+           
+          <!-- <FlexBox alignItems="End" justifyContent="End"> -->
+              
+        
+      
+          <!-- </FlexBox>  -->
+               
+        </l:VerticalLayout>
+    </App>
+</mvc:View>

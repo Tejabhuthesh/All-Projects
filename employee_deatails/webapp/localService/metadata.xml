@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+    <edmx:DataServices m:DataServiceVersion="2.0">
+        <Schema Namespace="ZTESTING2PROJECT_SRV" xml:lang="en" sap:schema-version="1" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+            <Annotation Term="Core.SchemaVersion" String="1.0.0" xmlns="http://docs.oasis-open.org/odata/ns/edm"/>
+            <EntityType Name="EmployeeDeatails" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeName" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="EMPLOYEE NAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeMob" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="EMPLOYEE MOB" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <NavigationProperty Name="EmployeeData" Relationship="ZTESTING2PROJECT_SRV.EmployeeData" FromRole="FromRole_EmployeeData" ToRole="ToRole_EmployeeData"/>
+                <NavigationProperty Name="EmployeeDeatailsTOEmployeeCOLLEGE" Relationship="ZTESTING2PROJECT_SRV.EmployeeData1" FromRole="FromRole_EmployeeData1" ToRole="ToRole_EmployeeData1"/>
+            </EntityType>
+            <EntityType Name="EmployeeSalaryDeatails" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeSalary" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="EMPLOYEE SALARY" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <EntityType Name="EmployeeCOLLEGE" sap:content-version="1">
+                <Key>
+                    <PropertyRef Name="EmployeeId"/>
+                </Key>
+                <Property Name="EmployeeId" Type="Edm.String" Nullable="false" MaxLength="5" sap:unicode="false" sap:label="Employee ID" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeName" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="EMPLOYEE NAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+                <Property Name="EmployeeCollegename" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="EMPLOYEE COLLEGE NAME" sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/>
+            </EntityType>
+            <Association Name="EmployeeData1" sap:content-version="1">
+                <End Type="ZTESTING2PROJECT_SRV.EmployeeDeatails" Multiplicity="1" Role="FromRole_EmployeeData1"/>
+                <End Type="ZTESTING2PROJECT_SRV.EmployeeCOLLEGE" Multiplicity="*" Role="ToRole_EmployeeData1"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmployeeData1">
+                        <PropertyRef Name="EmployeeId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmployeeData1">
+                        <PropertyRef Name="EmployeeId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <Association Name="EmployeeData" sap:content-version="1">
+                <End Type="ZTESTING2PROJECT_SRV.EmployeeDeatails" Multiplicity="1" Role="FromRole_EmployeeData"/>
+                <End Type="ZTESTING2PROJECT_SRV.EmployeeSalaryDeatails" Multiplicity="1" Role="ToRole_EmployeeData"/>
+                <ReferentialConstraint>
+                    <Principal Role="FromRole_EmployeeData">
+                        <PropertyRef Name="EmployeeId"/>
+                    </Principal>
+                    <Dependent Role="ToRole_EmployeeData">
+                        <PropertyRef Name="EmployeeId"/>
+                    </Dependent>
+                </ReferentialConstraint>
+            </Association>
+            <EntityContainer Name="ZTESTING2PROJECT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+                <EntitySet Name="EmployeeDeatailsSet" EntityType="ZTESTING2PROJECT_SRV.EmployeeDeatails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="EmployeeSalaryDeatailsSet" EntityType="ZTESTING2PROJECT_SRV.EmployeeSalaryDeatails" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <EntitySet Name="EmployeeCOLLEGESet" EntityType="ZTESTING2PROJECT_SRV.EmployeeCOLLEGE" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:content-version="1"/>
+                <AssociationSet Name="EmployeeData1Set" Association="ZTESTING2PROJECT_SRV.EmployeeData1" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmployeeDeatailsSet" Role="FromRole_EmployeeData1"/>
+                    <End EntitySet="EmployeeCOLLEGESet" Role="ToRole_EmployeeData1"/>
+                </AssociationSet>
+                <AssociationSet Name="EmployeeDataSet" Association="ZTESTING2PROJECT_SRV.EmployeeData" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:content-version="1">
+                    <End EntitySet="EmployeeDeatailsSet" Role="FromRole_EmployeeData"/>
+                    <End EntitySet="EmployeeSalaryDeatailsSet" Role="ToRole_EmployeeData"/>
+                </AssociationSet>
+            </EntityContainer>
+            <atom:link rel="self" href="http://ikjdcdevcha01.dangote-group.com:8000/sap/opu/odata/sap/ZTESTING2PROJECT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+            <atom:link rel="latest-version" href="http://ikjdcdevcha01.dangote-group.com:8000/sap/opu/odata/sap/ZTESTING2PROJECT_SRV/$metadata" xmlns:atom="http://www.w3.org/2005/Atom"/>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>

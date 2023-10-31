@@ -1,0 +1,20 @@
+<mvc:View controllerName="idstring.zstringmethods.controller.View3" xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" >
+   
+    <Page id="page" title="{i18n>title2}" class="page2">
+    <content>
+    <VBox justifyContent="Center" alignItems="Center">
+ 
+    <Input id="input1" type="Number"/>
+    
+    <Input id="input2" type="Number"/>
+    <Button text="Add" press="onadd"/>
+     
+     <Input id="out"/>
+     </VBox>
+     <!-- <Button text="Add1" press="onadd1"/> -->
+    </content>
+    </Page>
+   
+</mvc:View>

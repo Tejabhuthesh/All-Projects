@@ -1,0 +1,446 @@
+<mvc:View
+    controllerName="candidate.deatails.zcandidates.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    xmlns:c="sap.ui.core"
+    xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:u="sap.ui.unified"
+    xmlns:f="sap.f"
+    xmlns:layout="sap.ui.layout"
+    height="100%"
+    xmlns:ui="sap.ui.table"
+>
+    <Page
+        title=" {18n>title2}"
+        enableScrolling="true"
+        titleAlignment="Center"
+        showNavButton="false"
+        navButtonPress="onNavBack"
+    >
+        <content>
+            <IconTabBar
+                upperCase="true"
+                expandable="false"
+                applyContentPadding="true"
+                stretchContentHeight="true"
+                class="sapUiResponsiveContentPadding"
+            >
+                <items>
+                    <IconTabFilter
+                        key="home"
+                        text="Home"
+                    >
+                        <Label
+                            text="Home Container"
+                            design="Bold"
+                        />
+                        <Select
+                            editable="true"
+                            forceSelection="false"
+                            valueStateText="Teja"
+                            name="Teja"
+                        >
+                            <c:Item
+                                key="t"
+                                text="Name"
+                            />
+                        </Select>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        key="cfiles"
+                        text="Candidate Files"
+                    >
+                        <f:DynamicPage
+                            id="dynamicPageId"
+                            preserveHeaderStateOnScroll="true"
+                            headerExpanded="{/headerExpanded}"
+                            showFooter="false"
+                            fitContent="true"
+                        >
+                            <f:title>
+                                <f:DynamicPageTitle>
+                                    <f:heading>
+                                        <Title text="Candidate Files" />
+                                    </f:heading>
+
+                                    <f:actions>
+                                        <ToolbarSpacer />
+                                    </f:actions>
+                                </f:DynamicPageTitle>
+                            </f:title>
+
+                            <f:header>
+                                <f:DynamicPageHeader pinnable="true">
+                                    <filterbar:FilterBar
+                                        search="onPressGo"
+                                        useToolbar="false"
+                                        showGoOnFB="true"
+                                        showClearOnFB="true"
+                                    >
+                                        <filterbar:filterGroupItems>
+                                            <filterbar:FilterGroupItem
+                                                groupName="G1"
+                                                label="By Status"
+                                                groupTitle="group1"
+                                                name="By Status"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_bystts"
+                                                        visible="true"
+                                                        items=""
+                                                    >
+                                                        <c:Item
+                                                            key=""
+                                                            text=""
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G2"
+                                                label="By Lead Vetter"
+                                                groupTitle="group2"
+                                                name="By Lead Vetter"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_bysttsss"
+                                                        visible="true"
+                                                        items=""
+                                                    >
+                                                        <c:Item
+                                                            key=""
+                                                            text=""
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G3"
+                                                label="By Full Name"
+                                                groupTitle="group3"
+                                                name="By Full Name"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_bysttss"
+                                                        visible="true"
+                                                        items=""
+                                                    >
+                                                        <c:Item
+                                                            key=""
+                                                            text=""
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G4"
+                                                label="By Package Name"
+                                                groupTitle="group4"
+                                                name="By Package Name"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_pkgname"
+                                                        visible="true"
+                                                        items=""
+                                                    >
+                                                        <c:Item
+                                                            key=""
+                                                            text=""
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+
+                                            <filterbar:FilterGroupItem
+                                                groupName="G5"
+                                                label="By Job Requisition ID"
+                                                groupTitle="group5"
+                                                name="Employee Department"
+                                                visibleInFilterBar="true"
+                                            >
+                                                <filterbar:control>
+                                                    <MultiComboBox
+                                                        selectionChange="handleSelectionChange"
+                                                        selectionFinish="handleSelectionFinish"
+                                                        width="200px"
+                                                        id="_reqid"
+                                                        visible="true"
+                                                        items=""
+                                                    >
+                                                        <c:Item
+                                                            key=""
+                                                            text=""
+                                                        />
+                                                    </MultiComboBox>
+                                                </filterbar:control>
+                                            </filterbar:FilterGroupItem>
+                                        </filterbar:filterGroupItems>
+                                    </filterbar:FilterBar>
+                                </f:DynamicPageHeader>
+                            </f:header>
+
+                            <f:content>
+                                <ui:Table
+                                    alternateRowColors="true"
+                                    rows="{/Studentdeatails}"
+                                    width="auto"
+                                    rowActionCount="1"
+                                >
+                                    <ui:columns>
+                                        <ui:Column>
+                                            <Label text="First Name" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{Name}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column>
+                                            <Label text="Last Name" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{Branch}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column>
+                                            <Label text="Lead Vetter" />
+                                            <ui:template>
+                                                <Text
+                                                    text="{Year}"
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column>
+                                            <Label text="Job Application ID" />
+                                            <ui:template>
+                                                <Text
+                                                    text=""
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column>
+                                            <Label text="Job Requistion ID" />
+                                            <ui:template>
+                                                <Text
+                                                    text=""
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column>
+                                            <Label text="Vetting Status" />
+                                            <ui:template>
+                                                <Text
+                                                    text=""
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <ui:Column>
+                                            <Label text="Package Name" />
+                                            <ui:template>
+                                                <Text
+                                                    text=""
+                                                    wrapping="true"
+                                                />
+                                            </ui:template>
+                                        </ui:Column>
+                                        <!-- <ui:Column>
+                                            <ui:template>
+                                                <ui:RowAction>
+                                                    <ui:RowActionItem
+                                                        press="onPress"
+                                                        icon="sap-icon://feeder-arrow"
+                                                        text="{Name}"
+                                                    />
+                                                </ui:RowAction>
+                                            </ui:template>
+                                        </ui:Column> -->
+                                    </ui:columns>
+                                    <ui:rowActionTemplate>
+                                        <ui:RowAction>
+                                            <ui:items>
+                                                <ui:RowActionItem
+                                                    type="Delete"
+                                                    press="onAttachmentDeletePress"
+                                                />
+                                            </ui:items>
+                                        </ui:RowAction>
+                                    </ui:rowActionTemplate>
+                                    <!-- <ui:rowActionTemplate>
+                                        <ui:RowAction>
+                                            <ui:RowActionItem
+                                                press="onSelectPriceGroup"
+                                                type="Navigation"
+                                                icon="sap-icon://feeder-arrow"
+                                            />
+                                        </ui:RowAction>
+                                    </ui:rowActionTemplate> -->
+                                </ui:Table>
+                            </f:content>
+                        </f:DynamicPage>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        key="scrnpkg"
+                        text="Screening Packages "
+                    >
+                        <Label
+                            text="Screening Packages"
+                            design="Bold"
+                        />
+                        <Table
+                            backgroundDesign="Translucent"
+                            alternateRowColors="true"
+                            id="_idtable"
+                            width="100%"
+                            visible="true"
+                            inset="false"
+                            contextualWidth="inherit"
+                            
+                        >
+                            <headerToolbar>
+                                <Toolbar>
+                                    <Title text="" />
+                                    <ToolbarSpacer />
+                                    <SearchField
+                                        width="20%"
+                                        search="onFilterSearch"
+                                    />
+                                    <Button
+                                        text="Create Package"
+                                        type="Emphasized"
+                                        visible="true"
+                                        id="_idbtn"
+                                        press="onCreatePackage"
+                                    />
+                                </Toolbar>
+                            </headerToolbar>
+
+                            <columns>
+                                <Column
+                                    width="09em"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Text text="Package Name" />
+                                </Column>
+
+                                <Column
+                                    width="09em"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Text text="DBS Check" />
+                                </Column>
+
+                                <Column
+                                    width="09em"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Text text="Credit/Financial Check" />
+                                </Column>
+
+                                <Column
+                                    width="09em"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Text text="Right to Work Check" />
+                                </Column>
+
+                                <Column
+                                    width="09em"
+                                    minScreenWidth="Tablet"
+                                >
+                                    <Text text="Work History Check" />
+                                </Column>
+                            </columns>
+
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="Upadate Basic Package" />
+                                        <ComboBox
+                                            id="Enhanced"
+                                            value="select"
+                                        >
+                                            <c:Item
+                                                key="id1"
+                                                text="Basic"
+                                            />
+                                            <c:Item
+                                                key="id2"
+                                                text="Standard"
+                                            />
+                                            <c:Item
+                                                key="id3"
+                                                text="Enhanced"
+                                            />
+                                            <c:Item
+                                                key="id4"
+                                                text="None"
+                                            />
+                                        </ComboBox>
+                                        <CheckBox text="" />
+                                        <CheckBox text="" />
+                                        <StepInput
+                                            min="0"
+                                            max="9"
+                                            value="0"
+                                            textAlign="Center"
+                                            width="8rem"
+                                        />
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </IconTabFilter>
+                    <IconTabFilter
+                        key="withholding Info"
+                        text="Adverse Action"
+                    >
+                        <Label
+                            text="Adverse Action"
+                            design="Bold"
+                        />
+                    </IconTabFilter>
+                    <IconTabFilter
+                        key="Bank"
+                        text="Help Centre"
+                    >
+                        <Label
+                            text="Help Center"
+                            design="Bold"
+                        />
+                    </IconTabFilter>
+                </items>
+                <content />
+            </IconTabBar>
+        </content>
+    </Page>
+</mvc:View>

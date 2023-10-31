@@ -1,0 +1,20 @@
+<mvc:View controllerName="zautoslider.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:smartList="sap.ui.comp.smartlist">
+    <Page id="page" title="{i18n>title}">
+     <headerContent>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="onFullScreen" id="enterFullScreenBtn" tooltip="Enter Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/fullScreen} !== null }"/>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://exit-full-screen" press="handleExitFullScreen" id="exitFullScreenBtn" tooltip="Exit Full Screen Mode" visible="{= ${/actionButtonsInfo/endColumn/exitFullScreen} !== null }"/>
+            <OverflowToolbarButton type="Transparent" icon="sap-icon://decline" press="handleClose" tooltip="Close end column" visible="{= ${/actionButtonsInfo/endColumn/closeColumn} !== null }"/>
+            
+        </headerContent>
+        <content >
+            <smartList:SmartList id="ItemsST" entitySet="FoodItems" header="Customers List" showRowCount="true" showFullScreenButton="true" enableAutoBinding="true" selectFields="Pizza,Burger">
+                <smartList:listItemTemplate>
+                    <StandardListItem title="{Pizza}" info="{Burger}" />
+                </smartList:listItemTemplate>
+            </smartList:SmartList>
+        </content>
+    </Page>
+</mvc:View>

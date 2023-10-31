@@ -1,0 +1,44 @@
+/* Enter your custom styles here */
+.sapFDynamicPageHeader {
+  
+    background: #e0c6c6;
+}
+.sapMSticky>.sapMListHdrText, .sapMSticky>.sapMListHdrTBar.sapMTB-Transparent-CTX {
+    background: #9fe8932e;
+}
+.sapMListHdrText {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+    font-size: 1.125rem;
+    font-family: '72-Bold';
+    color: #4e0909ed;
+    height: 3rem;
+    line-height: 3rem;
+    padding: 0 1rem;
+    background-color: transparent;
+    border-bottom: 1px solid #d9d9d9;
+}
+.sapFDynamicPage .sapFDynamicPageContentWrapperStandard>.sapFDynamicPageContent, .sapFDynamicPage .sapFDynamicPageContentWrapperSolid>.sapFDynamicPageContent {
+    background: #60bd871a;
+}
+.sapMBtnGhost {
+    color: #0a7ce4;
+    
+}
+.sapUiFormResLayout.sapUiFormBackgrTranslucent>div {
+    background-color: rgb(136 209 108 / 65%);
+}
+
+
+.sapUiForm .sapUiFormTitle {
+    font-weight: normal;
+    color: #ea7f57;
+    height: 3rem;
+    line-height: 3rem;
+}
+.sapMLabel {
+    color: #1d1e1f;
+   
+}
