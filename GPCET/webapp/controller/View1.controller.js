@@ -21,10 +21,11 @@ sap.ui.define([
 
             },
 
-            onNavBack: function () {
+            onNavBack12: function (oEvent) {
             //  history.go(-1);
-            var loRouter = sap.ui.core.UIComponent.getRouterFor(this);
-            loRouter.navTo("http://localhost:8080/test/flpSandbox.html?sap-ui-xx-viewCache=false#idappproject1-display");
+            // var loRouter = sap.ui.core.UIComponent.getRouterFor(this);
+            // loRouter.navTo("http://localhost:8080/test/flpSandbox.html?sap-ui-xx-viewCache=false#idappproject1-display");
+            this.byId("view3").getController().onInit(oEvent);
             
            },
            ZTEST_USER:function (oEvent) {

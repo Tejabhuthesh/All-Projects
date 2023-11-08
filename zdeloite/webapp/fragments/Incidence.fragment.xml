@@ -1,0 +1,236 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+>
+    <Dialog
+   class="CF2"
+        id="idCreatePackage"
+        title="INCIDENCE"
+    >
+        <content>
+            <!-- <VBox
+                alignItems="Start"
+                justifyContent="Start"
+               
+            >
+                
+                <HBox>
+                    <Label
+                        text="Not employed"
+                        class="CF CF2"
+                    />
+                     <MultiComboBox
+                     	showSecondaryValues= "true"
+                                id="idname"
+                                items="{
+			            	path: 'Name>/', 
+				            sorter: { path: 'Name' }
+                             }"
+                           width="15rem"
+                            >
+                                <core:Item
+                                 
+                                    text="{Name>}"
+                                />
+                            </MultiComboBox>
+                    <Label
+                        text="Name"
+                        class="CF CF2"
+                    />
+                    <ComboBox
+                        width="12rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                    <Label
+                        text="Dates"
+                        class="CF CF2"
+                    />
+                    <ComboBox
+                        width="12rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                </HBox>
+                <HBox>
+                    <Label
+                        text="Type of Incident"
+                        class="CF CF2"
+                    />
+                    <ComboBox
+                    
+                        width="15rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                    <Label
+                        text="Incident Subtype"
+                        class="CF"
+                    />
+                    <ComboBox
+                        width="15rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                </HBox>
+                <Input
+                    id="idcustomerid"
+                    value=""
+                    width="40rem"
+                />
+                <HBox>
+                    <Button
+                       class="CF CF3"
+                        text="Save Edit"
+                        icon="sap-icon://edit"
+                        press="onSavePress"
+                    />
+                    <Button
+                       class="CF CF3"
+                        text="Eliminate"
+                        icon="sap-icon://decline"
+                        press="onSavePress"
+                    />
+                </HBox>
+            </VBox> -->
+                 <f:SimpleForm
+                id="SimpleFormChange480_Trial"
+                editable="true"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="4"
+                labelSpanL="4"
+                labelSpanM="4"
+                labelSpanS="12"
+                adjustLabelSpan="false"
+                emptySpanXL="0"
+                emptySpanL="0"
+                emptySpanM="0"
+                emptySpanS="0"
+                columnsXL="3"
+                columnsL="2"
+                columnsM="2"
+                singleContainerFullSize="false"
+            >
+                <f:content>
+                    <VBox>
+                        <HBox>
+                            <Label
+                                text="No.of employed"
+                               class="CF"
+                            />
+
+                          
+                             <MultiComboBox
+                                id="idname"
+                                items="{
+			            	path: 'Name>/', 
+				            sorter: { path: 'Name' }
+                             }"
+                            width="12.5rem"
+                            selectedKeys = "{ 
+                                path: 'Name>/'
+                            }"
+                            >
+                                <core:Item
+                                    key="{Name>}"
+                                    text="{Name>}"
+                                />
+                            </MultiComboBox>
+                        </HBox>
+                        <HBox>
+                            <Label
+                                text="Name"
+                                 class="CF12" 
+                            />
+                            <ComboBox
+                                items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                            >
+                                <core:Item text="{Data2>Name1}" />
+                            </ComboBox>
+                        </HBox>
+                        <HBox>
+                            <Label
+                                text="Dates"
+                              class="CF12" 
+                            />
+                            <ComboBox
+                                items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                            >
+                                <core:Item text="{Data2>Name1}" />
+                            </ComboBox>
+                        </HBox>
+                        <HBox>
+                            <Label
+                                text="Type of Incident"
+                                class="TypeofIncident" 
+                            />
+                            <ComboBox
+                                items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                            >
+                                <core:Item text="{Data2>Name1}" />
+                            </ComboBox>
+                        </HBox>
+                        <HBox>
+                            <Label
+                                text="Incident Subtype"
+                                class="IncidentSubtype" 
+                            />
+                            <ComboBox
+                                items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                            >
+                                <core:Item text="{Data2>Name1}" />
+                            </ComboBox>
+                        </HBox>
+                        <HBox>
+                            <Label
+                                text="Description"
+                              class="Description" 
+                            />
+                            <Input
+                                id="idcustomerid"
+                                value=""
+                                width="12.5rem"
+                            />
+                        </HBox>
+                    </VBox>
+                </f:content>
+            </f:SimpleForm>
+        </content>
+        <beginButton>
+            <Button
+                type="Emphasized"
+                text="Save New Incident"
+                press="onSavePress"
+            />
+        </beginButton>
+        <endButton>
+            <Button
+                id="closeBtne"
+                type="Transparent"
+                text="Close"
+                press="onClose"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

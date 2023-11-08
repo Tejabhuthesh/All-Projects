@@ -1,0 +1,431 @@
+<mvc:View
+    controllerName="zdeloite.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:ui="sap.ui.table"
+    xmlns:core="sap.ui.core"
+    xmlns:columnmenu="sap.m.table.columnmenu"
+    xmlns:vbm="sap.ui.vbm"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.f"
+    xmlns:main="sap.ui.webc.main"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
+        <!-- <customHeader>
+            <Bar>
+                <contentLeft>
+                    <Image src="img/logo.png" />
+                </contentLeft>
+
+                <contentMiddle>
+                    <Label text="Aktivitäten bei:" />
+
+                    <Label text="{NAME1}" />
+                </contentMiddle>
+            </Bar>
+        </customHeader> 
+
+         <subHeader  >
+            <Bar >
+                <contentRight>
+                   <Button
+                text="Special Closing"
+                type="Ghost"
+                icon="sap-icon://forward"
+            />
+            <Button
+                text="Payroll Closing"
+                type="Ghost"
+                icon="sap-icon://collections-insight"
+            />
+            <Button
+                text="Actions"
+                type="Ghost"
+                icon="sap-icon://action"
+            />
+                </contentRight>
+            </Bar>
+        </subHeader> -->
+        <headerContent>
+            <Button
+                text="Special Closing"
+                type="Ghost"
+                icon="sap-icon://forward"
+            />
+            <Button
+                text="Payroll Closing"
+                type="Ghost"
+                icon="sap-icon://collections-insight"
+            />
+            <Button
+                text="Actions"
+                type="Ghost"
+                icon="sap-icon://action"
+            />
+        </headerContent>
+
+        <content>
+    <Panel >
+      <Title text="Capture Filters" />
+    <HBox class="flex-parent" >
+    <VBox  class="box">
+  <HBox>
+                    <Label
+                        text="Stores"
+                        class="CF"
+                    />
+                    <ComboBox
+                        width="12rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+
+                    <Label
+                        text="Dates"
+                        class="CF"
+                    />
+                    <ComboBox
+                        width="12rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                    <Button
+                        text="Filter"
+                        icon="sap-icon://search"
+                        class="CF1"
+                    />
+                   
+                </HBox>
+    </VBox>
+    <VBox class="">
+      <!-- <OverflowToolbar
+                    design="Transparent"
+                    height="2rem"
+                >
+                    <ToolbarSpacer />
+
+                    <Label text="Vacation" />
+                    <core:Icon
+                        src="sap-icon://alert"
+                        size="1.5rem"
+                        class="Vacation"
+                    />
+                    <Label text="Rest" />
+                    <core:Icon
+                        src="sap-icon://alert"
+                        size="1.5rem"
+                        press="cvb"
+                    />
+                </OverflowToolbar> -->
+     <HBox>
+                        <Label
+                            class="font_L "
+                            text="Legend"
+                            wrapping="true"
+                        />
+                       
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                        src="sap-icon://alert"
+                        size="1.5rem"
+                        class="Vacation"
+                    />
+                        <Label
+                            class="CF4"
+                            text="validation"
+                            wrapping="true"
+                        />
+                    </HBox>
+                     <HBox>
+                        <core:Icon
+                        src="sap-icon://alert"
+                        size="1.5rem"
+                       
+                    />
+                        <Label
+                            class="CF4"
+                            text="Rest"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="validationOK"
+                        />
+                        <Label
+                            class="CF4"
+                            text="validation OK"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="ProposedIncidence"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Proposed Incidence"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="PendingAuthorizationByAC"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Pending authorization by AC"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="P_HR"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Pending authorization by HR"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="Refused"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Refused"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="PendingShipmentToSAP"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Pending shipment to SAP"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="SentToAP"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Sent to SAP"
+                            wrapping="true"
+                        />
+                    </HBox>
+                    <HBox>
+                        <core:Icon
+                            src="sap-icon://color-fill"
+                            class="SentWithErrorToSAP"
+                        />
+                        <Label
+                            class="CF4"
+                            text="Sent with error to SAP"
+                            wrapping="true"
+                        />
+                    </HBox>
+    </VBox>
+    </HBox>
+    </Panel>
+          
+            <ui:Table
+                id="idEmployees_Table"
+                rows="{oModel>/Table}"
+                alternateRowColors="true"
+                selectionMode="Multi"
+                rowActionCount="2"
+                cellClick="onPress"
+                rowSelectionChange="onSelChangeSeq"
+                firstVisibleRow="12"
+            >
+                <ui:extension>
+                    <OverflowToolbar>
+                        <Title text="Employees" />
+                        <ToolbarSpacer />
+
+                        <Button
+                            text="Add"
+                            icon="sap-icon://sys-add"
+                            type="Accept"
+                            press="onDeatails"
+                        />
+                        <Button
+                            text="Edit"
+                            icon="sap-icon://write-new-document"
+                            type="Emphasized"
+                            press="onD"
+                        />
+                        <Button
+                            text="Eliminate"
+                            icon="sap-icon://delete"
+                            type="Reject"
+                        />
+                    </OverflowToolbar>
+                </ui:extension>
+
+                <ui:columns>
+                    <ui:Column
+                        filterProperty="Vbeln"
+                        sortProperty="Vbeln"
+                    >
+                        <Label text="Name1" />
+                        <ui:template>
+                            <Text
+                                text="{oModel>name}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column
+                        filterProperty="Posnr"
+                        sortProperty="Posnr"
+                    >
+                        <Label text="Monday" />
+                        <ui:template>
+                            <Text
+                                text="{DeliverySet>Posnr}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column
+                        filterProperty="Bldat"
+                        sortProperty="Bldat"
+                    >
+                        <Label text="Tuesday" />
+                        <ui:template>
+                            <!-- <Text
+                                text="{path:'DeliverySet>Bldat', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd-MM-yyyy' } }"
+                                wrapping="true"
+                            /> -->
+                            <Input
+                                value="{AppView>NewRezl}"
+                                editable="false"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column
+                        filterProperty="Kunag"
+                        sortProperty="Kunag"
+                    >
+                        <Label text="Wednesday" />
+                        <ui:template>
+                            <Text
+                                text="{DeliverySet>Kunag}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column
+                        filterProperty="Kunnr"
+                        sortProperty="Kunnr"
+                    >
+                        <Label text="Thursday" />
+                        <ui:template>
+                            <Text
+                                text="{DeliverySet>Kunnr}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                        <!-- <ui:template>
+                             <Input value="{AppView>NewRezl}" editable="false"/>
+                        </ui:template> -->
+                    </ui:Column>
+                    <ui:Column
+                        filterProperty="Vkorg"
+                        sortProperty="Vkorg"
+                    >
+                        <Label text="Friday" />
+                        <ui:template>
+                            <!-- <Text
+                                text="{DeliverySet>Vkorg}"
+                                wrapping="true"
+                            /> -->
+                            <Input
+                                value="{AppView>NewRezl}"
+                                editable="false"
+                            />
+                        </ui:template>
+                    </ui:Column>
+
+                    <ui:Column
+                        filterProperty="Matnr"
+                        sortProperty="Matnr"
+                    >
+                        <Label text="Saturday" />
+                        <ui:template>
+                            <Text
+                                text="{DeliverySet>Matnr}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                    </ui:Column>
+
+                    <ui:Column
+                        filterProperty=""
+                        sortProperty=""
+                    >
+                        <Label text="Saturday" />
+                        <ui:template>
+                            <Text
+                                text="{DeliverySet>Matnr}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column
+                        filterProperty=""
+                        sortProperty=""
+                    >
+                        <Link
+                            text="Deatails"
+                            press="onDeatails"
+                        />
+                        <ui:template>
+                            <core:Icon
+                                src="sap-icon://edit"
+                                press="onEdit"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                </ui:columns>
+                <!-- <ui:rowActionTemplate>
+                    <ui:RowAction>
+                        <ui:items>
+                            <ui:RowActionItem
+                                type="Custom"
+                                press="onEdit"
+                                icon="sap-icon://edit"
+                            />
+                           
+                        </ui:items>
+                    </ui:RowAction>
+                </ui:rowActionTemplate> -->
+            </ui:Table>
+        </content>
+    </Page>
+</mvc:View>

@@ -1,0 +1,120 @@
+/* Enter your custom styles here */
+
+.CF {
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+}
+.CF1 {
+    margin-left: 1rem;
+   
+}
+.CF12 {
+    margin-left: 4.8rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+
+}
+.Description {
+    margin-left: 2.7rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+
+}
+.IncidentSubtype{
+    margin-left: 0.5rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+
+}
+.TypeofIncident{
+    margin-left: 0.8rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
+}
+.CF2 {
+   
+    margin-bottom: 1rem;
+    
+}
+.CF3 {
+   
+    margin-top: 1rem;
+    
+}
+   
+
+.sapMTB.sapMTBStandard {
+    border-bottom: solid 0rem #a8b3bd;
+}
+.validationOK{
+color: rgb(21, 0, 255);
+
+}
+.nn{
+linear-gradient(to left top, rgba(0, 255, 255, 1) 0%/*bottom-right color*/, rgba(255, 0, 255, 0.5) 50% /*middle color*/, rgba(255, 255, 0, 1) 100% /*top-left color*/),
+linear-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1)) /*"faked" black background make sure to add last or it will appear before the transparent/colored layer*/;
+}
+.ProposedIncidence {
+  
+    /* background-image: linear-gradient(to bottom right, #29537d , limegreen, crimson, blue, blue);
+     */
+     background-image: linear-gradient(to bottom right, #29537d , #e8272700);
+     /* background-image: linear-gradient(to left top, rgb(0, 4, 255) 0%bottom-right color, rgba(253, 251, 253, 0.5) 50% ); */
+   
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+.ProposedIncidenceg{
+    /* color: rgb(96, 96, 125); */
+    color:linear-gradient( 360deg,#29537d 50%, #e8272700 50%);
+}
+.PendingAuthorizationByAC{
+    color: rgba(0, 225, 255, 0.498);
+}
+.P_HR{
+    color: rgba(248, 158, 4, 0.537);
+}
+.Refused{
+    color: rgb(231, 22, 22);
+}
+.PendingShipmentToSAP{
+    color: rgb(228, 15, 197);
+}
+.SentToAP{
+    color: rgb(15, 228, 72);
+}
+.SentWithErrorToSAP{
+    color: rgb(85, 185, 140);
+}
+.CF4 {
+    margin-left: 0.5rem;
+   
+}
+
+.panLegend{
+    margin-left: 64.5rem;
+    margin-right: 0%;
+}
+.font_L {
+    font-family: '72-Bold';
+    font-size: medium;
+    text-decoration: underline;
+    color: rgb(90, 97, 223);
+}
+.Vacation{
+    color: yellow;
+    
+}
+
+.flex-parent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .box {
+    
+    margin-right: 22rem;
+  }

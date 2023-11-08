@@ -1,0 +1,130 @@
+<core:FragmentDefinition
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:ui="sap.ui.table"
+>
+    <Dialog
+        id="SelectedEmployees"
+        title="INCIDENTS TO MORE THAN ONE EMPLOYEE"
+    >
+        <content>
+           <ui:Table
+              
+              rows="{oModel>/Table}"
+                alternateRowColors="true"
+                selectionMode="Multi"
+                rowActionCount="2"
+            >
+                <ui:extension>
+                    <OverflowToolbar>
+                        
+                        <Title text="Selected Employees" />
+                    </OverflowToolbar>
+                </ui:extension>
+                <ui:columns>
+                    <ui:Column
+                    width="10rem"
+                        filterProperty="Vbeln"
+                        sortProperty="Vbeln"
+                    >
+                        <Label text="Name" />
+                        <ui:template>
+                            <Text
+                                text="{oModel>name}"
+                                wrapping="true"
+                                
+                            />
+                        </ui:template>
+                    </ui:Column>
+                    <ui:Column
+                    width="10rem"
+                        filterProperty="Posnr"
+                        sortProperty="Posnr"
+                    >
+                        <Label text="Name" />
+                        <ui:template>
+                            <Text
+                                text="{oModel>name}"
+                                wrapping="true"
+                            />
+                        </ui:template>
+                    </ui:Column>
+                </ui:columns>
+            </ui:Table>
+             <HBox>
+                    <Label
+                        text="Type of Incident"
+                        class="CF CF2"
+                    />
+                    <ComboBox
+                    
+                        width="15rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                    <Label
+                        text="Incident Subtype"
+                        class="CF"
+                    />
+                    <ComboBox
+                        width="15rem"
+                        items="{
+			            	path: 'Data2>/results',
+				            sorter: { path: 'Name1' } }"
+                    >
+                        <core:Item text="{Data2>Name1}" />
+                    </ComboBox>
+                </HBox>
+                  <Input
+                    id="idcustomerid"
+                    value=""
+                    width="40rem"
+                />
+                 <HBox>
+                    <Label
+                        text="Hours"
+                        class="CF"
+                    />
+                    <ComboBox
+                        width="5rem"
+                        items="{oModel>/FragTabTime}"   
+                    >
+                        <core:Item text="{oModel>time}" />
+                          <!-- <core:Item text="{path:'oModel>time', type:'sap.ui.model.type.Time',formatOptions:{ pattern:'hh-mm-ss'  } }" /> -->
+                    </ComboBox>
+                     <ComboBox
+                        width="5rem"
+                        items="{oModel>/FragTabTime}"
+                    >
+                        <core:Item text="{oModel>time}" />
+                    </ComboBox>
+                   
+                </HBox>
+                 <Button
+                       class="CF CF3"
+                        text="Eliminate"
+                        icon="sap-icon://decline"
+                        press="onSavePress"
+                    />
+        </content>
+        <beginButton>
+            <Button
+                type="Transparent"
+                text="Save"
+                press="onSavePress"
+            />
+          
+        </beginButton>
+        <endButton>
+            <Button
+                type="Transparent"
+                text="Close"
+                press="onClose_S"
+            />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

@@ -8,7 +8,7 @@ sap.ui.define([
         "use strict";
 
         return Controller.extend("idapp.project1.controller.View3", {
-            onInit() {
+            onInit(oEvent) {
                 var that = this;
                 this._dataModel =that.getOwnerComponent().getModel("tableData");
                 this._dataModel.setDefaultBindingMode(sap.ui.model.BindingMode.TwoWay);
@@ -37,6 +37,9 @@ sap.ui.define([
                
                 history.go(-1);
 
+            },
+            onNavBack1:function(oEvent){
+debugger
             },
             onpress1:function(){
                 var loRouter = sap.ui.core.UIComponent.getRouterFor(this);
