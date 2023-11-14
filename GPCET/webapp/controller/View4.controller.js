@@ -189,7 +189,7 @@ sap.ui.define([
             , progress: function () {
                 var that = this;
                 that.getSplitContObj().toDetail(this.createId("progress"));
-            }
+            },
 
 
 

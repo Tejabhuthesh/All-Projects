@@ -58,7 +58,7 @@
                         </MenuButton>
                     </VBox>
 
-                    <IconTabBar class=".sapMITBContent">
+                    <IconTabBar class=".sapMITBContent" expandable="false">
                         <items>
                             <IconTabFilter icon="sap-icon://home">
                                 <VBox>
@@ -295,6 +295,7 @@
                     <FlexBox
                         justifyContent="Center"
                         alignItems="Center"
+                        alignContent="Center"
                     >
                         <f:SimpleForm
                             editable="true"
@@ -317,6 +318,7 @@
 			singleContainerFullSize="false" 
                         >
                             <f:content>
+                            
                                 <Label text="PinNumber" />
                                 <!-- <Input value="{Data2>/0/PinNumber}" > -->
                                 	<!-- <layoutData>

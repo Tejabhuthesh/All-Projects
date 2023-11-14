@@ -213,13 +213,26 @@ sap.ui.define([
                 if (oEvent.getSource()._getValueHelpIcon().getSrc() === "sap-icon://hide") {
                     oEvent.getSource().setValueHelpIconSrc("sap-icon://show");
                     this.byId("idpassword").setType("Text");
-                    this.byId("idpassword1").setType("Text");
+                    
 
                 }
                 else if (oEvent.getSource()._getValueHelpIcon().getSrc() === "sap-icon://show") {
                     oEvent.getSource().setValueHelpIconSrc("sap-icon://hide");
                     this.byId("idpassword").setType("Password");
-                    this.byId("idpassword").setType("Password1");
+                   
+                }
+            },
+            onEyePassword1: function (oEvent) {
+                if (oEvent.getSource()._getValueHelpIcon().getSrc() === "sap-icon://hide") {
+                    oEvent.getSource().setValueHelpIconSrc("sap-icon://show");
+                   
+                    this.byId("idpassword1").setType("Text");
+
+                }
+                else if (oEvent.getSource()._getValueHelpIcon().getSrc() === "sap-icon://show") {
+                    oEvent.getSource().setValueHelpIconSrc("sap-icon://hide");
+                 
+                    this.byId("idpassword1").setType("Password");
 
                 }
             }

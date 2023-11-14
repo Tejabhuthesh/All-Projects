@@ -108,57 +108,57 @@
                 "clearControlAggregation": false
             },
             "routes": [
-				{
-					"pattern": "page2",
-					"name": "page2",
-					"target": "page2",
-					"layout": "EndColumnFullScreen"
-				},
-				{
-					"pattern": ":layout:",
-					"name": "list",
-					"target": [
-						"list",
-						"detail"
-					]
-				},
-				{
-					"pattern": "detail/{product}/{layout}",
-					"name": "detail",
-					"target": [
-						"list",
-						"detail"
-					]
-				},
-				{
-					"pattern": "detailDetail/{product}/{supplier}/{layout}",
-					"name": "detailDetail",
-					"target": [
-						"list",
-						"detail",
-						"detailDetail"
-					]
-				}
-			],
+                {
+                    "pattern": "page2",
+                    "name": "page2",
+                    "target": "page2",
+                    "layout": "EndColumnFullScreen"
+                },
+                {
+                    "pattern": ":layout:",
+                    "name": "list",
+                    "target": [
+                        "list",
+                        "detail"
+                    ]
+                },
+                {
+                    "pattern": "detail/{product}/{layout}",
+                    "name": "detail",
+                    "target": [
+                        "list",
+                        "detail"
+                    ]
+                },
+                {
+                    "pattern": "detailDetail/{product}/{supplier}/{layout}",
+                    "name": "detailDetail",
+                    "target": [
+                        "list",
+                        "detail",
+                        "detailDetail"
+                    ]
+                }
+            ],
             "targets": {
-				"list": {
-					"name": "List",
-					"controlAggregation": "beginColumnPages"
-				},
-				"detail": {
-					"name": "Detail",
-					"controlAggregation": "midColumnPages"
-				},
-				"detailDetail": {
-					"name": "DetailDetail",
-					"controlAggregation": "endColumnPages"
-				}
-        },
-        "rootView": {
-            "viewName": "idflex.zflexiblecoloumn.view.App",
-            "type": "XML",
-            "async": true,
-            "id": "App"
+                "list": {
+                    "name": "List",
+                    "controlAggregation": "beginColumnPages"
+                },
+                "detail": {
+                    "name": "Detail",
+                    "controlAggregation": "midColumnPages"
+                },
+                "detailDetail": {
+                    "name": "DetailDetail",
+                    "controlAggregation": "endColumnPages"
+                }
+            },
+            "rootView": {
+                "viewName": "idflex.zflexiblecoloumn.view.App",
+                "type": "XML",
+                "async": true,
+                "id": "App"
+            }
         }
     }
-}

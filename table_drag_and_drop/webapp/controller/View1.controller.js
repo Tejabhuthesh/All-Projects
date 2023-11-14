@@ -17,6 +17,12 @@ sap.ui.define([
                 var oModel = new JSONModel();
                 oModel.setData(oModel1);
                 this.getView().setModel(oModel, "oModel");
+                var t= this.getView().getModel("oModel").getData().length;
+                var data=[{"len":"3"}]
+                var oModel1 = new JSONModel(data);
+               
+                this.getView().setModel(oModel1, "oModel1");
+
             },
             moveToAvailableProductsTable: function (oEvent) {
 
@@ -91,7 +97,11 @@ sap.ui.define([
                 // this.moveSelectedItem("Up");
                 // oEvent.getSource().focus();
                 this.getView().getModel("i18n").getResourceBundle().aPropertyFiles[0].mProperties
-                this.getOwnerComponent().getModel("i18n").getResourceModel();
+                this.getOwnerComponent().getModel("i18n").getResourceBundle();
+               var unique= this.getView().getModel("oModel").getData();
+                var _HUNumber = unique.find(function (element) {
+                    return element.Name === "Teja" ;
+                })
             },
 
             moveDown: function (oEvent) {

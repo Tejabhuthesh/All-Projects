@@ -145,7 +145,6 @@
             </content>
 					</Panel>
 				</l:SplitPane>
-				
 			</l:PaneContainer>
 		</l:PaneContainer>
 	</l:ResponsiveSplitter>

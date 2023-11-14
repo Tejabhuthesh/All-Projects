@@ -1,19 +1,20 @@
 <mvc:View
-	controllerName="tabledraganddrop.controller.View1"
-	xmlns:dnd="sap.ui.core.dnd"
-	xmlns:mvc="sap.ui.core.mvc"
-	xmlns:c="sap.ui.core"
-	xmlns="sap.m"
-	xmlns:f="sap.ui.layout.form"
-	height="100%">
-	<Page
-title="Capture Previous Days by Division"
-		showHeader="true"
-		enableScrolling="true"
-		class="sapUiContentPadding">
-		<content>
-		
-		   <f:SimpleForm
+    controllerName="tabledraganddrop.controller.View1"
+    xmlns:dnd="sap.ui.core.dnd"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:c="sap.ui.core"
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    height="100%"
+>
+    <Page
+        title="Capture Previous Days by Division"
+        showHeader="true"
+        enableScrolling="true"
+        class="sapUiContentPadding"
+    >
+        <content>
+            <f:SimpleForm
                 id="SimpleFormChange480_Trial"
                 editable="true"
                 layout="ResponsiveGridLayout"
@@ -32,182 +33,212 @@ title="Capture Previous Days by Division"
                 singleContainerFullSize="false"
             >
                 <f:content>
-                   
-                    
-                            <Label
-                                text="Society"
-                              
-                            />
-
-                          
-                             <MultiComboBox
-                                id="idname"
-                                items="{
-			            	path: 'Name>/', 
-				            sorter: { path: 'Name' }
-                             }"
-                            width="12.5rem"
-                            selectedKeys = "{ 
-                                path: 'Name>/'
+                    <Label text="Society" />
+                    <MultiComboBox
+                        id="idname"
+                        items="{
+          path: 'oModel>/' ,length:'5'
+            }"
+                        width="12.5rem"
+                        selectedKeys="{ 
+                                path: ''
                             }"
-                            >
-                                <c:Item
-                                    key="{Name>}"
-                                    text="{Name>}"
-                                />
-                            </MultiComboBox>
-                      
-                       
-                  
+                    >
+                        <c:Item
+                            key="{oModel>Name}"
+                            text="{oModel>Name}"
+                        />
+                    </MultiComboBox>
                 </f:content>
             </f:SimpleForm>
-			<HBox renderType="Bare">
-				<!-- <mvc:XMLView id="availableProducts" viewName="sap.m.sample.TableDnD.AvailableProducts" async="true"/> -->
-                	<Table
-		id="table"
-		mode="SingleSelectMaster"
-		growing="true"
-		growingThreshold="10"
-		beforeOpenContextMenu="onBeforeOpenContextMenu"
-		items="{
+            <HBox renderType="Bare">
+              
+                <Table
+                    id="table"
+                    mode="SingleSelectMaster"
+                    growing="true"
+                    growingThreshold="10"
+                    beforeOpenContextMenu="onBeforeOpenContextMenu"
+                    items="{
 			path: 'oModel>/'
-		}">
-		
-			<!-- filters: {path: 'Name', operator: 'EQ', value1: 'Teja'} -->
-		<contextMenu>
-			<Menu>
-				<MenuItem text="Move to Selected Products" press="moveToSelectedProductsTable" />
-			</Menu>
-		</contextMenu>
-		<headerToolbar>
-			<OverflowToolbar>
-				<Title text="Available Products" />
-			</OverflowToolbar>
-		</headerToolbar>
-		<columns>
-			<Column>
-				<Text text="Product Name" />
-			</Column>
-			<Column>
-				<Text text="Category" />
-			</Column>
-			<Column
-				hAlign="End"
-				width="6rem">
-				<Text text="Quantity" />
-			</Column>
-		</columns>
-		<dragDropConfig>
-			<dnd:DragInfo
-				groupName="available2selected"
-				sourceAggregation="items" />
-			<dnd:DropInfo
-				groupName="selected2available"
-				drop="onDropAvailableProductsTable" />
-		</dragDropConfig>
-		<items>
-			<ColumnListItem press="onRowAvailable">
-				<cells>
-					<Text text="{oModel>Name}" wrapping="false" />
-					<Text text="{Category}" wrapping="false" />
-					<Text text="{
+		}"
+                >
+                   
+                    <contextMenu>
+                        <Menu>
+                            <MenuItem
+                                text="Move to Selected Products"
+                                press="moveToSelectedProductsTable"
+                            />
+                        </Menu>
+                    </contextMenu>
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <Title text="Available Products" />
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Product Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Category" />
+                        </Column>
+                        <Column
+                            hAlign="End"
+                            width="6rem"
+                        >
+                            <Text text="Quantity" />
+                        </Column>
+                    </columns>
+                    <dragDropConfig>
+                        <dnd:DragInfo
+                            groupName="available2selected"
+                            sourceAggregation="items"
+                        />
+                        <dnd:DropInfo
+                            groupName="selected2available"
+                            drop="onDropAvailableProductsTable"
+                        />
+                    </dragDropConfig>
+                    <items>
+                        <ColumnListItem press="onRowAvailable">
+                            <cells>
+                                <Text
+                                    text="{oModel>Name}"
+                                    wrapping="false"
+                                />
+                                <Text
+                                    text="{oModel1>/0/len}"
+                                    wrapping="false"
+                                />
+                                <Text
+                                    text="{
 						path: 'Quantity',
 						type: 'sap.ui.model.type.Integer'
-					}" />
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
-				<VBox justifyContent="Center" class="sapUiTinyMarginBeginEnd">
-					<Button
-						class="sapUiTinyMarginBottom"
-						icon="sap-icon://navigation-right-arrow"
-						tooltip="Move to selected"
-						press="moveToSelectedProductsTable"/>
-					<Button
-						icon="sap-icon://navigation-left-arrow"
-						tooltip="Move to available"
-						press="moveToAvailableProductsTable"/>
-				</VBox>
-				<!-- <mvc:XMLView id="selectedProducts" viewName="sap.m.sample.TableDnD.SelectedProducts" async="true"/> -->
-                	<Table
-		id="idSelcetedTable"
-		mode="SingleSelectMaster"
-		growing="true"
-		growingThreshold="10"
-		beforeOpenContextMenu="onBeforeOpenContextMenu"
-		items="{
+					}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+                <VBox
+                    justifyContent="Center"
+                    class="sapUiTinyMarginBeginEnd"
+                >
+                    <Button
+                        class="sapUiTinyMarginBottom"
+                        icon="sap-icon://navigation-right-arrow"
+                        tooltip="Move to selected"
+                        press="moveToSelectedProductsTable"
+                    />
+                    <Button
+                        icon="sap-icon://navigation-left-arrow"
+                        tooltip="Move to available"
+                        press="moveToAvailableProductsTable"
+                    />
+                </VBox>
+               
+                <Table
+                    id="idSelcetedTable"
+                    mode="SingleSelectMaster"
+                    growing="true"
+                    growingThreshold="10"
+                    beforeOpenContextMenu="onBeforeOpenContextMenu"
+                    items="{
 			path: 'oModel1>/'
 			
 		}"
-		
-		noDataText="Please drag-and-drop products here.">
-		<!-- filters: {path: 'Rank', operator: 'GT', value1: '0'},
-			sorter: {path: 'Rank', descending: true} -->
-		<contextMenu>
-			<Menu>
-				<MenuItem text="Move to Available Products" press="moveToAvailableProductsTable" />
-				<MenuItem text="Move up" press="moveUp" />
-				<MenuItem text="Move down" press="moveDown" />
-			</Menu>
-		</contextMenu>
-		<headerToolbar>
-			<OverflowToolbar>
-				<Title text="Selected Products" />
-				<ToolbarSpacer/>
-				<Button
-					icon="sap-icon://navigation-up-arrow"
-					tooltip="Move up"
-					press="moveUp"/>
-				<Button
-					icon="sap-icon://navigation-down-arrow"
-					tooltip="Move down"
-					press="moveDown"/>
-			</OverflowToolbar>
-		</headerToolbar>
-		<columns>
-			<Column>
-				<Text text="Product Name" />
-			</Column>
-			<Column>
-				<Text text="Category" />
-			</Column>
-			<Column
-				hAlign="End"
-				width="6rem">
-				<Text text="Quantity" />
-			</Column>
-		</columns>
-		<dragDropConfig>
-			<dnd:DragInfo
-				groupName="selected2available"
-				sourceAggregation="items" />
-			<dnd:DropInfo
-				groupName="available2selected"
-				targetAggregation="items"
-				dropPosition="Between"
-				drop="onDropSelectedProductsTabl" />
-			<dnd:DragDropInfo
-				sourceAggregation="items"
-				targetAggregation="items"
-				dropPosition="Between"
-				drop="onDropSelectedProductsTabl"/>
-		</dragDropConfig>
-		<items>
-			<ColumnListItem press="onRowSelcted">
-				<cells>
-					<Text text="{oModel1>Name}" wrapping="false" />
-					<Text text="{oModel1>Employeid}" wrapping="false" />
-					<Text text="{
+                    noDataText="Please drag-and-drop products here."
+                >
+                  
+                    <contextMenu>
+                        <Menu>
+                            <MenuItem
+                                text="Move to Available Products"
+                                press="moveToAvailableProductsTable"
+                            />
+                            <MenuItem
+                                text="Move up"
+                                press="moveUp"
+                            />
+                            <MenuItem
+                                text="Move down"
+                                press="moveDown"
+                            />
+                        </Menu>
+                    </contextMenu>
+                    <headerToolbar>
+                        <OverflowToolbar>
+                            <Title text="Selected Products" />
+                            <ToolbarSpacer />
+                            <Button
+                                icon="sap-icon://navigation-up-arrow"
+                                tooltip="Move up"
+                                press="moveUp"
+                            />
+                            <Button
+                                icon="sap-icon://navigation-down-arrow"
+                                tooltip="Move down"
+                                press="moveDown"
+                            />
+                        </OverflowToolbar>
+                    </headerToolbar>
+                    <columns>
+                        <Column>
+                            <Text text="Product Name" />
+                        </Column>
+                        <Column>
+                            <Text text="Category" />
+                        </Column>
+                        <Column
+                            hAlign="End"
+                            width="6rem"
+                        >
+                            <Text text="Quantity" />
+                        </Column>
+                    </columns>
+                    <dragDropConfig>
+                        <dnd:DragInfo
+                            groupName="selected2available"
+                            sourceAggregation="items"
+                        />
+                        <dnd:DropInfo
+                            groupName="available2selected"
+                            targetAggregation="items"
+                            dropPosition="Between"
+                            drop="onDropSelectedProductsTabl"
+                        />
+                        <dnd:DragDropInfo
+                            sourceAggregation="items"
+                            targetAggregation="items"
+                            dropPosition="Between"
+                            drop="onDropSelectedProductsTabl"
+                        />
+                    </dragDropConfig>
+                    <items>
+                        <ColumnListItem press="onRowSelcted">
+                            <cells>
+                                <Text
+                                    text="{oModel1>Name}"
+                                    wrapping="false"
+                                />
+                                <Text
+                                    text="{oModel1>Employeid}"
+                                    wrapping="false"
+                                />
+                                <Text
+                                    text="{
 						path: 'Quantity',
 						type: 'sap.ui.model.type.Integer'
-					}" />
-				</cells>
-			</ColumnListItem>
-		</items>
-	</Table>
-			</HBox>
-			   <f:SimpleForm
+					}"
+                                />
+                            </cells>
+                        </ColumnListItem>
+                    </items>
+                </Table>
+            </HBox>
+            <f:SimpleForm
                 id="SimpleFormChange4_Trial"
                 editable="true"
                 layout="ResponsiveGridLayout"
@@ -226,35 +257,109 @@ title="Capture Previous Days by Division"
                 singleContainerFullSize="false"
             >
                 <f:content>
-                   
-                    
-                            <Label
-                                text="Days"
-                              
-                            />
+                    <Label text="Days" />
 
-                          
-                             <MultiComboBox
-                                id="idna"
-                                items="{
+                    <MultiComboBox
+                        id="idna"
+                        items="{
 			            	path: 'Name>/', 
 				            sorter: { path: 'Name' }
                              }"
-                            width="12.5rem"
-                            selectedKeys = "{ 
+                        width="12.5rem"
+                        selectedKeys="{ 
                                 path: 'Name>/'
                             }"
-                            >
-                                <c:Item
-                                    key="{Name>}"
-                                    text="{Name>}"
-                                />
-                            </MultiComboBox>
-                      
-                       
-                  
+                    >
+                        <c:Item
+                            key="{Name>}"
+                            text="{Name>}"
+                        />
+                    </MultiComboBox>
                 </f:content>
             </f:SimpleForm>
-		</content>
-	</Page>
+        </content>
+    </Page>
 </mvc:View>
+
+<!-- <mvc:View
+		controllerName="tabledraganddrop.controller.View1"
+		xmlns="sap.m"
+		xmlns:mvc="sap.ui.core.mvc"
+		xmlns:semantic="sap.m.semantic">
+	<semantic:FullscreenPage
+			id="page"
+			title="{i18n>worklistViewTitle}">
+		<semantic:content>
+			<Table
+					id="table"
+					width="auto"
+					class="sapUiResponsiveMargin"
+					growing="true"
+					items="{
+					path: '/Posts',
+					sorter: {
+						path: 'Title',
+						descending: false
+						}
+					}"
+					busyIndicatorDelay="{worklistView>/tableBusyDelay}"
+					updateFinished=".onUpdateFinished">
+				<headerToolbar>
+					<Toolbar>
+				
+						<Label id="tableHeader" text="{worklistView>/worklistTableTitle}"/>
+						<ToolbarSpacer />
+						<SearchField id="searchField" width="auto" search=".onFilterPosts" />
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="33%" id="nameColumn" vAlign="Middle">
+						<Text text="{i18n>TableNameColumnTitle}" id="nameColumnTitle"/>
+					</Column>
+					<Column width="33%" id="categoryColumn" vAlign="Middle">
+						<Text text="{i18n>TableCategoryColumnTitle}" id="categoryColumnTitle"/>
+					</Column>
+					<Column width="33%" id="unitNumberColumn" hAlign="End" vAlign="Middle">
+						<Text text="{i18n>TableUnitNumberColumnTitle}" id="unitNumberColumnTitle"/>
+					</Column>
+					<Column width="80px" id="flaggedColumn" demandPopin="true" vAlign="Middle"/>
+				</columns>
+				<items>
+					<ColumnListItem
+							vAlign="Middle"
+							type="Navigation"
+							press=".onPress">
+						<cells>
+							<ObjectIdentifier
+									title="{Title}"/>
+							<Text
+									text="{Category}"/>
+							<ObjectNumber
+									number="{
+										path: 'Price',
+										formatter: '.formatter.numberUnit'
+									}"
+									state="{
+										path: 'Price',
+										formatter: '.formatter.priceState'
+									}"
+									unit="{Currency}"/>
+							<ToggleButton
+									id="flaggedButton"
+									tooltip="{i18n>flaggedTooltip}"
+									icon="sap-icon://flag"
+									pressed="{
+										path: 'Flagged',
+										type: '.types.flagged'
+									}"
+									class="sapUiMediumMarginBeginEnd"/>
+						</cells>
+					</ColumnListItem>
+				</items>
+			</Table>
+		</semantic:content>
+		<semantic:sendEmailAction>
+			<semantic:SendEmailAction id="shareEmail" press=".onShareEmailPress"/>
+		</semantic:sendEmailAction>
+	</semantic:FullscreenPage>
+</mvc:View> -->

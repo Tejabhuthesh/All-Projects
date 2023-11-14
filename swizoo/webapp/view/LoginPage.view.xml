@@ -11,7 +11,7 @@
 
         <content>
             <VBox>
-                <IconTabBar expandable="true" selectedKey="placements">
+                <IconTabBar expandable="false" selectedKey="placements">
                     <items>
                         <IconTabFilter key="placements" text="Registration" icon="sap-icon://account" visible="{=${Data2>/C} === 'X'}" class="sapMITBContentttt ">
                             <VBox alignItems="Center" justifyContent="Center" class="vBoxRegistrationpage sapMITBContentReg">
@@ -36,7 +36,7 @@
 
                                         <Label text="Password" required="true" />
 
-                                        <Input id="idpassword1" type="Password" showValueHelp="true" valueHelpIconSrc="sap-icon://hide" valueHelpRequest="onEyePassword" />
+                                        <Input id="idpassword1" type="Password" showValueHelp="true" valueHelpIconSrc="sap-icon://hide" valueHelpRequest="onEyePassword1" />
                                         <Button text="Register" type="Success" id="idrigester" press="onRigister" />
 
 

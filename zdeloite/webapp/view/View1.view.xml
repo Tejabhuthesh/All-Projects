@@ -52,6 +52,12 @@
             </Bar>
         </subHeader> -->
         <headerContent>
+        <Link
+				text="・Open google"
+				target="_blank"
+				href="http://www.google.co.jp" />
+              
+        
             <Button
                 text="Special Closing"
                 type="Ghost"
@@ -72,8 +78,8 @@
         <content>
     <Panel >
       <Title text="Capture Filters" />
-    <HBox class="flex-parent" >
-    <VBox  class="box">
+    <HBox width="100%" alignItems="Center" >
+    <VBox  width="80%"  >
   <HBox>
                     <Label
                         text="Stores"
@@ -108,7 +114,7 @@
                    
                 </HBox>
     </VBox>
-    <VBox class="">
+    <VBox class="" width="20%">
       <!-- <OverflowToolbar
                     design="Transparent"
                     height="2rem"

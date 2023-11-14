@@ -122,7 +122,6 @@
                                                
                                                 editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
                                             />
-
                                             <!-- value="{path:'{SalesSet>/Audat}', type:'sap.ui.model.type.DateTime',formatOptions:{ pattern:'dd/MM/yyyy' } }" -->
                                             <Label
                                                 text="Item Description"
@@ -138,7 +137,6 @@
                                                 text="Sold to Party"
                                                 required="true"
                                             />
-
                                             <Input
                                                 id="SoldtoParty"
                                                 width="100%"
@@ -156,7 +154,6 @@
                                                 editable="{=${EditModel>/SS} === 'S' || ${FlagModel>/V} === 'V'  || ${FlagModel>/Copy} === 'Copy' }"
                                             />
                                             <core:Title text="" />
-
                                             <Label
                                                 text="Material"
                                                 required="true"
@@ -384,7 +381,6 @@
                                                 text="Unit of Measurement"
                                                 required="true"
                                             />
-
                                             <Input
                                                 id="UnitofMeasurement_I"
                                                 value="{DeliverySet1>/Vrkme}"

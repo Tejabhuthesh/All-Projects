@@ -246,7 +246,6 @@ sap.ui.define([
                     oModel.setData(sData.Employedetails[index]);
                     that.getView().setModel(oModel, "Data3");
                 }
-
             }
             , SavePress: function () {
                 MessageBox.success("Saved Successfuly.")

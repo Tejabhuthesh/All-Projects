@@ -15,19 +15,19 @@
         <content>
             <Toolbar>
                 <Label text="SWIZOO" class="swizoo" />
-                <ComboBox width="20rem" placeholder="Select Your Restaurant" visible="true" id="SelectYourRestaurant" items="{
+                <!-- <ComboBox width="20rem" placeholder="Select Your Restaurant" visible="true" id="SelectYourRestaurant" items="{
 			            	path: 'Data2>/results',
 				            sorter: { path: 'Name1' } }">
                     <core:Item id="idcoreitem" text="{Data2>Name1}" />
-                </ComboBox>
-                <!-- <MultiComboBox id="SelectYourRestaurant" width="20rem" editable="true" items="{
+                </ComboBox> -->
+                <MultiComboBox id="SelectYourRestaurant" width="20rem" editable="true" items="{
           path: 'Data2>/results', sorter: { path: 'Name1',
                                                               group: false } 
             }">
 
                     <core:Item id="idcoreitem" text="{Data2>Name1}" />
 
-                </MultiComboBox> -->
+                </MultiComboBox>
 
                 <Button text="FIND FOOD" width="7rem" press="onFindFood" class="findfoodBtn"/>
                 <ToolbarSpacer />
