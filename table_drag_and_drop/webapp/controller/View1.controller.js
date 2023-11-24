@@ -105,8 +105,10 @@ sap.ui.define([
             },
 
             moveDown: function (oEvent) {
-                this.moveSelectedItem("Down");
-                oEvent.getSource().focus();
+             
+
+                // this.moveSelectedItem("Down");
+                // oEvent.getSource().focus();
             },
         });
     });

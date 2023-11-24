@@ -1,0 +1,17 @@
+<mvc:View controllerName="navigationdisplaymethod.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns="sap.m">
+    <!-- <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+        <content >
+        <Text text="BHUTHESH"></Text>
+      
+        </content>
+    </Page> -->
+     <Button text="VIEW3" press="ONPRESS"></Button>
+    	<MessagePage
+		title="{i18n>NotFound}"
+		text="{i18n>NotFound.text}"
+		description="{i18n>NotFound.description}"
+		showNavButton="true"
+		navButtonPress=".onNavBack"/>
+</mvc:View>

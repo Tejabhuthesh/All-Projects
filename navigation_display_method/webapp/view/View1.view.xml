@@ -1,0 +1,10 @@
+<mvc:View controllerName="navigationdisplaymethod.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+      	<content>
+			<Button id="displayNotFoundBtn" text="{i18n>DisplayNotFound}" press=".onDisplayNotFound" class="sapUiTinyMarginEnd"/>
+            <Button id="dotFoundBtn" text="{i18n>bi}" press=".onbi" class="sapUiTinyMarginEnd"/>
+		</content>
+    </Page>
+</mvc:View>

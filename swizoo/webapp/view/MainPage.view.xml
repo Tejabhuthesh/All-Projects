@@ -8,7 +8,7 @@
     <Page id="page" class="MainPageee" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack" showHeader="true">
         <headerContent >
             <Button icon="sap-icon://customer" class="findfoodBtn btnnn" width="7rem" press="oncustomer" visible="{=${Data2>/CustomerID} === 'V' }" />
-            <Button icon="sap-icon://customer" class="findfoodBtn btnnn" width="7rem" press="onCustomerDatails" visible="{=${Data2>/CustomerID} !== 'V' }" />
+            <Button icon="sap-icon://customer" class="findfoodBtn btnnn" width="7rem" press="onCustomerDatails" visible="true" />
             <OverflowToolbarButton type="Transparent" icon="sap-icon://full-screen" press="onFullScreen" id="enterFullScreenBtn1" tooltip="Enter Full Screen Mode" />
         </headerContent>
         <content>

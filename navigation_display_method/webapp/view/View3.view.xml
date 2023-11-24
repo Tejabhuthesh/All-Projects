@@ -1,0 +1,13 @@
+<mvc:View controllerName="navigationdisplaymethod.controller.View3"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+        <content >
+       <VBox >
+       <Label text="Employee"></Label>
+       <Text text="{jsonModel>Employeid}"></Text>
+          <Text text="{jsonModel>Name}"></Text>
+       </VBox>
+        </content>
+    </Page>
+</mvc:View>

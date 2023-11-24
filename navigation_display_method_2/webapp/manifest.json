@@ -1,0 +1,139 @@
+{
+  "_version": "1.49.0",
+  "sap.app": {
+    "id": "navigationdisplaymethod2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.10.6",
+      "toolsId": "5da42e2b-b0ac-4ae4-8c42-d7697c0cf84c"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "navigationdisplaymethod2.i18n.i18n"
+        }
+      },
+      "": {
+        "uri": "model/Employe.json",
+        "type": "sap.ui.model.json.JSONModel"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "navigationdisplaymethod2.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false,
+        "bypassed": {
+          "target": "notFound"
+        }
+      },
+      "routes": [
+        {
+          "name": "AppHome",
+          "pattern": "",
+          "target": "Home"
+        },
+        {
+          "name": "NOTFOUND",
+          "pattern": "NOTFOUND",
+          "target": "TargetView3"
+        },
+        {
+          "name": "EmployeeList",
+          "pattern": "EmployeeList",
+          "target": "Employee"
+        },
+        {
+          "name": "EmployeeDetail",
+          "pattern": "EmployeeDetail/{employeeId}",
+          "target": "Employee_Detail"
+        }
+      ],
+      "targets": {
+        "Home": {
+          "viewId": "Home",
+          "viewName": "Home",
+          "level": 1
+        },
+        "notFound": {
+          "viewId": "NotFound",
+          "viewName": "notFound",
+          "transition": "show"
+        },
+        "Employee": {
+          "viewId": "employee",
+          "viewName": "EmployeeList",
+          "level": 2
+        },
+        "Employee_Detail": {
+          "viewId": "employeeDetail",
+          "viewName": "EmployeeDetail",
+          "transition": "flip",
+          "level": 3
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "navigationdisplaymethod2.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}
